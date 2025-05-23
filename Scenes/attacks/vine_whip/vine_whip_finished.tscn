@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/attacks/vine_whip/vine_whip_finished.png" type="Texture" id=1]
+[ext_resource path="res://scripts/battle/attack_finished.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 300, 0, 60, 80 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 360, 0, 60, 80 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Animated",
+"speed": 15.0
+} ]
+
+[node name="FireFinished" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.497313, -0.349915 )
+scale = Vector2( 0.320262, 0.306994 )
+frames = SubResource( 5 )
+animation = "Animated"
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

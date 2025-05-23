@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://img/items/pokeball.png" type="Texture" id=1]
+[ext_resource path="res://scripts/player/Item.gd" type="Script" id=2]
+[ext_resource path="res://img/components/shadow_mold_2.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 4.36503
+
+[node name="Pokeball" type="Area2D"]
+collision_layer = 32
+collision_mask = 17
+script = ExtResource( 2 )
+id = 1
+Name = "pokeball"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0743256, -0.297302 )
+shape = SubResource( 1 )
+
+[node name="shadow" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.454902 )
+position = Vector2( -0.0997476, 3.7808 )
+scale = Vector2( 0.146765, 0.0534203 )
+texture = ExtResource( 3 )
+
+[node name="img" type="Sprite" parent="."]
+position = Vector2( -0.0841999, -0.3865 )
+scale = Vector2( 0.176726, 0.176726 )
+texture = ExtResource( 1 )

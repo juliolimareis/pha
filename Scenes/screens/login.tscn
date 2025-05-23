@@ -1,0 +1,188 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://img/screens/login_2.jpg" type="Texture" id=1]
+[ext_resource path="res://Scenes/screens/login_theme.tres" type="Theme" id=2]
+[ext_resource path="res://scripts/screens/login.gd" type="Script" id=3]
+[ext_resource path="res://img/brands/logo_branco.png" type="Texture" id=4]
+[ext_resource path="res://fonts/arial/ARIAL.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://img/layouts/perfil_poke.png" type="Texture" id=6]
+[ext_resource path="res://img/brands/PHA 02.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/screens/Version.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 7
+font_data = ExtResource( 5 )
+
+[node name="Login" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+rect_pivot_offset = Vector2( -178.989, 28.1469 )
+script = ExtResource( 3 )
+account = "juliolimareis"
+validVersion = false
+autoLogin = false
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background_fields" type="Sprite" parent="NinePatchRect"]
+position = Vector2( 184.381, 112.361 )
+scale = Vector2( 0.335593, 0.998313 )
+z_as_relative = false
+texture = ExtResource( 6 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -63.0568
+margin_top = -55.0016
+margin_right = 68.9432
+margin_bottom = 72.9984
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelLogin" type="Label" parent="NinePatchRect/VBoxContainer"]
+margin_right = 132.0
+margin_bottom = 13.0
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0.0980392, 0.580392, 0.803922, 1 )
+text = "E-mail"
+
+[node name="Login" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
+margin_top = 17.0
+margin_right = 132.0
+margin_bottom = 40.0
+theme = ExtResource( 2 )
+max_length = 50
+
+[node name="LabelPasswd" type="Label" parent="NinePatchRect/VBoxContainer"]
+margin_top = 44.0
+margin_right = 132.0
+margin_bottom = 57.0
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0.0980392, 0.580392, 0.803922, 1 )
+text = "Senha"
+
+[node name="Password" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
+margin_top = 61.0
+margin_right = 132.0
+margin_bottom = 84.0
+theme = ExtResource( 2 )
+max_length = 50
+secret = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoginButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+margin_top = 88.0
+margin_right = 132.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 80, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextButton" type="Label" parent="NinePatchRect/VBoxContainer/LoginButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.12373
+margin_top = 1.25084
+margin_right = -1.12373
+margin_bottom = 1.25084
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0.0980392, 0.580392, 0.803922, 1 )
+text = "Entrar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RegisterButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+margin_top = 112.0
+margin_right = 132.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 80, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextButton" type="Label" parent="NinePatchRect/VBoxContainer/RegisterButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.12373
+margin_top = -6.30506
+margin_right = -1.12373
+margin_bottom = -6.30506
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0.0980392, 0.580392, 0.803922, 1 )
+text = "Cadastrar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="logo" type="Sprite" parent="."]
+position = Vector2( 344.938, 221.214 )
+scale = Vector2( 0.0738967, 0.0680888 )
+texture = ExtResource( 4 )
+
+[node name="Title" type="Sprite" parent="."]
+position = Vector2( 186.273, 49.3351 )
+scale = Vector2( 0.104876, 0.0976733 )
+texture = ExtResource( 7 )
+
+[node name="MessageDanger" type="Control" parent="."]
+visible = false
+margin_left = 185.0
+margin_top = 221.0
+margin_right = 225.0
+margin_bottom = 261.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="perfil_poke" type="Sprite" parent="MessageDanger"]
+position = Vector2( -0.974157, 0 )
+scale = Vector2( 0.420096, 0.19945 )
+z_as_relative = false
+texture = ExtResource( 6 )
+
+[node name="Danger" type="Label" parent="MessageDanger"]
+margin_left = -93.6346
+margin_top = -14.4284
+margin_right = 91.3654
+margin_bottom = 15.5716
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.278431, 0.278431, 1 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Version" parent="." instance=ExtResource( 8 )]
+margin_left = 164.682
+margin_top = 186.117
+margin_right = 204.682
+margin_bottom = 196.117
+
+[connection signal="text_changed" from="NinePatchRect/VBoxContainer/Login" to="." method="_on_Login_text_changed"]
+[connection signal="text_changed" from="NinePatchRect/VBoxContainer/Password" to="." method="_on_Password_text_changed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/LoginButton" to="." method="_on_LoginButton_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/RegisterButton" to="." method="_on_RegisterButton_pressed"]

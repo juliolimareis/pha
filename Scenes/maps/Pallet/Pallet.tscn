@@ -1,0 +1,119 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scenes/items/revive.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/objects/Hidrante.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/maps/Ambient.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/map/transitionScene.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/objects/Jardim_Completo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/objects/Casa_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/objects/Bicicletario.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/objects/Placa_Madeira.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/items/pokeball.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/items/potion.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/objects/Poste_Verde.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/objects/arvore.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/objects/Cut.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/objects/Laboratorio.tscn" type="PackedScene" id=18]
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 10, 8.47262 )
+
+[node name="Pallet" type="YSort"]
+position = Vector2( 49.6148, 59.0105 )
+
+[node name="Poste_Verde" parent="." instance=ExtResource( 12 )]
+position = Vector2( 279.405, 140.803 )
+
+[node name="Poste_Verde2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 0.0760822, -52.706 )
+
+[node name="Bicicletario" parent="." instance=ExtResource( 7 )]
+position = Vector2( 352.152, 76.9981 )
+
+[node name="Placa_Madeira" parent="." instance=ExtResource( 9 )]
+position = Vector2( 57.302, 92.889 )
+
+[node name="Hidrante" parent="." instance=ExtResource( 2 )]
+position = Vector2( 30.5818, 152.218 )
+
+[node name="Laboratorio" parent="." instance=ExtResource( 18 )]
+position = Vector2( 395.448, 52.1768 )
+
+[node name="Area2D" type="Area2D" parent="Laboratorio"]
+script = ExtResource( 4 )
+path = "res://Scenes/maps/LabInside.tscn"
+isAutoConnect = true
+pokes = ""
+items = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laboratorio/Area2D"]
+position = Vector2( 0, 1.52737 )
+shape = SubResource( 23 )
+
+[node name="Jardim_Completo" parent="." instance=ExtResource( 5 )]
+position = Vector2( 195.666, 166.112 )
+
+[node name="Casa_2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 397.53, 183.696 )
+scale = Vector2( 0.997705, 1 )
+
+[node name="Bicicletario2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 373.852, 77.0493 )
+
+[node name="Bicicletario3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 420.781, 76.7462 )
+
+[node name="Bicicletario4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 441.556, 76.4068 )
+
+[node name="Casa_player" type="YSort" parent="."]
+
+[node name="Casa_1" parent="Casa_player" instance=ExtResource( 6 )]
+position = Vector2( 213.683, 69.1691 )
+
+[node name="Cut" parent="Casa_player" instance=ExtResource( 16 )]
+position = Vector2( 142.996, 30.7316 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="Arvore" parent="Casa_player" instance=ExtResource( 14 )]
+position = Vector2( 135.813, -4.63037 )
+
+[node name="Potion" parent="." instance=ExtResource( 11 )]
+position = Vector2( 163.57, 18.2376 )
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Revive" parent="." instance=ExtResource( 1 )]
+position = Vector2( 268.573, -8.95645 )
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Pokeball" parent="." instance=ExtResource( 10 )]
+position = Vector2( 134.853, 75.0352 )
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Ambient" parent="." instance=ExtResource( 3 )]
+
+[node name="Grounds" parent="Ambient" index="0"]
+tile_data = PoolIntArray( -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 1, 0, -65526, 1, 1, -65525, 1, 1, -65524, 1, 2, -65523, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 1, 65536, 10, 1, 65537, 11, 1, 65537, 12, 1, 65538, 13, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 1, 5, 65543, 0, 0, 65544, 0, 0, 65545, 1, 65536, 65546, 1, 65537, 65547, 1, 65537, 65548, 1, 65538, 65549, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 1, 131072, 131082, 1, 131073, 131083, 1, 131073, 131084, 1, 131074, 131085, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 1, 0, 262149, 1, 1, 262150, 1, 1, 262151, 1, 2, 262152, 0, 0, 262153, 1, 0, 262154, 1, 1, 262155, 1, 1, 262156, 1, 2, 262157, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 1, 131073, 327685, 1, 131073, 327686, 1, 131073, 327687, 1, 131074, 327688, 0, 0, 327689, 1, 131072, 327690, 1, 131073, 327691, 1, 131073, 327692, 1, 131074, 327693, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0 )
+
+[node name="Roads" parent="Ambient" index="1"]
+tile_data = PoolIntArray( -131072, 1, 7, -131071, 1, 8, -65536, 1, 131076, -65535, 1, 131077, -65533, 3, 0, -65532, 3, 1, -65531, 3, 1, -65530, 3, 1, -65529, 3, 2, -65527, 3, 0, -65526, 3, 1, -65525, 3, 1, -65524, 3, 2, 65534, 1, 7, 65535, 1, 196612, 0, 1, 196609, 1, 1, 131077, 3, 3, 65536, 4, 3, 65537, 5, 3, 65537, 6, 3, 65537, 7, 3, 65538, 9, 3, 65536, 10, 3, 65537, 11, 3, 65537, 12, 3, 65538, 131070, 1, 65543, 131071, 1, 196613, 65536, 1, 196613, 65537, 1, 65544, 65539, 3, 65536, 65540, 3, 65537, 65541, 3, 65537, 65542, 3, 65537, 65543, 3, 65538, 65545, 3, 65536, 65546, 3, 65537, 65547, 3, 65537, 65548, 3, 65538, 131075, 3, 131072, 131076, 3, 131073, 131077, 3, 131073, 131078, 3, 131073, 131079, 3, 131074, 131081, 3, 131072, 131082, 3, 131073, 131083, 3, 131073, 131084, 3, 131074, 262147, 3, 0, 262148, 3, 1, 262149, 3, 1, 262150, 3, 1, 262151, 3, 2, 262153, 3, 0, 262154, 3, 1, 262155, 3, 1, 262156, 3, 2, 327683, 3, 131072, 327684, 3, 131073, 327685, 3, 131073, 327686, 3, 131073, 327687, 3, 131074, 327689, 3, 131072, 327690, 3, 131073, 327691, 3, 131073, 327692, 3, 131074 )
+
+[node name="Environments" parent="Ambient" index="2"]
+tile_data = PoolIntArray( -65533, 5, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 6, 0, 3, 10, 0, 7, 4, 0, 65539, 10, 0, 65543, 4, 0, 131075, 7, 0, 131076, 9, 0, 131078, 9, 0, 131079, 8, 0, 262145, 11, 0 )
+
+[editable path="Ambient"]

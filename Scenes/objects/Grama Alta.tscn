@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://img/maps/elements/tall grass.png" type="Texture" id=1]
+
+[node name="Grama Alta" type="Node2D"]
+
+[node name="shadow" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 0.454902 )
+position = Vector2( 1.67339, 6.47261 )
+scale = Vector2( 1.49723, 1.44388 )
+texture = ExtResource( 1 )
+hframes = 3
+frame = 1
+
+[node name="tall grass" type="Sprite" parent="."]
+position = Vector2( 0.167916, 4.87043 )
+scale = Vector2( 1.42708, 1.38542 )
+texture = ExtResource( 1 )
+hframes = 3
+frame = 1

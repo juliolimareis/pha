@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/battle/attack_finished.gd" type="Script" id=2]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [  ],
+"loop": false,
+"name": "Animated",
+"speed": 4.0
+} ]
+
+[node name="FireFinished" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.17677, 0.707104 )
+scale = Vector2( 0.549219, 0.549219 )
+frames = SubResource( 5 )
+animation = "Animated"
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

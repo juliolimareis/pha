@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="SegmentShape2D" id=1]
+b = Vector2( 0.411118, 178.157 )
+
+[sub_resource type="SegmentShape2D" id=2]
+b = Vector2( 319.392, 0.341049 )
+
+[node name="Limits" type="StaticBody2D"]
+visible = false
+
+[node name="WallRight" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -2.66968 )
+shape = SubResource( 1 )
+
+[node name="WallUp" type="CollisionShape2D" parent="."]
+position = Vector2( 1.5874, -1.5874 )
+shape = SubResource( 2 )
+
+[node name="WallDown" type="CollisionShape2D" parent="."]
+position = Vector2( 1.26134, 179.952 )
+shape = SubResource( 2 )
+
+[node name="WallLeft" type="CollisionShape2D" parent="."]
+position = Vector2( 322.242, 1.04626 )
+shape = SubResource( 1 )

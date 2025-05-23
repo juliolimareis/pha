@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://brt8jbkx7xvpt"]
+
+[ext_resource type="Script" uid="uid://dmk5xj406a3i8" path="res://scripts/pokemon/LabelsPoke.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://b13oyuqxlfa40" path="res://img/icons/skull_danger.png" id="3"]
+
+[node name="Labels" type="Node2D"]
+script = ExtResource("2")
+
+[node name="Lv" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+text = "Lv100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkullDanger" type="Node2D" parent="."]
+visible = false
+
+[node name="shadow" type="Sprite2D" parent="SkullDanger"]
+modulate = Color(0, 0, 0, 0.454902)
+position = Vector2(15.2963, -4.74399)
+scale = Vector2(0.119051, 0.119051)
+texture = ExtResource("3")
+
+[node name="SkullDanger" type="Sprite2D" parent="SkullDanger"]
+position = Vector2(14.6752, -5.25492)
+scale = Vector2(0.119051, 0.119051)
+texture = ExtResource("3")

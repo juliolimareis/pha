@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://83lcp3v3367q"]
+
+[ext_resource type="Script" uid="uid://dh4ly5iifyvux" path="res://scripts/pokemonStatus.gd" id="1"]
+
+[node name="status" type="Node2D"]
+script = ExtResource("1")

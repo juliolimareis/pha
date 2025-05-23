@@ -1,0 +1,65 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://img/player/down1.png" type="Texture" id=2]
+[ext_resource path="res://img/player/up1.png" type="Texture" id=3]
+[ext_resource path="res://img/player/up2.png" type="Texture" id=4]
+[ext_resource path="res://img/player/up3.png" type="Texture" id=5]
+[ext_resource path="res://img/player/down2.png" type="Texture" id=6]
+[ext_resource path="res://img/player/down3.png" type="Texture" id=7]
+[ext_resource path="res://img/player/left1.png" type="Texture" id=8]
+[ext_resource path="res://img/player/left2.png" type="Texture" id=9]
+[ext_resource path="res://img/player/left3.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "run_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "run_speed",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 1.45206
+height = 5.11703
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2( 1.14187, 1.17477 )
+current = true
+limit_smoothed = true
+smoothing_enabled = true
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -13.2142, -20.0573 )
+scale = Vector2( 0.404541, 0.402518 )
+frames = SubResource( 1 )
+animation = "run_speed"
+offset = Vector2( 32, 32 )
+
+[node name="pes" type="CollisionShape2D" parent="."]
+position = Vector2( 0.147436, 0.584913 )
+rotation = -1.57498
+shape = SubResource( 2 )

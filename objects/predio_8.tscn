@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://img/components/predio_8.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/maps/LightWindow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/maps/LightWindowRandon.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.3601, 43.788 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 15.9345, 47.616 )
+
+[node name="predio_8" type="StaticBody2D"]
+position = Vector2( 0, 7 )
+collision_layer = 4
+collision_mask = 17
+
+[node name="shadow" type="Sprite" parent="."]
+self_modulate = Color( 0.00784314, 0, 0, 0.454902 )
+position = Vector2( 8.1082, -31.9457 )
+scale = Vector2( 1, 0.894907 )
+texture = ExtResource( 1 )
+
+[node name="Predio8" type="Sprite" parent="."]
+position = Vector2( 0, -35.6486 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 15.5275, -22.0921 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -31.955, -17.7603 )
+shape = SubResource( 2 )
+
+[node name="LightDor" parent="." instance=ExtResource( 2 )]
+position = Vector2( 24.0369, 6.25596 )
+scale = Vector2( 0.188912, 0.503177 )
+
+[node name="LightDor2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 7.97163, 6.32611 )
+scale = Vector2( 0.188912, 0.503177 )
+
+[node name="LightMoldRandom" parent="." instance=ExtResource( 3 )]
+position = Vector2( -32.4861, -23.1842 )
+scale = Vector2( 0.0537735, 0.175721 )
+
+[node name="LightMoldRandom3" parent="." instance=ExtResource( 3 )]
+position = Vector2( -7.48608, -31.1842 )
+scale = Vector2( 0.0537735, 0.175721 )
+
+[node name="LightMoldRandom4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 8.51392, -31.1842 )
+scale = Vector2( 0.0537735, 0.175721 )
+
+[node name="LightMoldRandom5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 23.5139, -31.1842 )
+scale = Vector2( 0.0537735, 0.175721 )
+
+[node name="LightMoldRandom6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 39.5139, -31.1842 )
+scale = Vector2( 0.0537735, 0.175721 )
+
+[node name="LightMoldRandom2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -32.4861, 12.8158 )
+scale = Vector2( 0.0537735, 0.175721 )

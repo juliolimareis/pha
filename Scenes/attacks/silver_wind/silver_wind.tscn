@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/attacks/silver_wind/silver_wind.png" type="Texture" id=1]
+[ext_resource path="res://scripts/battle/moveStatus.gd" type="Script" id=2]
+[ext_resource path="res://scripts/battle/attack.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/attacks/silver_wind/silver_wind.tres" type="Animation" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 20.0122
+
+[node name="Silver Wind" type="Area2D" groups=[
+"fire_1",
+]]
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+time = 1.0
+inverse = true
+prepare = false
+type = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.96996, 2.07719 )
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.094182, 4.07844 )
+scale = Vector2( 0.50021, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( 0.432159, -3.0893 )
+scale = Vector2( 0.329107, 0.363781 )
+texture = ExtResource( 1 )
+hframes = 5
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 60
+atkType = "Special"
+type = 13
+countdown = 4
+target = "range"
+effect = true
+effectAccuracy = 10
+effectTarget = "enemy"
+enemyEffects = {
+"accuracy": {
+"add": 0,
+"reduce": 0
+},
+"atk": {
+"add": 0,
+"reduce": 10
+},
+"atkSp": {
+"add": 0,
+"reduce": 10
+},
+"def": {
+"add": 0,
+"reduce": 10
+},
+"defSp": {
+"add": 10,
+"reduce": 0
+},
+"hp": {
+"add": 0,
+"reduce": 0
+},
+"speed": {
+"add": 0,
+"reduce": 10
+}
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

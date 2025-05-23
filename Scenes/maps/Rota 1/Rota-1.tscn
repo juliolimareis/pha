@@ -1,0 +1,274 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/maps/Ambient.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/objects/Grama Alta Bloco.tscn" type="PackedScene" id=2]
+[ext_resource path="res://img/components/poça_agua.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/objects/Cut_vertical.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/flor_colorida_1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/objects/Pedra_3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/pedra_1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/objects/Pedra_2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/Flor_laranja.tscn" type="PackedScene" id=9]
+
+[node name="Rota-1" type="YSort"]
+
+[node name="Ambient" parent="." instance=ExtResource( 1 )]
+
+[node name="Grounds" parent="Ambient" index="0"]
+tile_data = PoolIntArray( 65511, 0, 0, 65512, 0, 0, 65513, 0, 0, 65514, 0, 0, 65515, 0, 0, 65516, 0, 0, 65517, 0, 0, 65518, 0, 0, 65519, 0, 0, 65520, 0, 0, 65521, 1, 196608, 65522, 1, 196609, 65523, 1, 196609, 65524, 1, 196609, 65525, 1, 196609, 65526, 1, 196609, 65527, 1, 196609, 65528, 1, 196610, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 131047, 0, 0, 131048, 1, 0, 131049, 1, 1, 131050, 1, 1, 131051, 1, 2, 131052, 0, 0, 131053, 0, 0, 131054, 0, 0, 131055, 0, 0, 131056, 0, 0, 131057, 0, 0, 131058, 0, 0, 131059, 0, 0, 131060, 0, 0, 131061, 0, 0, 131062, 0, 0, 131063, 0, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 196583, 0, 0, 196584, 1, 65536, 196585, 1, 65537, 196586, 1, 65537, 196587, 1, 65538, 196588, 0, 0, 196589, 0, 0, 196590, 0, 0, 196591, 0, 0, 196592, 0, 0, 196593, 0, 0, 196594, 0, 0, 196595, 0, 0, 196596, 0, 0, 196597, 0, 0, 196598, 0, 0, 196599, 0, 0, 196600, 0, 0, 196601, 0, 0, 196602, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 262119, 0, 0, 262120, 1, 65536, 262121, 1, 65537, 262122, 1, 65537, 262123, 1, 65538, 262124, 0, 0, 262125, 0, 0, 262126, 0, 0, 262127, 0, 0, 262128, 0, 0, 262129, 0, 0, 262130, 0, 0, 262131, 0, 0, 262132, 0, 0, 262133, 0, 0, 262134, 0, 0, 262135, 0, 0, 262136, 0, 0, 262137, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 327655, 0, 0, 327656, 1, 65536, 327657, 1, 65537, 327658, 1, 65537, 327659, 1, 65538, 327660, 0, 0, 327661, 0, 0, 327662, 0, 0, 327663, 0, 0, 327664, 0, 0, 327665, 0, 0, 327666, 0, 0, 327667, 0, 0, 327668, 0, 0, 327669, 0, 0, 327670, 0, 0, 327671, 0, 0, 327672, 0, 0, 327673, 1, 0, 327674, 1, 1, 327675, 1, 1, 327676, 1, 1, 327677, 1, 1, 327678, 1, 2, 327679, 0, 0, 262144, 0, 0, 393191, 0, 0, 393192, 1, 131072, 393193, 1, 131073, 393194, 1, 131073, 393195, 1, 131074, 393196, 0, 0, 393197, 0, 0, 393198, 0, 0, 393199, 0, 0, 393200, 0, 0, 393201, 0, 0, 393202, 0, 0, 393203, 0, 0, 393204, 0, 0, 393205, 0, 0, 393206, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 1, 65536, 393210, 1, 65537, 393211, 1, 65537, 393212, 1, 65537, 393213, 1, 65537, 393214, 1, 65538, 393215, 0, 0, 327680, 0, 0, 458727, 0, 0, 458728, 0, 0, 458729, 0, 0, 458730, 0, 0, 458731, 0, 0, 458732, 0, 0, 458733, 0, 0, 458734, 0, 0, 458735, 0, 0, 458736, 0, 0, 458737, 0, 0, 458738, 0, 0, 458739, 0, 0, 458740, 0, 0, 458741, 0, 0, 458742, 0, 0, 458743, 0, 0, 458744, 0, 0, 458745, 1, 131072, 458746, 1, 131073, 458747, 1, 131073, 458748, 1, 131073, 458749, 1, 131073, 458750, 1, 131074, 458751, 0, 0, 393216, 0, 0, 524263, 0, 0, 524264, 0, 0, 524265, 0, 0, 524266, 0, 0, 524267, 0, 0, 524268, 0, 0, 524269, 0, 0, 524270, 0, 0, 524271, 0, 0, 524272, 0, 0, 524273, 0, 0, 524274, 0, 0, 524275, 0, 0, 524276, 0, 0, 524277, 0, 0, 524278, 0, 0, 524279, 0, 0, 524280, 0, 0, 524281, 0, 0, 524282, 0, 0, 524283, 0, 0, 524284, 0, 0, 524285, 0, 0, 524286, 0, 0, 524287, 0, 0, 458752, 0, 0, 589799, 0, 0, 589800, 0, 0, 589801, 0, 0, 589802, 0, 0, 589803, 0, 0, 589804, 0, 0, 589805, 0, 0, 589806, 0, 0, 589807, 0, 0, 589808, 0, 0, 589809, 0, 0, 589810, 0, 0, 589811, 0, 0, 589812, 0, 0, 589813, 0, 0, 589814, 0, 0, 589815, 0, 0, 589816, 0, 0, 589817, 0, 0, 589818, 0, 0, 589819, 0, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 0, 589823, 0, 0, 524288, 0, 0 )
+
+[node name="Roads" parent="Ambient" index="1"]
+tile_data = PoolIntArray( 65508, 9, 0, 65509, 9, 7, 65510, 9, 8, 65521, 3, 0, 65522, 3, 1, 65523, 3, 1, 65524, 3, 1, 65525, 3, 1, 65526, 3, 1, 65527, 3, 1, 65528, 3, 2, 131044, 9, 65542, 131045, 9, 65543, 131046, 9, 65544, 131057, 3, 131072, 131058, 3, 131073, 131059, 3, 131073, 131060, 3, 131073, 131061, 3, 131073, 131062, 3, 131073, 131063, 3, 131073, 131064, 3, 131074, 196580, 9, 65542, 196581, 9, 65543, 196582, 9, 65544, 196597, 12, 6, 196598, 12, 7, 196599, 12, 1, 196600, 1, 7, 196601, 1, 196612, 196602, 1, 196612, 196603, 1, 196612, 196604, 1, 196612, 196605, 1, 196612, 196606, 1, 196612, 196607, 1, 196612, 131072, 1, 196612, 131073, 1, 8, 262116, 9, 65542, 262117, 9, 65543, 262118, 9, 65544, 262133, 12, 65536, 262134, 12, 131079, 262135, 12, 65537, 262136, 1, 65543, 262137, 1, 196613, 262138, 1, 196613, 262139, 1, 196613, 262140, 1, 196613, 262141, 1, 196613, 262142, 1, 196613, 262143, 1, 196613, 196608, 1, 196613, 196609, 1, 65544, 327652, 9, 65542, 327653, 9, 65543, 327654, 9, 65544, 393188, 9, 65542, 393189, 9, 65543, 393190, 9, 65544, 393202, 3, 0, 393203, 3, 1, 393204, 3, 2, 458724, 9, 65542, 458725, 9, 65543, 458726, 9, 65544, 458728, 10, 0, 458729, 10, 7, 458730, 10, 7, 458731, 10, 8, 458738, 3, 131072, 458739, 3, 131073, 458740, 3, 131074, 524260, 9, 65536, 524261, 9, 131079, 524262, 9, 65537, 524264, 10, 131078, 524265, 10, 131079, 524266, 10, 131079, 524267, 10, 131080 )
+
+[node name="Environments" parent="Ambient" index="2"]
+tile_data = PoolIntArray( -25, 2, 0, -23, 2, 0, -21, 2, 0, -19, 2, 0, -15, 2, 0, -13, 2, 0, -11, 2, 0, -9, 2, 0, -7, 2, 0, -5, 2, 0, -3, 2, 0, -1, 2, 0, 65511, 3, 0, 0, 3, 0, 131047, 3, 0, 327655, 3, 0, 262144, 3, 0, 458727, 3, 0, 393216, 3, 0, 524263, 2, 0, 524265, 2, 0, 524267, 2, 0, 524269, 2, 0, 524271, 2, 0, 524273, 2, 0, 524275, 2, 0, 524277, 2, 0, 524279, 2, 0, 524281, 2, 0, 524283, 2, 0, 524285, 2, 0, 524287, 2, 0 )
+
+[node name="Pedra_3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -336.655, 34.6612 )
+
+[node name="Pedra_4" parent="." instance=ExtResource( 6 )]
+position = Vector2( -290.509, 34.4969 )
+
+[node name="Pedra_6" parent="." instance=ExtResource( 6 )]
+position = Vector2( -420.427, 34.4969 )
+
+[node name="Pedra_2" parent="." instance=ExtResource( 8 )]
+position = Vector2( -791.983, 87.4152 )
+
+[node name="Grama Alta Bloco" parent="." instance=ExtResource( 2 )]
+position = Vector2( -105, 163.504 )
+isGrass = true
+activationPercent = 70
+pokes = "16, 1-2, 100, 1-2 "
+
+[node name="Grama Alta Bloco11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 35.2525, 103.883 )
+path = "res://Scenes/maps/battle/Battle.tscn"
+isBattle = true
+isGrass = true
+activationPercent = 90
+pokes = "19, 1-2, 100, 1-2| 20, 7, 1, 1"
+
+[node name="Grama Alta Bloco12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 35.2525, 80 )
+path = "res://Scenes/maps/battle/Battle.tscn"
+isBattle = true
+isGrass = true
+activationPercent = 90
+pokes = "19, 1-2, 100, 1-2| 20, 7, 1, 1"
+
+[node name="Grama Alta Bloco13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2, 80.5 )
+path = "res://Scenes/maps/battle/Battle.tscn"
+isBattle = true
+isGrass = true
+activationPercent = 90
+pokes = "19, 1-2, 100, 1-2| 20, 7, 1, 1"
+
+[node name="Grama Alta Bloco14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2.2636, 104.452 )
+z_as_relative = false
+path = "res://Scenes/maps/battle/Battle.tscn"
+isBattle = true
+isGrass = true
+activationPercent = 90
+pokes = "19, 1-2, 100, 1-2| 20, 7, 1, 1"
+
+[node name="Grama Alta Bloco10" parent="." instance=ExtResource( 2 )]
+position = Vector2( -810.376, 54 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "21, 1-2, 70, 1-2| 16, 1-2, 30, 1-2| 19, 1-3, 30, 1-2"
+
+[node name="Pedra_5" parent="." instance=ExtResource( 8 )]
+position = Vector2( -793.012, 167.646 )
+
+[node name="Grama Alta Bloco4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -809.806, 83.8754 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "21, 1-2, 70, 1-2| 16, 1-2, 30, 1-2| 19, 1-3, 30, 1-2"
+
+[node name="Grama Alta Bloco5" parent="." instance=ExtResource( 2 )]
+position = Vector2( -104.89, 194.921 )
+isGrass = true
+activationPercent = 70
+pokes = "16, 1-2, 100, 1-2 "
+
+[node name="Grama Alta Bloco6" parent="." instance=ExtResource( 2 )]
+position = Vector2( -846.5, 84.25 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "21, 1-2, 70, 1-2| 16, 1-2, 30, 1-2| 19, 1-3, 30, 1-2"
+
+[node name="Grama Alta Bloco7" parent="." instance=ExtResource( 2 )]
+position = Vector2( -847, 54.75 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "21, 1-2, 70, 1-2| 16, 1-2, 30, 1-2| 19, 1-3, 30, 1-2"
+
+[node name="Grama Alta Bloco8" parent="." instance=ExtResource( 2 )]
+position = Vector2( -772.809, 83.25 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "21, 1-2, 70, 1-2| 16, 1-2, 30, 1-2| 19, 1-3, 30, 1-2"
+
+[node name="Grama Alta Bloco9" parent="." instance=ExtResource( 2 )]
+position = Vector2( -773, 54.25 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "21, 1-2, 70, 1-2| 16, 1-2, 30, 1-2| 19, 1-3, 30, 1-2"
+
+[node name="Grama Alta Bloco19" parent="." instance=ExtResource( 2 )]
+position = Vector2( -811.321, 137 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "21, 1-2, 70, 1-2| 16, 1-2, 30, 1-2| 19, 1-3, 30, 1-2"
+
+[node name="Grama Alta Bloco20" parent="." instance=ExtResource( 2 )]
+position = Vector2( -810.806, 166.875 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "21, 1-2, 70, 1-2| 16, 1-2, 30, 1-2| 19, 1-3, 30, 1-2"
+
+[node name="Grama Alta Bloco21" parent="." instance=ExtResource( 2 )]
+position = Vector2( -847.5, 167.25 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "21, 1-2, 70, 1-2| 16, 1-2, 30, 1-2| 19, 1-3, 30, 1-2"
+
+[node name="Grama Alta Bloco22" parent="." instance=ExtResource( 2 )]
+position = Vector2( -848, 137.75 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "21, 1-2, 70, 1-2| 16, 1-2, 30, 1-2| 19, 1-3, 30, 1-2"
+
+[node name="Grama Alta Bloco23" parent="." instance=ExtResource( 2 )]
+position = Vector2( -773.809, 166.25 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "21, 1-2, 70, 1-2| 16, 1-2, 30, 1-2| 19, 1-3, 30, 1-2"
+
+[node name="Grama Alta Bloco24" parent="." instance=ExtResource( 2 )]
+position = Vector2( -775, 137.25 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "21, 1-2, 70, 1-2| 16, 1-2, 30, 1-2| 19, 1-3, 30, 1-2"
+
+[node name="pedra_1" parent="." instance=ExtResource( 7 )]
+position = Vector2( -357.201, 116.64 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="pedra_2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -319.055, 96.7837 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="pedra_3" parent="." instance=ExtResource( 7 )]
+position = Vector2( -370.4, 92.688 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="poça_agua" type="Sprite" parent="."]
+position = Vector2( -483.101, 123.599 )
+scale = Vector2( 0.874369, 0.864509 )
+texture = ExtResource( 3 )
+
+[node name="Cut" parent="." instance=ExtResource( 4 )]
+position = Vector2( -878.691, 130.138 )
+
+[node name="Grama Alta Bloco15" parent="." instance=ExtResource( 2 )]
+position = Vector2( -187.718, 195.318 )
+isGrass = true
+activationPercent = 70
+pokes = "16, 1-2, 100, 1-2 "
+
+[node name="Grama Alta Bloco17" parent="." instance=ExtResource( 2 )]
+position = Vector2( -187.916, 164.165 )
+isGrass = true
+activationPercent = 70
+pokes = "16, 1-2, 100, 1-2 "
+
+[node name="Grama Alta Bloco25" parent="." instance=ExtResource( 2 )]
+position = Vector2( -632.294, 188.194 )
+isGrass = true
+activationPercent = 70
+pokes = "16, 1-2, 100, 1-2 "
+
+[node name="Grama Alta Bloco26" parent="." instance=ExtResource( 2 )]
+position = Vector2( -586.718, 156.38 )
+isGrass = true
+activationPercent = 70
+pokes = "16, 1-2, 100, 1-2 "
+
+[node name="Grama Alta Bloco27" parent="." instance=ExtResource( 2 )]
+position = Vector2( -632.492, 157.041 )
+isGrass = true
+activationPercent = 70
+pokes = "16, 1-2, 100, 1-2 "
+
+[node name="Grama Alta Bloco28" parent="." instance=ExtResource( 2 )]
+position = Vector2( -586.608, 187.797 )
+isGrass = true
+activationPercent = 70
+pokes = "16, 1-2, 100, 1-2 "
+
+[node name="flor_colorida_4" parent="." instance=ExtResource( 5 )]
+position = Vector2( -614.153, 110.704 )
+
+[node name="flor_colorida_5" parent="." instance=ExtResource( 5 )]
+position = Vector2( -467.334, 209.3 )
+
+[node name="Flor_laranja" parent="." instance=ExtResource( 9 )]
+position = Vector2( -504.124, 30.75 )
+
+[node name="Flor_laranja2" parent="." instance=ExtResource( 9 )]
+position = Vector2( -476.875, 54 )
+
+[node name="Flor_laranja3" parent="." instance=ExtResource( 9 )]
+position = Vector2( -461.108, 34.003 )
+
+[node name="Flor_laranja4" parent="." instance=ExtResource( 9 )]
+position = Vector2( -444.839, 226.252 )
+
+[node name="Flor_laranja5" parent="." instance=ExtResource( 9 )]
+position = Vector2( -429.072, 206.255 )
+
+[node name="flor_colorida_1" parent="." instance=ExtResource( 5 )]
+position = Vector2( -378.733, 27.003 )
+
+[node name="Grama Alta Bloco29" parent="." instance=ExtResource( 2 )]
+position = Vector2( -227.841, 195.318 )
+isGrass = true
+activationPercent = 70
+pokes = "16, 1-2, 100, 1-2 "
+
+[node name="Grama Alta Bloco30" parent="." instance=ExtResource( 2 )]
+position = Vector2( -228.039, 164.165 )
+isGrass = true
+activationPercent = 70
+pokes = "16, 1-2, 100, 1-2 "
+
+[node name="Grama Alta Bloco16" parent="." instance=ExtResource( 2 )]
+position = Vector2( -146.502, 195.318 )
+isGrass = true
+activationPercent = 70
+pokes = "16, 1-2, 100, 1-2 "
+
+[node name="Grama Alta Bloco18" parent="." instance=ExtResource( 2 )]
+position = Vector2( -146.7, 164.165 )
+isGrass = true
+activationPercent = 70
+pokes = "16, 1-2, 100, 1-2 "
+
+[editable path="Ambient"]

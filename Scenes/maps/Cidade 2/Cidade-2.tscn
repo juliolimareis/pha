@@ -1,0 +1,502 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://img/components/poça_agua.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/maps/Ambient.tscn" type="PackedScene" id=2]
+[ext_resource path="res://img/components/planta_remover.png" type="Texture" id=4]
+[ext_resource path="res://img/components/escada_2.png" type="Texture" id=6]
+[ext_resource path="res://img/components/paralelepipedo_1.png" type="Texture" id=7]
+[ext_resource path="res://img/components/estrada_2.png" type="Texture" id=8]
+[ext_resource path="res://img/components/escada_madeira_1.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/objects/Hidrante.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/objects/Casa_verde_escada.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/objects/arvore.tscn" type="PackedScene" id=12]
+[ext_resource path="res://objects/Casa_rosa.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/objects/Grama Alta Bloco.tscn" type="PackedScene" id=14]
+[ext_resource path="res://objects/Casa_15.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/objects/Pedra_1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/items/pokeball.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/objects/Bicicletario.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/objects/centro_pokemon.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/items/potion.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/items/revive.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/objects/Poste_Verde.tscn" type="PackedScene" id=22]
+[ext_resource path="res://objects/Loja.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/objects/Placa_2.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/objects/placa_4.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/objects/Placa_Madeira.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/objects/Jardim_Completo.tscn" type="PackedScene" id=27]
+[ext_resource path="res://objects/ginasio_1.tscn" type="PackedScene" id=28]
+[ext_resource path="res://objects/Poste_4.tscn" type="PackedScene" id=29]
+[ext_resource path="res://objects/Casa_12.tscn" type="PackedScene" id=30]
+[ext_resource path="res://objects/Casa_8.tscn" type="PackedScene" id=32]
+[ext_resource path="res://objects/predio_8.tscn" type="PackedScene" id=35]
+[ext_resource path="res://objects/predio_2.tscn" type="PackedScene" id=39]
+[ext_resource path="res://objects/Casa_9.tscn" type="PackedScene" id=40]
+[ext_resource path="res://objects/Casa_11.tscn" type="PackedScene" id=41]
+
+[node name="Cidade-2" type="YSort"]
+
+[node name="Grama Alta Bloco444" parent="." instance=ExtResource( 14 )]
+position = Vector2( 690.078, -772.602 )
+isBattle = true
+isGrass = true
+
+[node name="Grama Alta Bloco445" parent="." instance=ExtResource( 14 )]
+position = Vector2( 691.078, -739.079 )
+isBattle = true
+isGrass = true
+
+[node name="Grama Alta Bloco446" parent="." instance=ExtResource( 14 )]
+position = Vector2( 691.078, -706.207 )
+isBattle = true
+isGrass = true
+
+[node name="Placa_Madeira" parent="." instance=ExtResource( 26 )]
+position = Vector2( 1272.18, -850.17 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Poste_Verde3" parent="." instance=ExtResource( 22 )]
+position = Vector2( 910.78, -618.642 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="placa_5" parent="." instance=ExtResource( 25 )]
+position = Vector2( 1507.92, -1058.77 )
+
+[node name="Jardim_Completo" parent="." instance=ExtResource( 27 )]
+position = Vector2( 1026.94, -1110.91 )
+
+[node name="placa_4" parent="." instance=ExtResource( 25 )]
+position = Vector2( 1178.83, -1037.83 )
+
+[node name="centro_pokemon" parent="." instance=ExtResource( 19 )]
+position = Vector2( 760.514, -564.359 )
+
+[node name="Poste_Verde2" parent="." instance=ExtResource( 22 )]
+position = Vector2( 1492.84, -989.716 )
+scale = Vector2( 0.997705, 1 )
+
+[node name="Casa_verde_escada" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1812.01, -1118.4 )
+
+[node name="planta_remover" type="Sprite" parent="."]
+position = Vector2( 1214.06, -1027.9 )
+scale = Vector2( 0.997705, 1 )
+texture = ExtResource( 4 )
+
+[node name="Hidrante" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1565.45, -616.987 )
+scale = Vector2( 0.997705, 1 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1585.68, -569.946 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1567.48, -578.513 )
+
+[node name="StaticBody2D3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1564.06, -600.3 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="PoçaAgua" type="Sprite" parent="."]
+position = Vector2( 1592.94, -606.786 )
+texture = ExtResource( 1 )
+
+[node name="estrada_2" type="Sprite" parent="."]
+position = Vector2( 1607.72, -604.658 )
+scale = Vector2( 1.00858, 0.991532 )
+z_index = -1
+texture = ExtResource( 8 )
+
+[node name="escada_madeira_1" type="Sprite" parent="."]
+position = Vector2( 1609.82, -591.164 )
+scale = Vector2( 1.00858, 0.991532 )
+texture = ExtResource( 9 )
+
+[node name="paralelepipedo_1" type="Sprite" parent="."]
+position = Vector2( 1603.24, -628.056 )
+scale = Vector2( 1.00858, 0.991532 )
+texture = ExtResource( 7 )
+
+[node name="Placa_2" parent="." instance=ExtResource( 24 )]
+position = Vector2( 729.344, -474.944 )
+
+[node name="Bicicletario" parent="." instance=ExtResource( 18 )]
+position = Vector2( 752.99, -1051.2 )
+
+[node name="Bicicletario2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 860.248, -1050.46 )
+
+[node name="Bicicletario3" parent="." instance=ExtResource( 18 )]
+position = Vector2( 725.131, -1050.94 )
+
+[node name="placa_6" parent="." instance=ExtResource( 25 )]
+position = Vector2( 909.656, -1052.26 )
+
+[node name="Poste_Verde" parent="." instance=ExtResource( 22 )]
+position = Vector2( 697.116, -1075.5 )
+
+[node name="Poste_Verde4" parent="." instance=ExtResource( 22 )]
+position = Vector2( 675.691, -819.508 )
+
+[node name="Poste_Verde5" parent="." instance=ExtResource( 22 )]
+position = Vector2( 675.691, -873.414 )
+
+[node name="Poste_Verde6" parent="." instance=ExtResource( 22 )]
+position = Vector2( 850.997, -873.098 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Poste_Verde7" parent="." instance=ExtResource( 22 )]
+position = Vector2( 852.311, -820.602 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Poste_Verde8" parent="." instance=ExtResource( 22 )]
+position = Vector2( 1000.97, -804.88 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Arvore" parent="." instance=ExtResource( 12 )]
+position = Vector2( 755.979, -820.793 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Arvore2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 716.421, -820.596 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Arvore3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 716.362, -872.873 )
+
+[node name="Arvore4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 756.276, -873.414 )
+
+[node name="Arvore5" parent="." instance=ExtResource( 12 )]
+position = Vector2( 926.713, -817.225 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Arvore6" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1041.28, -817.252 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Arvore7" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1080.94, -817.32 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Arvore8" parent="." instance=ExtResource( 12 )]
+position = Vector2( 887.239, -872.379 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Arvore9" parent="." instance=ExtResource( 12 )]
+position = Vector2( 926.889, -872.475 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Arvore10" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1041.28, -873.927 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Arvore11" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1080.94, -873.945 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Arvore12" parent="." instance=ExtResource( 12 )]
+position = Vector2( 887.097, -817.22 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Poste_Verde9" parent="." instance=ExtResource( 22 )]
+position = Vector2( 1001.07, -873.098 )
+
+[node name="Placa_3" parent="." instance=ExtResource( 24 )]
+position = Vector2( 1808.73, -857.57 )
+
+[node name="Poste_Verde10" parent="." instance=ExtResource( 22 )]
+position = Vector2( 1790.73, -975.864 )
+scale = Vector2( 1.00858, 0.991533 )
+
+[node name="escada_2" type="Sprite" parent="."]
+position = Vector2( 1252.26, -1020.69 )
+z_index = -1
+texture = ExtResource( 6 )
+
+[node name="Arvore13" parent="." instance=ExtResource( 12 )]
+position = Vector2( 842.152, -942.684 )
+
+[node name="Arvore14" parent="." instance=ExtResource( 12 )]
+position = Vector2( 842.392, -899.512 )
+
+[node name="Arvore15" parent="." instance=ExtResource( 12 )]
+position = Vector2( 780.474, -942.948 )
+
+[node name="Arvore16" parent="." instance=ExtResource( 12 )]
+position = Vector2( 777.206, -900.084 )
+
+[node name="Poste_Verde11" parent="." instance=ExtResource( 22 )]
+position = Vector2( 780.262, -1031.79 )
+
+[node name="Poste_Verde12" parent="." instance=ExtResource( 22 )]
+position = Vector2( 835.94, -1032.25 )
+
+[node name="Arvore17" parent="." instance=ExtResource( 12 )]
+position = Vector2( 780.026, -982.434 )
+
+[node name="Poste_Verde13" parent="." instance=ExtResource( 22 )]
+position = Vector2( 780.262, -873.597 )
+
+[node name="Poste_Verde14" parent="." instance=ExtResource( 22 )]
+position = Vector2( 782.066, -820.726 )
+
+[node name="Arvore18" parent="." instance=ExtResource( 12 )]
+position = Vector2( 841.589, -982.434 )
+scale = Vector2( 1.00858, 0.991532 )
+
+[node name="Arvore19" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1283.61, -909.367 )
+
+[node name="Arvore20" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1283.8, -874.436 )
+
+[node name="Arvore21" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1193.96, -873.379 )
+
+[node name="Ginasio_1" parent="." instance=ExtResource( 28 )]
+position = Vector2( 1471.73, -1086.6 )
+
+[node name="Loja" parent="." instance=ExtResource( 23 )]
+position = Vector2( 842.559, -520.122 )
+
+[node name="Placa_Madeira2" parent="." instance=ExtResource( 26 )]
+position = Vector2( 1567.98, -636.342 )
+
+[node name="Casa_12" parent="." instance=ExtResource( 30 )]
+position = Vector2( 875.674, -1091.68 )
+
+[node name="Casa_9" parent="." instance=ExtResource( 40 )]
+position = Vector2( 739.684, -1093.53 )
+
+[node name="Casa_11" parent="." instance=ExtResource( 41 )]
+position = Vector2( 809.899, -1093.53 )
+
+[node name="Casa_8" parent="." instance=ExtResource( 32 )]
+position = Vector2( 1517.18, -489.103 )
+
+[node name="Casa_15" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1659.99, -493.124 )
+
+[node name="Casa_rosa" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1252.91, -1041.41 )
+
+[node name="Casa_13" parent="." instance=ExtResource( 41 )]
+position = Vector2( 1587.82, -491.133 )
+
+[node name="Poste_4" parent="." instance=ExtResource( 29 )]
+position = Vector2( 1570.59, -883.041 )
+
+[node name="Poste_5" parent="." instance=ExtResource( 29 )]
+position = Vector2( 1573.59, -799.947 )
+
+[node name="Grama Alta Bloco2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1669.72, -1144.39 )
+pokes = "1, 3-5, 20, 1 | 19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1634.12, -1144.44 )
+isGrass = true
+pokes = "1, 3-5, 20, 1 | 19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1178.58, -566.345 )
+isGrass = true
+pokes = "4, 3-5, 20, 1 | 19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco5" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1214.75, -566.244 )
+isGrass = true
+pokes = "4, 3-5, 20, 1 | 19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco6" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1723.91, -627.676 )
+isGrass = true
+pokes = "7, 3-5, 20, 1 | 19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco7" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1760.08, -627.676 )
+isGrass = true
+pokes = "7, 3-5, 20, 1 | 19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Revive" parent="." instance=ExtResource( 21 )]
+position = Vector2( 748.387, -493.124 )
+isDrop = true
+porcentProb = 50
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Revive2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 762.246, -493.439 )
+isDrop = true
+porcentProb = 50
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Revive3" parent="." instance=ExtResource( 21 )]
+position = Vector2( 774.845, -494.069 )
+isDrop = true
+porcentProb = 50
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Potion" parent="." instance=ExtResource( 20 )]
+position = Vector2( 789.649, -494.699 )
+isDrop = true
+porcentProb = 50
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 733.898, -505.093 )
+isDrop = true
+porcentProb = 50
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion3" parent="." instance=ExtResource( 20 )]
+position = Vector2( 802.563, -502.888 )
+isDrop = true
+porcentProb = 50
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion4" parent="." instance=ExtResource( 20 )]
+position = Vector2( 1291.23, -1032.74 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion5" parent="." instance=ExtResource( 20 )]
+position = Vector2( 734.818, -1071.76 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion6" parent="." instance=ExtResource( 20 )]
+position = Vector2( 681.961, -1126.03 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion7" parent="." instance=ExtResource( 20 )]
+position = Vector2( 689.512, -944.866 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion8" parent="." instance=ExtResource( 20 )]
+position = Vector2( 683.849, -573.396 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Revive10" parent="." instance=ExtResource( 21 )]
+position = Vector2( 922.876, -1046.77 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Pokeball" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1252.69, -1014.64 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Pokeball2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1636.12, -1108.79 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Pokeball3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1716.77, -631.651 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Pokeball4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1170.47, -569.262 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="predio_2" parent="." instance=ExtResource( 39 )]
+position = Vector2( 1426.23, -488.098 )
+
+[node name="predio_9" parent="." instance=ExtResource( 35 )]
+position = Vector2( 925.974, -945.269 )
+
+[node name="Ambient" parent="." instance=ExtResource( 2 )]
+
+[node name="Grounds" parent="Ambient" index="0"]
+tile_data = PoolIntArray( -2097134, 0, 0, -2097133, 0, 0, -2097132, 0, 0, -2097131, 0, 0, -2097130, 0, 0, -2097129, 0, 0, -2097128, 0, 0, -2097127, 0, 0, -2097126, 0, 0, -2097125, 0, 0, -2097124, 0, 0, -2097123, 0, 0, -2097122, 0, 0, -2097121, 0, 0, -2097120, 0, 0, -2097119, 0, 0, -2097118, 0, 0, -2097117, 0, 0, -2097116, 0, 0, -2097115, 0, 0, -2097114, 0, 0, -2097113, 0, 0, -2097112, 0, 0, -2097111, 0, 0, -2097110, 0, 0, -2097109, 0, 0, -2097108, 0, 0, -2097107, 0, 0, -2097106, 0, 0, -2097105, 0, 0, -2097104, 0, 0, -2097103, 0, 0, -2097102, 0, 0, -2097101, 0, 0, -2031598, 0, 0, -2031597, 0, 0, -2031595, 0, 0, -2031594, 0, 0, -2031593, 0, 0, -2031592, 0, 0, -2031591, 0, 0, -2031590, 0, 0, -2031589, 0, 0, -2031588, 0, 0, -2031587, 0, 0, -2031586, 0, 0, -2031585, 0, 0, -2031584, 0, 0, -2031583, 0, 0, -2031582, 0, 0, -2031581, 0, 0, -2031580, 0, 0, -2031579, 0, 0, -2031578, 0, 0, -2031577, 0, 0, -2031576, 0, 0, -2031575, 0, 0, -2031574, 0, 0, -2031573, 0, 0, -2031572, 0, 0, -2031571, 0, 0, -2031570, 0, 0, -2031569, 0, 0, -2031568, 0, 0, -2031567, 0, 0, -2031566, 0, 0, -2031565, 0, 0, -1966062, 0, 0, -1966061, 0, 0, -1966060, 0, 0, -1966059, 0, 0, -1966058, 0, 0, -1966057, 0, 0, -1966056, 0, 0, -1966055, 0, 0, -1966054, 0, 0, -1966053, 0, 0, -1966052, 0, 0, -1966051, 0, 0, -1966050, 0, 0, -1966049, 0, 0, -1966048, 0, 0, -1966047, 0, 0, -1966046, 0, 0, -1966045, 0, 0, -1966044, 0, 0, -1966043, 0, 0, -1966042, 0, 0, -1966041, 0, 0, -1966040, 0, 0, -1966039, 0, 0, -1966038, 0, 0, -1966037, 0, 0, -1966036, 0, 0, -1966035, 0, 0, -1966034, 0, 0, -1966033, 0, 0, -1966032, 0, 0, -1966031, 0, 0, -1966030, 0, 0, -1966029, 0, 0, -1900526, 0, 0, -1900525, 0, 0, -1900524, 0, 0, -1900523, 0, 0, -1900522, 0, 0, -1900521, 0, 0, -1900520, 0, 0, -1900519, 0, 0, -1900518, 0, 0, -1900517, 0, 0, -1900516, 0, 0, -1900515, 0, 0, -1900514, 0, 0, -1900513, 0, 0, -1900512, 0, 0, -1900511, 0, 0, -1900510, 0, 0, -1900509, 0, 0, -1900508, 0, 0, -1900507, 0, 0, -1900506, 0, 0, -1900505, 0, 0, -1900504, 0, 0, -1900503, 0, 0, -1900502, 0, 0, -1900501, 0, 0, -1900500, 0, 0, -1900499, 0, 0, -1900498, 0, 0, -1900497, 0, 0, -1900496, 0, 0, -1900495, 0, 0, -1900494, 0, 0, -1900493, 0, 0, -1834990, 0, 0, -1834989, 0, 0, -1834988, 0, 0, -1834987, 0, 0, -1834986, 0, 0, -1834985, 0, 0, -1834984, 0, 0, -1834983, 0, 0, -1834982, 0, 0, -1834981, 0, 0, -1834980, 0, 0, -1834979, 0, 0, -1834978, 0, 0, -1834977, 0, 0, -1834976, 0, 0, -1834975, 0, 0, -1834974, 0, 0, -1834973, 0, 0, -1834972, 0, 0, -1834971, 0, 0, -1834970, 0, 0, -1834969, 0, 0, -1834968, 0, 0, -1834967, 0, 0, -1834966, 0, 0, -1834965, 0, 0, -1834964, 0, 0, -1834963, 0, 0, -1834962, 0, 0, -1834961, 0, 0, -1834960, 0, 0, -1834959, 0, 0, -1834958, 0, 0, -1834957, 0, 0, -1769454, 0, 0, -1769453, 0, 0, -1769452, 0, 0, -1769451, 0, 0, -1769450, 0, 0, -1769449, 0, 0, -1769448, 0, 0, -1769447, 0, 0, -1769446, 0, 0, -1769445, 0, 0, -1769444, 0, 0, -1769443, 0, 0, -1769442, 0, 0, -1769441, 0, 0, -1769440, 0, 0, -1769439, 0, 0, -1769438, 0, 0, -1769437, 0, 0, -1769436, 0, 0, -1769435, 0, 0, -1769434, 0, 0, -1769433, 0, 0, -1769432, 0, 0, -1769431, 0, 0, -1769430, 0, 0, -1769429, 0, 0, -1769428, 0, 0, -1769427, 0, 0, -1769426, 0, 0, -1769425, 0, 0, -1769424, 0, 0, -1769423, 0, 0, -1769422, 0, 0, -1769421, 0, 0, -1703918, 0, 0, -1703917, 0, 0, -1703916, 0, 0, -1703915, 0, 0, -1703914, 0, 0, -1703913, 0, 0, -1703912, 0, 0, -1703911, 0, 0, -1703910, 0, 0, -1703909, 0, 0, -1703908, 0, 0, -1703907, 0, 0, -1703906, 0, 0, -1703905, 0, 0, -1703904, 0, 0, -1703903, 0, 0, -1703902, 0, 0, -1703901, 0, 0, -1703900, 0, 0, -1703899, 0, 0, -1703898, 0, 0, -1703897, 0, 0, -1703896, 0, 0, -1703895, 0, 0, -1703894, 0, 0, -1703893, 0, 0, -1703892, 0, 0, -1703891, 0, 0, -1703890, 0, 0, -1703889, 0, 0, -1703888, 0, 0, -1703887, 0, 0, -1703886, 0, 0, -1703885, 0, 0, -1638382, 0, 0, -1638381, 0, 0, -1638380, 0, 0, -1638379, 0, 0, -1638378, 0, 0, -1638377, 0, 0, -1638376, 0, 0, -1638375, 0, 0, -1638374, 0, 0, -1638373, 0, 0, -1638372, 0, 0, -1638371, 0, 0, -1638370, 0, 0, -1638369, 0, 0, -1638368, 0, 0, -1638367, 0, 0, -1638366, 0, 0, -1638365, 0, 0, -1638364, 0, 0, -1638363, 0, 0, -1638362, 0, 0, -1638361, 0, 0, -1638360, 0, 0, -1638359, 0, 0, -1638358, 0, 0, -1638357, 0, 0, -1638356, 0, 0, -1638355, 0, 0, -1638354, 0, 0, -1638353, 0, 0, -1638352, 0, 0, -1638351, 0, 0, -1638350, 0, 0, -1638349, 0, 0, -1572846, 0, 0, -1572845, 0, 0, -1572844, 0, 0, -1572843, 0, 0, -1572842, 0, 0, -1572841, 0, 0, -1572840, 0, 0, -1572839, 0, 0, -1572838, 0, 0, -1572837, 0, 0, -1572836, 0, 0, -1572835, 0, 0, -1572834, 0, 0, -1572833, 0, 0, -1572832, 0, 0, -1572831, 0, 0, -1572830, 0, 0, -1572829, 0, 0, -1572828, 0, 0, -1572827, 0, 0, -1572826, 0, 0, -1572825, 0, 0, -1572824, 0, 0, -1572823, 0, 0, -1572822, 0, 0, -1572821, 0, 0, -1572820, 0, 0, -1572819, 0, 0, -1572818, 0, 0, -1572817, 0, 0, -1572816, 0, 0, -1572815, 0, 0, -1572814, 0, 0, -1572813, 0, 0, -1507310, 0, 0, -1507309, 0, 0, -1507308, 0, 0, -1507307, 0, 0, -1507306, 0, 0, -1507305, 0, 0, -1507304, 0, 0, -1507303, 0, 0, -1507302, 0, 0, -1507301, 0, 0, -1507300, 0, 0, -1507299, 0, 0, -1507298, 0, 0, -1507297, 0, 0, -1507296, 0, 0, -1507295, 0, 0, -1507294, 0, 0, -1507293, 0, 0, -1507292, 0, 0, -1507291, 0, 0, -1507290, 0, 0, -1507289, 0, 0, -1507288, 0, 0, -1507287, 0, 0, -1507286, 0, 0, -1507285, 0, 0, -1507284, 0, 0, -1507283, 0, 0, -1507282, 0, 0, -1507281, 0, 0, -1507280, 0, 0, -1507279, 0, 0, -1507278, 0, 0, -1507277, 0, 0, -1441774, 0, 0, -1441773, 0, 0, -1441772, 0, 0, -1441771, 0, 0, -1441770, 0, 0, -1441769, 0, 0, -1441768, 0, 0, -1441767, 0, 0, -1441766, 0, 0, -1441765, 0, 0, -1441764, 0, 0, -1441763, 0, 0, -1441762, 0, 0, -1441761, 0, 0, -1441760, 0, 0, -1441759, 0, 0, -1441758, 0, 0, -1441757, 0, 0, -1441756, 0, 0, -1441755, 0, 0, -1441754, 0, 0, -1441753, 0, 0, -1441752, 0, 0, -1441751, 0, 0, -1441750, 0, 0, -1441749, 0, 0, -1441748, 0, 0, -1441747, 0, 0, -1441746, 0, 0, -1441745, 0, 0, -1441744, 0, 0, -1441743, 0, 0, -1441742, 0, 0, -1441741, 0, 0, -1376238, 0, 0, -1376237, 0, 0, -1376236, 0, 0, -1376235, 0, 0, -1376234, 0, 0, -1376233, 0, 0, -1376232, 0, 0, -1376231, 0, 0, -1376230, 0, 0, -1376229, 0, 0, -1376228, 0, 0, -1376227, 0, 0, -1376226, 0, 0, -1376225, 0, 0, -1376224, 0, 0, -1376223, 0, 0, -1376222, 0, 0, -1376221, 0, 0, -1376220, 0, 0, -1376219, 0, 0, -1376218, 0, 0, -1376217, 0, 0, -1376216, 0, 0, -1376215, 0, 0, -1376214, 0, 0, -1376213, 0, 0, -1376212, 0, 0, -1376211, 0, 0, -1376210, 0, 0, -1376209, 0, 0, -1376208, 0, 0, -1376207, 0, 0, -1376206, 0, 0, -1376205, 0, 0, -1310702, 0, 0, -1310701, 0, 0, -1310700, 0, 0, -1310699, 0, 0, -1310698, 0, 0, -1310697, 0, 0, -1310696, 0, 0, -1310695, 0, 0, -1310694, 0, 0, -1310693, 0, 0, -1310692, 0, 0, -1310691, 0, 0, -1310690, 0, 0, -1310689, 0, 0, -1310688, 0, 0, -1310687, 0, 0, -1310686, 0, 0, -1310685, 0, 0, -1310684, 0, 0, -1310683, 0, 0, -1310682, 0, 0, -1310681, 0, 0, -1310680, 0, 0, -1310679, 0, 0, -1310678, 0, 0, -1310677, 0, 0, -1310676, 0, 0, -1310675, 0, 0, -1310674, 0, 0, -1310673, 0, 0, -1310672, 0, 0, -1310671, 0, 0, -1310670, 0, 0, -1310669, 0, 0, -1245166, 0, 0, -1245165, 0, 0, -1245164, 0, 0, -1245163, 0, 0, -1245162, 0, 0, -1245161, 0, 0, -1245160, 0, 0, -1245159, 0, 0, -1245158, 0, 0, -1245157, 0, 0, -1245156, 0, 0, -1245155, 0, 0, -1245154, 0, 0, -1245153, 0, 0, -1245152, 0, 0, -1245151, 0, 0, -1245150, 0, 0, -1245149, 0, 0, -1245148, 0, 0, -1245147, 0, 0, -1245146, 0, 0, -1245145, 0, 0, -1245144, 0, 0, -1245143, 0, 0, -1245142, 0, 0, -1245141, 0, 0, -1245140, 0, 0, -1245139, 0, 0, -1245138, 0, 0, -1245137, 0, 0, -1245136, 0, 0, -1245135, 0, 0, -1245134, 0, 0, -1245133, 0, 0, -1179630, 0, 0, -1179629, 0, 0, -1179628, 0, 0, -1179627, 0, 0, -1179626, 0, 0, -1179625, 0, 0, -1179624, 0, 0, -1179623, 0, 0, -1179622, 0, 0, -1179621, 0, 0, -1179620, 0, 0, -1179619, 0, 0, -1179618, 0, 0, -1179617, 0, 0, -1179616, 0, 0, -1179615, 0, 0, -1179614, 0, 0, -1179613, 0, 0, -1179612, 0, 0, -1179611, 0, 0, -1179610, 0, 0, -1179609, 0, 0, -1179608, 0, 0, -1179607, 0, 0, -1179606, 0, 0, -1179605, 0, 0, -1179604, 0, 0, -1179603, 0, 0, -1179602, 0, 0, -1179601, 0, 0, -1179600, 0, 0, -1179599, 0, 0, -1179598, 0, 0, -1179597, 0, 0, -1114094, 0, 0, -1114093, 0, 0, -1114092, 0, 0, -1114091, 0, 0, -1114090, 0, 0, -1114089, 0, 0, -1114088, 0, 0, -1114087, 0, 0, -1114086, 0, 0, -1114085, 0, 0, -1114084, 0, 0, -1114083, 0, 0, -1114082, 0, 0, -1114081, 0, 0, -1114080, 0, 0, -1114079, 0, 0, -1114078, 0, 0, -1114077, 0, 0, -1114076, 0, 0, -1114075, 0, 0, -1114074, 0, 0, -1114073, 0, 0, -1114072, 0, 0, -1114071, 0, 0, -1114070, 0, 0, -1114069, 0, 0, -1114068, 0, 0, -1114067, 0, 0, -1114066, 0, 0, -1114065, 0, 0, -1114064, 0, 0, -1114063, 0, 0, -1114062, 0, 0, -1114061, 0, 0, -1048558, 0, 0, -1048557, 0, 0, -1048556, 0, 0, -1048555, 0, 0, -1048554, 0, 0, -1048553, 0, 0, -1048552, 0, 0, -1048551, 0, 0, -1048550, 0, 0, -1048549, 0, 0, -1048548, 0, 0, -1048547, 0, 0, -1048546, 0, 0, -1048545, 0, 0, -1048544, 0, 0, -1048543, 0, 0, -1048542, 0, 0, -1048541, 0, 0, -1048540, 0, 0, -1048539, 0, 0, -1048538, 0, 0, -1048537, 0, 0, -1048536, 0, 0, -1048535, 0, 0, -1048534, 0, 0, -1048533, 0, 0, -1048532, 0, 0, -1048531, 0, 0, -1048530, 0, 0, -1048529, 0, 0, -1048528, 0, 0, -1048527, 0, 0, -1048526, 0, 0, -1048525, 0, 0, -983022, 0, 0, -983021, 0, 0, -983020, 0, 0, -983019, 0, 0, -983018, 0, 0, -983017, 0, 0, -983016, 0, 0, -983015, 0, 0, -983014, 0, 0, -983013, 0, 0, -983012, 0, 0, -983011, 0, 0, -983010, 0, 0, -983009, 0, 0, -983008, 0, 0, -983007, 0, 0, -983006, 0, 0, -983005, 0, 0, -983004, 0, 0, -983003, 0, 0, -983002, 0, 0, -983001, 0, 0, -983000, 0, 0, -982999, 0, 0, -982998, 0, 0, -982997, 0, 0, -982996, 0, 0, -982995, 0, 0, -982994, 0, 0, -982993, 0, 0, -982992, 0, 0, -982991, 0, 0, -982990, 0, 0, -982989, 0, 0, -917486, 0, 0, -917485, 0, 0, -917484, 0, 0, -917483, 0, 0, -917482, 0, 0, -917481, 0, 0, -917480, 0, 0, -917479, 0, 0, -917478, 0, 0, -917477, 0, 0, -917476, 0, 0, -917475, 0, 0, -917474, 0, 0, -917473, 0, 0, -917472, 0, 0, -917471, 0, 0, -917470, 0, 0, -917469, 0, 0, -917468, 0, 0, -917467, 0, 0, -917466, 0, 0, -917465, 0, 0, -917464, 0, 0, -917463, 0, 0, -917462, 0, 0, -917461, 0, 0, -917460, 0, 0, -917459, 0, 0, -917458, 0, 0, -917457, 0, 0, -917456, 0, 0, -917455, 0, 0, -917454, 0, 0, -917453, 0, 0, -851950, 0, 0, -851949, 0, 0, -851948, 0, 0, -851947, 0, 0, -851946, 0, 0, -851945, 0, 0, -851944, 0, 0, -851943, 0, 0, -851942, 0, 0, -851941, 0, 0, -851940, 0, 0, -851939, 0, 0, -851938, 0, 0, -851937, 0, 0, -851936, 0, 0, -851935, 0, 0, -851934, 0, 0, -851933, 0, 0, -851932, 0, 0, -851931, 0, 0, -851930, 0, 0, -851929, 0, 0, -851928, 0, 0, -851927, 0, 0, -851926, 0, 0, -851925, 0, 0, -851924, 0, 0, -851923, 0, 0, -851922, 0, 0, -851921, 0, 0, -851920, 0, 0, -851919, 0, 0, -851918, 0, 0, -851917, 0, 0 )
+
+[node name="Ambient2" parent="." instance=ExtResource( 2 )]
+
+[node name="Roads" parent="Ambient2" index="1"]
+tile_data = PoolIntArray( -1900522, 6, 65541, -1834986, 6, 65538, -1769450, 6, 65538, -1703914, 6, 65538, -1638378, 6, 65538, -1572846, 6, 65542, -1572845, 6, 2, -1572844, 6, 2, -1572843, 6, 2, -1572842, 6, 4, -1572841, 6, 2, -1572840, 6, 2, -1572839, 6, 2, -1572838, 6, 2, -1572837, 6, 2, -1572836, 6, 2, -1572835, 6, 2, -1572834, 6, 2, -1572833, 6, 2, -1572832, 6, 2, -1572831, 6, 2, -1572830, 6, 5 )
+
+[node name="Escada2" type="Sprite" parent="Ambient2/Roads" index="0"]
+position = Vector2( 644.666, -845.595 )
+rotation = -1.5708
+texture = ExtResource( 6 )
+
+[editable path="Ambient"]
+[editable path="Ambient2"]

@@ -1,0 +1,85 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://img/player/down1.png" type="Texture" id=2]
+[ext_resource path="res://img/player/up1.png" type="Texture" id=3]
+[ext_resource path="res://img/player/up2.png" type="Texture" id=4]
+[ext_resource path="res://img/player/up3.png" type="Texture" id=5]
+[ext_resource path="res://img/player/down2.png" type="Texture" id=6]
+[ext_resource path="res://img/player/down3.png" type="Texture" id=7]
+[ext_resource path="res://img/player/left1.png" type="Texture" id=8]
+[ext_resource path="res://img/player/left2.png" type="Texture" id=9]
+[ext_resource path="res://img/player/left3.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "run_speed",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "run_up",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 0.453964
+height = 6.38938
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 6.43647
+height = 7.88265
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( -22.6584, -16.1277 )
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 23.3321, 13.6105 )
+scale = Vector2( 1.14187, 1.17477 )
+current = true
+limit_smoothed = true
+smoothing_enabled = true
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 11.5225, 3.27081 )
+scale = Vector2( 0.404541, 0.402518 )
+frames = SubResource( 1 )
+animation = "run_speed"
+frame = 2
+offset = Vector2( 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="pes" type="CollisionShape2D" parent="."]
+position = Vector2( 24.1468, 25.231 )
+rotation = -1.57498
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="corpo" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 24.4189, 15.4737 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

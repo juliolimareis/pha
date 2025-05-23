@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/attacks/gust/gust.png" type="Texture" id=1]
+[ext_resource path="res://scripts/battle/moveStatus.gd" type="Script" id=2]
+[ext_resource path="res://scripts/battle/attack.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/attacks/gust/gust.tres" type="Animation" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 10.3382
+
+[node name="Gust" type="Area2D" groups=["fire_1"]]
+position = Vector2( -0.31498, 0.629959 )
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "gust"
+time = 0.9
+type = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.394674, -1.43473 )
+scale = Vector2( 0.96, 0.627298 )
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0.507554, -0.417084 )
+scale = Vector2( 0.439997, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( 0.444905, -0.760526 )
+scale = Vector2( 0.323947, 0.300653 )
+texture = ExtResource( 1 )
+hframes = 3
+frame = 2
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 40
+atkType = "Special"
+type = 5
+countdown = 2
+target = "range"
+effectAccuracy = 0
+effectTime = 0.0
+selfEffects = {
+"accuracy": {
+"add": 0,
+"reduce": 0
+},
+"atk": {
+"add": 0,
+"reduce": 0
+},
+"atkSp": {
+"add": 0,
+"reduce": 0
+},
+"def": {
+"add": 0,
+"reduce": 0
+},
+"defSp": {
+"add": 0,
+"reduce": 0
+},
+"hp": {
+"add": 0,
+"reduce": 0
+},
+"speed": {
+"add": 0,
+"reduce": 0
+}
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

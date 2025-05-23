@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqk2jhifm4hl2"]
+
+[ext_resource type="Texture2D" uid="uid://cmgy5nei51s86" path="res://img/components/shadow_mold_2.png" id="1"]
+
+[node name="PokeShadow" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.454902)
+position = Vector2(0.115404, 13.5477)
+scale = Vector2(0.639081, 0.205581)
+texture = ExtResource("1")

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/objects/Grama Alta.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/map/Entrance.gd" type="Script" id=2]
+[ext_resource path="res://scripts/battle/configBattle.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.875, 6.5 )
+
+[node name="Grama Alta Bloco" type="YSort"]
+script = ExtResource( 3 )
+battleType = 2
+configEnemies = "10, 1-2, 90, 1-2"
+combatAreaXMin = -2375.0
+combatAreaXMax = -2065.0
+combatAreaYMin = 1528.0
+combatAreaYMax = 1709.0
+
+[node name="Entrance" type="StaticBody2D" parent="."]
+position = Vector2( 17, 13 )
+collision_layer = 256
+collision_mask = 0
+script = ExtResource( 2 )
+locationName = "grass"
+targetName = "battle_grass_player_start"
+isBattle = true
+registryData = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance"]
+z_index = -50
+z_as_relative = false
+shape = SubResource( 1 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Grama Alta" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 8.44309, 3.99653 )
+scale = Vector2( 0.997705, 1 )
+
+[node name="Grama Alta2" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 25.4559, 4.01121 )
+scale = Vector2( 0.997705, 1 )
+
+[node name="Grama Alta4" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 8.32465, 14.3787 )
+
+[node name="Grama Alta3" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 25.4864, 14.3787 )

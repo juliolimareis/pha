@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/attacks/inferno/inferno.png" type="Texture" id=1]
+[ext_resource path="res://scripts/battle/moveStatus.gd" type="Script" id=2]
+[ext_resource path="res://scripts/battle/attack.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/attacks/inferno/inferno.tres" type="Animation" id=4]
+[ext_resource path="res://Scenes/attacks/inferno/inferno_finished.png" type="Texture" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 10.9668
+height = 6.50427
+
+[sub_resource type="Animation" id=2]
+resource_name = "finished"
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 40, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 80, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 5 )
+region = Rect2( 120, 0, 40, 40 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ null, SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": false,
+"name": "finished",
+"speed": 7.0
+} ]
+
+[node name="Inferno" type="Area2D" groups=[
+"fire_1",
+]]
+position = Vector2( -0.31498, 0.629959 )
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "inferno"
+animationFinished = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.29315, 1.9779 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 10.7431, 2.59356 )
+scale = Vector2( 0.29553, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+anims/finished = SubResource( 2 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( -2.75354, 2.0641 )
+rotation = 1.5708
+scale = Vector2( 0.939053, 0.898959 )
+texture = ExtResource( 1 )
+hframes = 6
+frame = 4
+
+[node name="finished" type="AnimatedSprite" parent="."]
+frames = SubResource( 7 )
+animation = "finished"
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 100
+atkType = "Special"
+type = 2
+countdown = 4
+target = "range"
+effect = true
+enemyStatusCondition = {
+"burn": 100,
+"paralyze": 0,
+"poison": 0,
+"sleep": 0
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

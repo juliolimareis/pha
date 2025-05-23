@@ -1,0 +1,298 @@
+[gd_scene load_steps=66 format=2]
+
+[ext_resource path="res://Scenes/characters/Spearow/Left.tres" type="Animation" id=1]
+[ext_resource path="res://Scenes/characters/Spearow/AttackUp.tres" type="Animation" id=2]
+[ext_resource path="res://Scenes/characters/Spearow/Down.tres" type="Animation" id=3]
+[ext_resource path="res://Scenes/characters/Spearow/RunLeft.tres" type="Animation" id=4]
+[ext_resource path="res://Scenes/characters/Spearow/Right.tres" type="Animation" id=5]
+[ext_resource path="res://scripts/pokemon/pokemon.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/characters/Spearow/RunRight.tres" type="Animation" id=7]
+[ext_resource path="res://Scenes/characters/Spearow/Up.tres" type="Animation" id=8]
+[ext_resource path="res://Scenes/characters/Spearow/RunDown.tres" type="Animation" id=9]
+[ext_resource path="res://Scenes/characters/Spearow/RunUp.tres" type="Animation" id=10]
+[ext_resource path="res://Scenes/characters/Spearow/AttackSpRight.tres" type="Animation" id=11]
+[ext_resource path="res://Scenes/characters/Spearow/AttackSpUp.tres" type="Animation" id=12]
+[ext_resource path="res://Scenes/characters/Spearow/Dead.tres" type="Animation" id=13]
+[ext_resource path="res://Scenes/characters/Spearow/AttackLeft.tres" type="Animation" id=14]
+[ext_resource path="res://Scenes/characters/Spearow/Sleep.tres" type="Animation" id=15]
+[ext_resource path="res://Scenes/characters/Spearow/AttackDown.tres" type="Animation" id=16]
+[ext_resource path="res://Scenes/characters/Spearow/AttackRight.tres" type="Animation" id=17]
+[ext_resource path="res://Scenes/characters/Spearow/AttackSpDown.tres" type="Animation" id=18]
+[ext_resource path="res://Scenes/characters/Spearow/RunDead.tres" type="Animation" id=19]
+[ext_resource path="res://Scenes/characters/Spearow/AttackSpLeft.tres" type="Animation" id=20]
+[ext_resource path="res://scripts/battle/sight.gd" type="Script" id=21]
+[ext_resource path="res://scripts/pokemon/countdowns.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/layouts/healthBar/HealthBar.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/characters/Spearow/flashDamage.tres" type="Animation" id=24]
+[ext_resource path="res://Scenes/status/AnimStatus.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/layouts/LabelsPoke.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/recurse/pokeShadow.tscn" type="PackedScene" id=27]
+[ext_resource path="res://img/pokemons/Spearow.png" type="Texture" id=28]
+[ext_resource path="res://Scenes/characters/pokemonStatus.tscn" type="PackedScene" id=36]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.54291
+height = 0.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 4.85222
+height = 8.11889
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "attackLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "attackRight"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "attackDown"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "attackUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=7]
+blend_point_0/node = SubResource( 3 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 4 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 5 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 6 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "attackSpLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "attackSpRight"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "attackSpDown"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "attackSpUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=12]
+blend_point_0/node = SubResource( 8 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 9 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 10 )
+blend_point_2/pos = Vector2( 0, 1.1 )
+blend_point_3/node = SubResource( 11 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1.1, -1.1 )
+max_space = Vector2( 1.1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "left"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "right"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "down"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "up"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=17]
+blend_point_0/node = SubResource( 13 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 14 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 15 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 16 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "runLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "runRight"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "runDown"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "runUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=22]
+blend_point_0/node = SubResource( 18 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 19 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 20 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 21 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "dead"
+
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "runDead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+
+[sub_resource type="AnimationNodeStateMachine" id=35]
+states/Attack/node = SubResource( 7 )
+states/Attack/position = Vector2( 375, 220 )
+states/AttackSp/node = SubResource( 12 )
+states/AttackSp/position = Vector2( 545, 220 )
+states/Idle/node = SubResource( 17 )
+states/Idle/position = Vector2( 459, 119 )
+states/Run/node = SubResource( 22 )
+states/Run/position = Vector2( 640, 119 )
+states/dead/node = SubResource( 23 )
+states/dead/position = Vector2( 459, 26.7068 )
+states/runDead/node = SubResource( 24 )
+states/runDead/position = Vector2( 276.039, 119 )
+transitions = [ "Run", "Idle", SubResource( 25 ), "Idle", "Run", SubResource( 26 ), "Idle", "Attack", SubResource( 27 ), "Attack", "Idle", SubResource( 28 ), "Idle", "AttackSp", SubResource( 29 ), "AttackSp", "Idle", SubResource( 30 ), "runDead", "Idle", SubResource( 31 ), "Idle", "runDead", SubResource( 32 ), "dead", "Idle", SubResource( 33 ), "Idle", "dead", SubResource( 34 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -303.961, -8.29323 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=36]
+
+[node name="Spearow" type="KinematicBody2D"]
+collision_mask = 2
+script = ExtResource( 6 )
+
+[node name="PokeShadow" parent="." instance=ExtResource( 27 )]
+position = Vector2( 0.928501, 8.21388 )
+scale = Vector2( 0.366906, 0.181283 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.472779, 2.04865 )
+scale = Vector2( 0.881808, 0.881808 )
+texture = ExtResource( 28 )
+hframes = 40
+frame = 21
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.511084, 5.79088 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 0.554636, -2.97445 )
+rotation = -1.5708
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/attackDown = ExtResource( 16 )
+anims/attackLeft = ExtResource( 14 )
+anims/attackRight = ExtResource( 17 )
+anims/attackSpDown = ExtResource( 18 )
+anims/attackSpLeft = ExtResource( 20 )
+anims/attackSpRight = ExtResource( 11 )
+anims/attackSpUp = ExtResource( 12 )
+anims/attackUp = ExtResource( 2 )
+anims/dead = ExtResource( 13 )
+anims/down = ExtResource( 3 )
+anims/flashDamage = ExtResource( 24 )
+anims/left = ExtResource( 1 )
+anims/right = ExtResource( 5 )
+anims/runDead = ExtResource( 19 )
+anims/runDown = ExtResource( 9 )
+anims/runLeft = ExtResource( 4 )
+anims/runRight = ExtResource( 7 )
+anims/runUp = ExtResource( 10 )
+anims/sleep = ExtResource( 15 )
+anims/up = ExtResource( 8 )
+next/up = "up"
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 35 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 36 )
+parameters/Attack/blend_position = Vector2( 0.000589967, 0 )
+parameters/AttackSp/blend_position = Vector2( 0, 0 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Run/blend_position = Vector2( -0.0017699, -0.00709224 )
+
+[node name="status" parent="." instance=ExtResource( 36 )]
+Name = "Spearow"
+code = 21
+pokemonType1 = 1
+pokemonType2 = 5
+levelEvolution = 20
+codeEvolution = 22
+levelingRate = "mf"
+statusBase = {
+"atk": 60,
+"atkSp": 31,
+"def": 30,
+"defSp": 31,
+"gender": 50,
+"hp": 40,
+"speed": 70
+}
+move1 = "growl"
+move2 = "leer"
+move3 = "assurance"
+move4 = "tackle"
+catchRate = 255
+EV = {
+"atk": 0,
+"atkSp": 0,
+"def": 0,
+"defSp": 0,
+"exp": 52,
+"hp": 0,
+"speed": 1
+}
+
+[node name="Attack" type="Node2D" parent="."]
+position = Vector2( 1, 15 )
+rotation = 1.74533
+
+[node name="sight" type="Position2D" parent="Attack"]
+position = Vector2( 60.4476, -9.70061 )
+rotation = -0.191986
+z_index = 20
+script = ExtResource( 21 )
+color = Color( 0.980392, 0.305882, 0.176471, 1 )
+
+[node name="range" type="Position2D" parent="Attack"]
+position = Vector2( 0.312309, 0.0776176 )
+rotation = -1.74533
+
+[node name="closeAttack" type="Position2D" parent="."]
+
+[node name="cowntdown" type="Node2D" parent="."]
+script = ExtResource( 22 )
+
+[node name="HealthBar" parent="." instance=ExtResource( 23 )]
+margin_left = -13.4916
+margin_top = -16.3031
+margin_right = -13.4916
+margin_bottom = -16.3031
+
+[node name="AnimStatus" parent="." instance=ExtResource( 25 )]
+
+[node name="Labels" parent="." instance=ExtResource( 26 )]
+position = Vector2( 0.934189, -16.8425 )

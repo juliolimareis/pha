@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/attacks/heat_wave/heat_wave.png" type="Texture" id=1]
+[ext_resource path="res://scripts/battle/moveStatus.gd" type="Script" id=2]
+[ext_resource path="res://scripts/battle/attack.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/attacks/heat_wave/heat_wave.tres" type="Animation" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20.2712, 12.9658 )
+
+[node name="Heat Wave" type="Area2D" groups=[
+"fire_1",
+]]
+position = Vector2( -0.31498, 0.629959 )
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "heat_wave"
+time = 1.0
+inverse = true
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.890924, -0.47724 )
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.201629, 0.292106 )
+scale = Vector2( 0.439997, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( 0.0577188, -0.270341 )
+scale = Vector2( 0.175339, 0.162731 )
+texture = ExtResource( 1 )
+hframes = 3
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 95
+atkType = "Special"
+type = 2
+countdown = 5
+target = "range"
+effect = true
+effectAccuracy = 10
+effectTarget = "enemy"
+effectTime = 3.0
+enemyStatusCondition = {
+"burn": 100,
+"confusion": 0,
+"freeze": 0,
+"paralysis": 0,
+"poison": 0,
+"sleep": 0
+}
+selfEffects = {
+"accuracy": {
+"add": 0,
+"reduce": 0
+},
+"atk": {
+"add": 0,
+"reduce": 0
+},
+"atkSp": {
+"add": 0,
+"reduce": 0
+},
+"def": {
+"add": 0,
+"reduce": 0
+},
+"defSp": {
+"add": 0,
+"reduce": 0
+},
+"hp": {
+"add": 0,
+"reduce": 0
+},
+"speed": {
+"add": 0,
+"reduce": 0
+}
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

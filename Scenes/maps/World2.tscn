@@ -1,0 +1,1114 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Scenes/maps/Cidade 2/Cidade-2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/maps/Climate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/maps/rota 3/Rota-3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/maps/Cidade 1/Cidade 1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/maps/Rota 1/Rota-1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/maps/Pallet/Pallet.tscn" type="PackedScene" id=6]
+[ext_resource path="res://img/components/pedra_mar_2.png" type="Texture" id=7]
+[ext_resource path="res://img/components/entrada_caverna_2.png" type="Texture" id=9]
+[ext_resource path="res://img/components/pedra_remover.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/maps/Rota 2/Rota-2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://img/components/planta_remover.png" type="Texture" id=16]
+[ext_resource path="res://img/components/pokebola.png" type="Texture" id=17]
+[ext_resource path="res://scripts/battle/PlayerNetwork.gd" type="Script" id=19]
+[ext_resource path="res://img/components/flor_laranja.png" type="Texture" id=32]
+[ext_resource path="res://Scenes/objects/Grama Alta Bloco.tscn" type="PackedScene" id=42]
+[ext_resource path="res://Scenes/objects/Placa_Madeira.tscn" type="PackedScene" id=48]
+[ext_resource path="res://Scenes/objects/Pedra_2.tscn" type="PackedScene" id=58]
+[ext_resource path="res://Scenes/objects/Cut.tscn" type="PackedScene" id=62]
+[ext_resource path="res://objects/cerca_acima.tscn" type="PackedScene" id=63]
+[ext_resource path="res://objects/Casa_17.tscn" type="PackedScene" id=79]
+[ext_resource path="res://objects/Casa_33.tscn" type="PackedScene" id=80]
+[ext_resource path="res://objects/Catavento.tscn" type="PackedScene" id=81]
+[ext_resource path="res://Scenes/items/potion.tscn" type="PackedScene" id=82]
+[ext_resource path="res://Scenes/items/pokeball.tscn" type="PackedScene" id=83]
+[ext_resource path="res://objects/Poste_3.tscn" type="PackedScene" id=84]
+[ext_resource path="res://Scenes/items/revive.tscn" type="PackedScene" id=85]
+
+[sub_resource type="SegmentShape2D" id=25]
+a = Vector2( 21.9783, 25.3504 )
+b = Vector2( 22.145, -10.3566 )
+
+[node name="World" type="YSort"]
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -1044.73, 117.199, -749.115 ],
+"_edit_vertical_guides_": [ -419.274, -516.258 ]
+}
+isTest = true
+addPlayer = true
+addPoke = true
+groupLocationName = "world"
+typeMap = "world"
+isNativeLocalization = true
+
+[node name="Climate" parent="." instance=ExtResource( 2 )]
+
+[node name="Pallet" parent="." instance=ExtResource( 6 )]
+position = Vector2( 143.109, 178.96 )
+
+[node name="Rota-1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 36.0019, 106.563 )
+
+[node name="Rota-2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1, 71.3569 )
+
+[node name="Cidade 1" parent="." instance=ExtResource( 4 )]
+
+[node name="Rota 3" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1614.92, -758.427 )
+
+[node name="Cidade-2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 169.689, 72.504 )
+
+[node name="Elements" type="YSort" parent="."]
+
+[node name="Images" type="YSort" parent="Elements"]
+
+[node name="flor_laranja4" type="Sprite" parent="Elements/Images"]
+position = Vector2( -443.079, 198.753 )
+z_index = -1
+texture = ExtResource( 32 )
+
+[node name="flor_laranja2" type="Sprite" parent="Elements/Images"]
+position = Vector2( -500.076, 202.336 )
+z_index = -1
+texture = ExtResource( 32 )
+
+[node name="flor_laranja" type="Sprite" parent="Elements/Images"]
+position = Vector2( -504.696, 184.47 )
+z_index = -1
+texture = ExtResource( 32 )
+
+[node name="flor_laranja3" type="Sprite" parent="Elements/Images"]
+position = Vector2( -472.987, 181.805 )
+z_index = -1
+texture = ExtResource( 32 )
+
+[node name="Rota 4" type="YSort" parent="Elements"]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Catavento" parent="Elements/Rota 4" instance=ExtResource( 81 )]
+position = Vector2( 1990.17, -1059.01 )
+
+[node name="Catavento2" parent="Elements/Rota 4" instance=ExtResource( 81 )]
+position = Vector2( 1948.79, -1059.11 )
+
+[node name="Casa_34" parent="Elements/Rota 4" instance=ExtResource( 80 )]
+position = Vector2( 2281.4, -1136.48 )
+scale = Vector2( 0.661882, 0.608065 )
+
+[node name="Casa_35" parent="Elements/Rota 4" instance=ExtResource( 80 )]
+position = Vector2( 2231.7, -1136.32 )
+scale = Vector2( 0.661882, 0.608065 )
+
+[node name="Casa_17" parent="Elements/Rota 4" instance=ExtResource( 79 )]
+position = Vector2( 2173.66, -1136.32 )
+scale = Vector2( 0.661882, 0.608065 )
+
+[node name="Placa_Madeira" parent="Elements/Rota 4" instance=ExtResource( 48 )]
+position = Vector2( 2550.09, -1053.43 )
+
+[node name="Pedra_45" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2910.47, -971.046 )
+
+[node name="pedra_mar_156" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3062.7, -527.099 )
+texture = ExtResource( 7 )
+
+[node name="pokebola3" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2917.36, -698.868 )
+texture = ExtResource( 17 )
+
+[node name="entrada_caverna_2" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3598.24, -649.829 )
+rotation = 1.56668
+scale = Vector2( 0.956036, 1 )
+texture = ExtResource( 9 )
+
+[node name="pedra_mar_2" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3535.35, -381.375 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_3" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3488.99, -354.981 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_4" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3477.23, -338.792 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_5" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3421.66, -254.248 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_6" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3320.91, -236.242 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_7" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3404.88, -241.376 )
+scale = Vector2( 0.991493, 1.00854 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_8" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3342.37, -236.714 )
+scale = Vector2( 0.991493, 1.00854 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_9" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3467.67, -323.868 )
+scale = Vector2( 0.991493, 1.00854 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_10" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3500.13, -369.824 )
+scale = Vector2( 0.991493, 1.00854 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_11" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3384.78, -239.762 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_12" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3435.45, -272.064 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_13" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3516.04, -379.222 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_14" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3363.19, -238.36 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_15" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3458.05, -306.193 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_16" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3446.65, -288.96 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_17" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3300.28, -237.527 )
+texture = ExtResource( 7 )
+
+[node name="Pedra_2" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3529.62, -486.065 )
+
+[node name="Pedra_3" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3488.27, -485.263 )
+
+[node name="pedra_remover" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3540.17, -429.953 )
+texture = ExtResource( 12 )
+
+[node name="Pedra_4" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3447.21, -484.347 )
+
+[node name="Pedra_5" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3406.11, -479.188 )
+
+[node name="Pedra_6" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3366.06, -465.773 )
+
+[node name="Pedra_7" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3328.12, -450.294 )
+
+[node name="Pedra_8" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3011.92, -379.821 )
+
+[node name="Pedra_9" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3057.08, -381.775 )
+
+[node name="Pedra_10" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3292.92, -429.238 )
+
+[node name="Pedra_11" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3261.38, -403.574 )
+
+[node name="Pedra_12" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2752.83, -364.876 )
+
+[node name="Pedra_13" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2881.09, -371.552 )
+
+[node name="Pedra_14" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2924.45, -373.568 )
+
+[node name="Pedra_15" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3102.84, -388.626 )
+
+[node name="Pedra_16" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3145.43, -394.065 )
+
+[node name="Pedra_17" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3423.48, -1111.55 )
+
+[node name="Pedra_18" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3405.57, -1077.54 )
+
+[node name="Pedra_19" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2861.05, -211.659 )
+
+[node name="Pedra_20" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2971.33, -214.54 )
+
+[node name="Pedra_21" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2970.75, -254.847 )
+
+[node name="Pedra_22" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3009.49, -274.729 )
+
+[node name="Pedra_23" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3025.73, -159.449 )
+
+[node name="Pedra_24" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2664.73, -361.288 )
+
+[node name="Pedra_25" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2838.47, -369.147 )
+
+[node name="Pedra_26" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2969.56, -376.568 )
+
+[node name="Pedra_27" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2709.7, -363.945 )
+
+[node name="Pedra_28" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2796, -367.124 )
+
+[node name="Pedra_29" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2939.53, -280.886 )
+
+[node name="Pedra_30" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2892.53, -280.829 )
+
+[node name="Pedra_31" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2982.35, -176.723 )
+
+[node name="Pedra_32" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2858.48, -250.72 )
+
+[node name="Pedra_33" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2899.69, -193.428 )
+
+[node name="pedra_mar_18" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3278.13, -237.176 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_19" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3146.26, -283.076 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_20" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3085.03, -349.214 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_21" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3159.35, -258.772 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_22" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3069.25, -333.742 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_23" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3098.17, -366.389 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_24" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3163.68, -625.357 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_25" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3164.99, -598.019 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_26" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3204, -489.412 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_27" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3184.2, -244.519 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_28" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3274.18, -376.739 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_29" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2885.56, -126.802 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_30" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2908.34, -171.064 )
+scale = Vector2( 1.0406, 1.03977 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_31" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2869.64, -106.915 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_32" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2895.72, -147.573 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_33" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3283.37, -350.301 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_34" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3278.29, -263.323 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_35" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3268.17, -291.323 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_36" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3169.18, -520.513 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_37" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3221.73, -474.225 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_38" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3243.4, -462.326 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_39" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3187.06, -506.301 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_40" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3168.57, -649.622 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_41" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3165.84, -573.23 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_42" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3193.76, -686.506 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_43" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2733.82, -405.082 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_44" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2648.41, -430.427 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_45" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2642.86, -532.062 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_46" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2677.97, -480.161 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_47" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2744.19, -501.692 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_48" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3235.03, -714.446 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_49" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3343.79, -719.671 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_50" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3262.51, -451.382 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_51" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3259.95, -719.87 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_52" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3212.66, -702.709 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_53" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3427.34, -719.772 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_54" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3454.23, -719.719 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_55" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3315.54, -719.698 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_56" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3401.8, -719.961 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_57" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3475.83, -719.908 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_58" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3523.99, -719.82 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_59" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3286.77, -719.648 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_60" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3499.08, -719.655 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_61" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3178.15, -668.763 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_62" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3167.04, -547.721 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_63" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2674.32, -604.376 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_64" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2805.26, -690.167 )
+texture = ExtResource( 7 )
+
+[node name="pedra_remover2" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2937.38, -197.234 )
+texture = ExtResource( 12 )
+
+[node name="pokebola" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2914.22, -242.174 )
+texture = ExtResource( 17 )
+
+[node name="Pedra_34" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3378.02, -1051.05 )
+
+[node name="Pedra_35" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3349.68, -1022.69 )
+
+[node name="Pedra_36" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3325.64, -989.454 )
+
+[node name="Pedra_37" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3283.21, -979.76 )
+
+[node name="Pedra_38" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3237.95, -978.375 )
+
+[node name="Pedra_39" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3189.86, -975.605 )
+
+[node name="Pedra_40" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3141.86, -973.258 )
+
+[node name="Pedra_41" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3096.18, -972.791 )
+
+[node name="Pedra_42" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3049.38, -971.972 )
+
+[node name="Pedra_43" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 3000.07, -971.154 )
+
+[node name="pedra_mar_65" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2998.56, -612.353 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_66" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2991.65, -552.227 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_67" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2769.72, -448.349 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_68" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2814.51, -547.514 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_69" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2708.37, -550.375 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_70" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2844.86, -454.871 )
+scale = Vector2( 1.00002, 1 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_71" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2920.56, -429.029 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_72" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2939.09, -483.698 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_73" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2994.66, -437.86 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_74" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2677.21, -685.775 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_75" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2748.3, -583.748 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_76" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2622.68, -658.123 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_77" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2710.32, -657.169 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_78" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2883.65, -657.169 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_79" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3052.12, -586.609 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_80" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3024.85, -743.939 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_81" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2946.95, -796.383 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_82" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2834.96, -613.307 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_83" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3005.37, -853.594 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_84" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2884.63, -503.653 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_85" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2992.84, -501.256 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_86" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3049.2, -458.838 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_87" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2900.21, -783.987 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_88" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2747.32, -707.706 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_89" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2683.05, -751.567 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_90" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2620.73, -772.545 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_91" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2625.6, -722.008 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_92" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2760.96, -767.777 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_93" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2752.19, -838.337 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_94" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2950.84, -864.082 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_95" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2690.84, -792.568 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_96" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2709.3, -930.683 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_97" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2681.11, -889.827 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_98" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2648.97, -942.271 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_99" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2645.08, -841.198 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_100" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2740.51, -907.944 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_101" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2826.2, -835.477 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_102" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2797.96, -875.524 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_103" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3028.87, -801.164 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_104" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2774.59, -638.099 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_105" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3081.33, -909.851 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_106" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2836.91, -750.614 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_107" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2943.05, -742.032 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_108" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2952.23, -657.829 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_109" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2877.67, -719.428 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_110" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2790.17, -580.888 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_111" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2909.94, -602.818 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_112" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2884.31, -944.937 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_113" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2809.65, -924.154 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_114" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2881.7, -854.547 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_115" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2871.97, -908.898 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_116" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3056.01, -869.803 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_117" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3011.22, -665.751 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_118" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3077.43, -670.518 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_119" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2923.58, -554.189 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_120" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 2797.96, -503.653 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_121" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3124.15, -948.917 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_122" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3174.27, -926.609 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_123" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3327.42, -742.678 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_124" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3322.26, -762.006 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_125" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3316.67, -783.899 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_126" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3307.73, -807.004 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_127" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3531.63, -946.587 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_128" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3505.21, -952.674 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_129" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3476.53, -946.454 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_130" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3301.86, -830.948 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_131" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3293.92, -853.161 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_132" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3296.19, -875.373 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_133" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3457.79, -929.911 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_134" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3308.67, -895.365 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_135" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3334.75, -899.807 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_136" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3144.2, -874.263 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_137" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3136.63, -808.063 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_138" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3094.03, -773.709 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_139" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3130.36, -627.707 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_140" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3142.89, -711.137 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_141" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3270.7, -774.936 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_142" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3245.64, -747.944 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_143" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3255.66, -817.878 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_144" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3251.91, -868.182 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_145" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3254.41, -917.259 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_146" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3105.31, -590.899 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_147" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3130.36, -552.865 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_148" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3441.11, -908.67 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_149" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3432.6, -884.293 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_150" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3424.48, -858.358 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_151" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3429.47, -832.226 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_152" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3442.66, -810.851 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_153" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3460.2, -792.106 )
+texture = ExtResource( 7 )
+
+[node name="pedra_mar_154" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3481.27, -773.479 )
+texture = ExtResource( 7 )
+
+[node name="pedra_remover3" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3528.8, -768.432 )
+texture = ExtResource( 12 )
+
+[node name="pedra_mar_155" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3503.35, -759.324 )
+texture = ExtResource( 7 )
+
+[node name="pokebola4" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 3506.29, -853.146 )
+texture = ExtResource( 17 )
+
+[node name="Pedra_44" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2954.9, -971.046 )
+
+[node name="Pedra_46" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2859.68, -971.046 )
+
+[node name="Pedra_47" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2808.89, -971.046 )
+
+[node name="Pedra_48" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2758.11, -969.803 )
+
+[node name="Pedra_49" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2712.4, -969.803 )
+
+[node name="Pedra_50" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2671.78, -971.046 )
+
+[node name="Pedra_51" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2631.15, -976.019 )
+
+[node name="Grama Alta Bloco4" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2345.53, -1093.29 )
+
+[node name="Grama Alta Bloco7" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2345.85, -1118.4 )
+
+[node name="Grama Alta Bloco15" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2346.05, -1140.33 )
+
+[node name="Grama Alta Bloco2" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2529.36, -1093.21 )
+
+[node name="Grama Alta Bloco3" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2529.35, -1140.89 )
+
+[node name="Grama Alta Bloco6" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2391.51, -1117.42 )
+
+[node name="Grama Alta Bloco8" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2391.42, -1093.16 )
+
+[node name="Grama Alta Bloco9" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2438.18, -1141.21 )
+
+[node name="Grama Alta Bloco10" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2484.85, -1141.28 )
+
+[node name="Grama Alta Bloco13" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2391.56, -1140.49 )
+
+[node name="Grama Alta Bloco21" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2529.34, -1116.68 )
+
+[node name="Grama Alta Bloco19" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2437.62, -1093.32 )
+
+[node name="Grama Alta Bloco18" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2484.56, -1093.11 )
+
+[node name="Grama Alta Bloco17" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2484.97, -1117.12 )
+
+[node name="Grama Alta Bloco16" parent="Elements/Rota 4" instance=ExtResource( 42 )]
+position = Vector2( 2438.11, -1117.16 )
+
+[node name="Pedra_52" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2601.65, -996.654 )
+
+[node name="Pedra_53" parent="Elements/Rota 4" instance=ExtResource( 58 )]
+position = Vector2( 2592.15, -1031.79 )
+
+[node name="Casa_33" parent="Elements/Rota 4" instance=ExtResource( 80 )]
+position = Vector2( 2105.01, -1139.92 )
+scale = Vector2( 0.991493, 1.00854 )
+
+[node name="Placa_Madeira2" parent="Elements/Rota 4" instance=ExtResource( 48 )]
+position = Vector2( 2063.25, -1020.06 )
+
+[node name="Placa_Madeira3" parent="Elements/Rota 4" instance=ExtResource( 48 )]
+position = Vector2( 2063.25, -805.159 )
+scale = Vector2( 0.989218, 1.00854 )
+
+[node name="planta_remover2" type="Sprite" parent="Elements/Rota 4"]
+position = Vector2( 1404.86, -112.954 )
+scale = Vector2( 0.991493, 1.00854 )
+texture = ExtResource( 16 )
+
+[node name="Poste_3" parent="Elements/Rota 4" instance=ExtResource( 84 )]
+position = Vector2( 2317.24, -1144.64 )
+
+[node name="Poste_4" parent="Elements/Rota 4" instance=ExtResource( 84 )]
+position = Vector2( 1909.92, -1142.46 )
+
+[node name="bloqueio_rio" type="StaticBody2D" parent="Elements/Rota 4"]
+position = Vector2( 2550.09, -655.882 )
+collision_layer = 8
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elements/Rota 4/bloqueio_rio"]
+shape = SubResource( 25 )
+
+[node name="cerca_1" parent="Elements/Rota 4" instance=ExtResource( 63 )]
+position = Vector2( 1927.18, -1038.96 )
+
+[node name="cerca_2" parent="Elements/Rota 4" instance=ExtResource( 63 )]
+position = Vector2( 1991, -1038.96 )
+
+[node name="cerca_3" parent="Elements/Rota 4" instance=ExtResource( 63 )]
+position = Vector2( 2039.26, -1038.96 )
+
+[node name="cerca_4" parent="Elements/Rota 4" instance=ExtResource( 63 )]
+position = Vector2( 2179.19, -1038.84 )
+
+[node name="cerca_7" parent="Elements/Rota 4" instance=ExtResource( 63 )]
+position = Vector2( 2163.04, -1038.84 )
+
+[node name="cerca_5" parent="Elements/Rota 4" instance=ExtResource( 63 )]
+position = Vector2( 2243.1, -1038.84 )
+
+[node name="cerca_6" parent="Elements/Rota 4" instance=ExtResource( 63 )]
+position = Vector2( 2307.13, -1038.96 )
+
+[node name="Cut" parent="Elements/Rota 4" instance=ExtResource( 62 )]
+position = Vector2( 3528.8, -1178.59 )
+
+[node name="Items" type="YSort" parent="Elements"]
+
+[node name="Revive7" parent="Elements/Items" instance=ExtResource( 85 )]
+position = Vector2( -796.842, -364.087 )
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Pokeball9" parent="Elements/Items" instance=ExtResource( 83 )]
+position = Vector2( -397.67, -332.939 )
+isDrop = true
+porcentProb = 10
+
+[node name="items" type="YSort" parent="."]
+
+[node name="Potion10" parent="items" instance=ExtResource( 82 )]
+position = Vector2( -779.543, -205.295 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Revive4" parent="items" instance=ExtResource( 85 )]
+position = Vector2( -849.492, -119.503 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Revive5" parent="items" instance=ExtResource( 85 )]
+position = Vector2( -405.056, -57.7533 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Revive6" parent="items" instance=ExtResource( 85 )]
+position = Vector2( -509.111, -325.919 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Revive7" parent="items" instance=ExtResource( 85 )]
+position = Vector2( -785.813, 132.716 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Potion11" parent="items" instance=ExtResource( 82 )]
+position = Vector2( -311.12, 208.069 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion12" parent="items" instance=ExtResource( 82 )]
+position = Vector2( -262.287, 29.0518 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Pokes" type="YSort" parent="."]
+
+[node name="Players" type="YSort" parent="."]

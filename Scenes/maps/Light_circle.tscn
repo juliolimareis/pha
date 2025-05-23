@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://img/maps/sun.png" type="Texture" id=1]
+[ext_resource path="res://scripts/map/light.gd" type="Script" id=2]
+
+[node name="Light2D" type="Light2D"]
+scale = Vector2( 0.0378058, 0.0330813 )
+enabled = false
+texture = ExtResource( 1 )
+script = ExtResource( 2 )

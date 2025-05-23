@@ -1,0 +1,185 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://img/components/predio_5.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/maps/LightWindowRandon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/maps/LightWindow.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 39.845, 27.9596 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+height = 0.0
+
+[node name="predio_5" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 17
+
+[node name="shadow" type="Sprite" parent="."]
+self_modulate = Color( 0.00784314, 0, 0, 0.454902 )
+position = Vector2( 10.1082, -56.9457 )
+scale = Vector2( 1, 0.894907 )
+texture = ExtResource( 1 )
+
+[node name="Predio8" type="Sprite" parent="."]
+position = Vector2( 0, -67.6486 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0298519, 18.1476 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 42.6861 )
+shape = SubResource( 2 )
+
+[node name="LightMoldRandom2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 9.49226, -25.656 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 26.4973, -25.6462 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -9.50774, -25.656 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom5" parent="." instance=ExtResource( 2 )]
+position = Vector2( -26.5027, -25.6462 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 9.49226, -38.656 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 26.4973, -38.6462 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom8" parent="." instance=ExtResource( 2 )]
+position = Vector2( -9.50774, -38.656 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom9" parent="." instance=ExtResource( 2 )]
+position = Vector2( -26.5027, -38.6462 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 9.49226, -51.656 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 26.4973, -51.6462 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom12" parent="." instance=ExtResource( 2 )]
+position = Vector2( -9.50774, -51.656 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom13" parent="." instance=ExtResource( 2 )]
+position = Vector2( -26.5027, -51.6462 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 9.49226, -64.6561 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 26.4973, -64.6462 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom16" parent="." instance=ExtResource( 2 )]
+position = Vector2( -9.50774, -64.6561 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom17" parent="." instance=ExtResource( 2 )]
+position = Vector2( -26.5027, -64.6462 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom18" parent="." instance=ExtResource( 2 )]
+position = Vector2( 9.49226, -77.6561 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom19" parent="." instance=ExtResource( 2 )]
+position = Vector2( 26.4973, -77.6462 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom20" parent="." instance=ExtResource( 2 )]
+position = Vector2( -9.50774, -77.6561 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom21" parent="." instance=ExtResource( 2 )]
+position = Vector2( -26.5027, -77.6462 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom22" parent="." instance=ExtResource( 2 )]
+position = Vector2( 9.49226, -90.6561 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom23" parent="." instance=ExtResource( 2 )]
+position = Vector2( 26.4973, -90.6462 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom24" parent="." instance=ExtResource( 2 )]
+position = Vector2( -9.50774, -90.6561 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom25" parent="." instance=ExtResource( 2 )]
+position = Vector2( -26.5027, -90.6462 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom26" parent="." instance=ExtResource( 2 )]
+position = Vector2( 9.49226, -103.656 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom27" parent="." instance=ExtResource( 2 )]
+position = Vector2( 26.4973, -103.646 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom28" parent="." instance=ExtResource( 2 )]
+position = Vector2( -9.50774, -103.656 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom29" parent="." instance=ExtResource( 2 )]
+position = Vector2( -26.5027, -103.646 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom30" parent="." instance=ExtResource( 2 )]
+position = Vector2( 9.49226, -116.656 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom31" parent="." instance=ExtResource( 2 )]
+position = Vector2( 26.4973, -116.646 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMoldRandom32" parent="." instance=ExtResource( 2 )]
+position = Vector2( -9.50774, -116.656 )
+scale = Vector2( 0.130285, 0.0874926 )
+
+[node name="LightMoldRandom33" parent="." instance=ExtResource( 2 )]
+position = Vector2( -26.5027, -116.646 )
+scale = Vector2( 0.055122, 0.0870601 )
+
+[node name="LightMold" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0.13031, 40.652 )
+scale = Vector2( 0.289479, 0.453384 )
+
+[node name="LightMold6" parent="." instance=ExtResource( 3 )]
+position = Vector2( -0.376597, 2.56334 )
+scale = Vector2( 1.36948, 0.222615 )
+
+[node name="LightMold3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 22.092, 31.9105 )
+scale = Vector2( 0.262796, 0.374816 )
+
+[node name="LightMold7" parent="." instance=ExtResource( 3 )]
+position = Vector2( -21.908, 31.9105 )
+scale = Vector2( 0.262796, 0.374816 )
+
+[node name="LightMold4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 34.5179, 30.9733 )
+scale = Vector2( 0.0854085, 0.313507 )
+
+[node name="LightMold5" parent="." instance=ExtResource( 3 )]
+position = Vector2( -34.4435, 30.7891 )
+scale = Vector2( 0.0862398, 0.321693 )

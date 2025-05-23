@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://fonts/arial/ARIAL.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://img/layouts/perfil_poke.png" type="Texture" id=2]
+[ext_resource path="res://scripts/screens/configNotification.gd" type="Script" id=3]
+[ext_resource path="res://scripts/screens/ButtonClick.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 466, 177 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+extra_spacing_top = -1
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[node name="Painel" type="Panel"]
+margin_right = 400.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 400, 90 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+margin_right = 398.0
+margin_bottom = 89.0
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( 39.5248, 43.5993 )
+scale = Vector2( 0.86704, 0.763997 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 81.3543
+margin_top = 4.0
+margin_right = 381.354
+margin_bottom = 84.7622
+grow_horizontal = 0
+rect_min_size = Vector2( 300, 80 )
+rect_clip_content = false
+mouse_filter = 2
+theme = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Bulbasaur Está no level 9"
+tab_size = 0
+text = "Bulbasaur Está no level 9"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,18 @@
+## Login
+
+1 -> Após autenticação de usuário
+
+2 -> salvar token em <GlobalPlayer.token>
+
+3 -> (startGame) -> Inicia conexão websocket <Server.initConn()>
+     	Cria chamada de evento na função _on_connected que é emitida 	     quando obtem sucesso com servidor.
+
+4 -> (_on_connected) -> Muda para a cena <GlobalScene.world>
+
+## World
+
+1 -> (_init) -> Chama <Server.start> para iniciar autenticação com servidor, ser autenticação for bem sucedida chama a função (_on_start)
+
+2 -> (_on_start) -> instancia o node onde o jogador deve nascer,
+                    instancia o jogador e inicia evento de atualização de jogador
+                    

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://img/components/flor_laranja.png" type="Texture" id=1]
+
+[node name="Flor_laranja" type="Node2D"]
+
+[node name="FlorLaranja" type="Sprite" parent="."]
+position = Vector2( 0.274216, -0.246948 )
+z_index = -10
+z_as_relative = false
+texture = ExtResource( 1 )

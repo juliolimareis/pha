@@ -1,0 +1,213 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://img/maps/internal/Lab_inside.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/items/revive.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/items/pokeball.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/items/potion.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/GetInitialPokeball.tscn" type="PackedScene" id=8]
+[ext_resource path="res://img/screens/background_black.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30.9351, 24.6871 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 70.5762, 10.1281 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 22.6274, 15.601 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 16.589
+height = 22.115
+
+[sub_resource type="SegmentShape2D" id=5]
+a = Vector2( 71.4033, 15.6902 )
+b = Vector2( 71.1672, 224.848 )
+
+[sub_resource type="SegmentShape2D" id=6]
+a = Vector2( 72.1533, 16.6902 )
+b = Vector2( 296.403, 16.9402 )
+
+[sub_resource type="SegmentShape2D" id=7]
+a = Vector2( 216, 48 )
+b = Vector2( 232.903, 47.6889 )
+
+[node name="LabInside" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 209.389 ],
+"_edit_vertical_guides_": [ 194.7 ]
+}
+
+[node name="BackgroundBlack" type="Sprite" parent="."]
+position = Vector2( 178.568, 127.5 )
+scale = Vector2( 0.539906, 0.675896 )
+z_as_relative = false
+texture = ExtResource( 9 )
+
+[node name="LabInside" type="Sprite" parent="."]
+position = Vector2( 192, 120 )
+z_as_relative = false
+texture = ExtResource( 1 )
+
+[node name="objects" type="StaticBody2D" parent="."]
+position = Vector2( 8, 0 )
+collision_layer = 4
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects"]
+position = Vector2( 103.984, 162.215 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="objects"]
+position = Vector2( 265.019, 37.4892 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="objects"]
+position = Vector2( 263.68, 162.465 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="objects"]
+position = Vector2( 144.077, 44.1988 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="objects"]
+position = Vector2( 255.682, 106.395 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="objects"]
+position = Vector2( 96.3262, 100.949 )
+shape = SubResource( 4 )
+
+[node name="bounds" type="StaticBody2D" parent="."]
+position = Vector2( 8, 0 )
+collision_layer = 8
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounds"]
+position = Vector2( -0.5, 0 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bounds"]
+position = Vector2( 226.076, 0.779739 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="bounds"]
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="bounds"]
+position = Vector2( -1, 208 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="bounds"]
+shape = SubResource( 7 )
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Pokeball2" parent="Items" instance=ExtResource( 6 )]
+position = Vector2( 155.811, 65.3613 )
+rotation = 1.12419
+isDrop = true
+porcentProb = 30
+
+[node name="Pokeball" parent="Items" instance=ExtResource( 6 )]
+position = Vector2( 146.831, 65.9226 )
+rotation = -0.288772
+isDrop = true
+porcentProb = 30
+
+[node name="Revive2" parent="Items" instance=ExtResource( 5 )]
+position = Vector2( 268.094, 93.5936 )
+isDrop = true
+porcentProb = 30
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Revive7" parent="Items" instance=ExtResource( 5 )]
+position = Vector2( 282.397, 93.3287 )
+isDrop = true
+porcentProb = 30
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Revive4" parent="Items" instance=ExtResource( 5 )]
+position = Vector2( 243.931, 104.579 )
+isDrop = true
+porcentProb = 30
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Revive5" parent="Items" instance=ExtResource( 5 )]
+position = Vector2( 251.751, 93.8782 )
+isDrop = true
+porcentProb = 30
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Potion" parent="Items" instance=ExtResource( 7 )]
+position = Vector2( 284.432, 105.576 )
+isDrop = true
+porcentProb = 30
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion2" parent="Items" instance=ExtResource( 7 )]
+position = Vector2( 246.665, 117.89 )
+isDrop = true
+porcentProb = 30
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion3" parent="Items" instance=ExtResource( 7 )]
+position = Vector2( 255.937, 117.496 )
+isDrop = true
+porcentProb = 30
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion6" parent="Items" instance=ExtResource( 7 )]
+position = Vector2( 282.423, 117.026 )
+isDrop = true
+porcentProb = 30
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="InitialPokes" type="Node2D" parent="."]
+
+[node name="1" parent="InitialPokes" instance=ExtResource( 8 )]
+position = Vector2( 181.842, 44.2144 )
+
+[node name="4" parent="InitialPokes" instance=ExtResource( 8 )]
+position = Vector2( 200.304, 44.2144 )
+imagePath = "res://img/items/pokeball_red.png"
+
+[node name="7" parent="InitialPokes" instance=ExtResource( 8 )]
+position = Vector2( 218.353, 44.016 )
+imagePath = "res://img/items/pokeball_blue.png"

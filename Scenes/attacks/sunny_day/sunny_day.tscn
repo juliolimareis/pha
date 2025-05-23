@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/attacks/rain_dance/rain_dance.png" type="Texture" id=1]
+[ext_resource path="res://scripts/battle/moveStatus.gd" type="Script" id=2]
+[ext_resource path="res://scripts/battle/attack.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/attacks/rain_dance/rain_dance.tres" type="Animation" id=4]
+[ext_resource path="res://img/maps/sun.png" type="Texture" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 38.9446
+
+[node name="Sunny Day" type="Area2D" groups=["fire_1"]]
+position = Vector2( -0.31498, -1.37004 )
+z_index = 10
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "sunny_day"
+move = false
+time = 3.0
+prepare = false
+hold = true
+type = 2
+
+[node name="atk collision" type="CollisionShape2D" parent="."]
+position = Vector2( -0.940773, -1.2588 )
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.664421, 1.20216 )
+scale = Vector2( 1.29666, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+
+[node name="attack" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0.106144, 2.63425 )
+scale = Vector2( 0.653124, 0.690626 )
+z_index = 10
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+atkType = "Special"
+type = 2
+countdown = 7
+target = "close"
+effect = true
+effectTarget = "both"
+effectTime = 5.0
+enemyStatusCondition = {
+"burn": 0,
+"confusion": 0,
+"dragonDance": 0,
+"freeze": 0,
+"paralysis": 0,
+"poison": 0,
+"rainDance": 0,
+"seed": 0,
+"sleep": 0,
+"sunnyDay": 100,
+"synthesis": 0
+}
+selfStatusCondition = {
+"burn": 0,
+"confusion": 0,
+"dragonDance": 0,
+"freeze": 0,
+"paralysis": 0,
+"poison": 0,
+"rainDance": 0,
+"seed": 0,
+"sleep": 0,
+"sunnyDay": 100,
+"synthesis": 0
+}
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 0.134874, 1.27193 )
+scale = Vector2( 0.0857431, 0.0857431 )
+texture = ExtResource( 5 )
+color = Color( 0.992157, 0.243137, 0.145098, 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

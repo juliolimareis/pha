@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/attacks/giga_drain/giga_drain_finished.png" type="Texture" id=1]
+[ext_resource path="res://scripts/battle/attack_finished.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 34, 34 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 34, 0, 34, 34 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 68, 0, 34, 34 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 102, 0, 34, 34 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ null, SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "Animated",
+"speed": 5.0
+} ]
+
+[node name="FireFinished" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.393712, -8.10623e-06 )
+scale = Vector2( 0.5072, 0.477835 )
+frames = SubResource( 5 )
+animation = "Animated"
+frame = 1
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

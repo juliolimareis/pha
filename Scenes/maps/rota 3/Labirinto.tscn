@@ -1,0 +1,2702 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/maps/Ambient.tscn" type="PackedScene" id=1]
+[ext_resource path="res://img/components/buraco.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/items/pokeball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/objects/Placa_2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/items/potion.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/objects/Placa_Madeira.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/casa_4.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/objects/Grama Alta Bloco.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scripts/map/transitionScene.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/items/revive.tscn" type="PackedScene" id=10]
+
+[sub_resource type="CircleShape2D" id=24]
+radius = 26.5434
+
+[node name="Labirinto" type="Node2D"]
+
+[node name="Grama Alta Bloco14" parent="." instance=ExtResource( 8 )]
+position = Vector2( 265.416, -115.449 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco13" parent="." instance=ExtResource( 8 )]
+position = Vector2( 265.284, -141.694 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco12" parent="." instance=ExtResource( 8 )]
+position = Vector2( 265.294, -167.031 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco8" parent="." instance=ExtResource( 8 )]
+position = Vector2( 265.299, -208.747 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 231.486, -115.311 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco" parent="." instance=ExtResource( 8 )]
+position = Vector2( 163.952, -208.899 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 49.6679, -217.167 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 197.705, -208.496 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 231.476, -208.667 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 231.74, -140.716 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 265.313, -233.559 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco9" parent="." instance=ExtResource( 8 )]
+position = Vector2( 327.865, -232.729 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco10" parent="." instance=ExtResource( 8 )]
+position = Vector2( 327.799, -207.817 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco11" parent="." instance=ExtResource( 8 )]
+position = Vector2( 232.561, -166.099 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco440" parent="." instance=ExtResource( 8 )]
+position = Vector2( 115.233, -112.439 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "16, 1-2, 60, 1-2|19, 1-2, 60, 1-2"
+
+[node name="Grama Alta Bloco441" parent="." instance=ExtResource( 8 )]
+position = Vector2( 85.3573, -112.439 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "16, 1-2, 60, 1-2|19, 1-2, 60, 1-2"
+
+[node name="Grama Alta Bloco442" parent="." instance=ExtResource( 8 )]
+position = Vector2( 114.357, -139.942 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "16, 1-2, 60, 1-2|19, 1-2, 60, 1-2"
+
+[node name="Grama Alta Bloco443" parent="." instance=ExtResource( 8 )]
+position = Vector2( 85.9863, -139.942 )
+isBattle = true
+isGrass = true
+activationPercent = 80
+pokes = "16, 1-2, 60, 1-2|19, 1-2, 60, 1-2"
+
+[node name="Grama Alta Bloco15" parent="." instance=ExtResource( 8 )]
+position = Vector2( 327.927, -257.819 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco16" parent="." instance=ExtResource( 8 )]
+position = Vector2( 394.88, -207.73 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco17" parent="." instance=ExtResource( 8 )]
+position = Vector2( 327.864, -282.932 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco18" parent="." instance=ExtResource( 8 )]
+position = Vector2( 361.351, -207.886 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco19" parent="." instance=ExtResource( 8 )]
+position = Vector2( 361.457, -233.201 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco21" parent="." instance=ExtResource( 8 )]
+position = Vector2( 327.59, -305.042 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco22" parent="." instance=ExtResource( 8 )]
+position = Vector2( 395.164, -233.279 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco23" parent="." instance=ExtResource( 8 )]
+position = Vector2( 361.032, -257.948 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco24" parent="." instance=ExtResource( 8 )]
+position = Vector2( 360.188, -283.573 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco25" parent="." instance=ExtResource( 8 )]
+position = Vector2( 394.565, -258.933 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco27" parent="." instance=ExtResource( 8 )]
+position = Vector2( 164.351, -234.078 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco28" parent="." instance=ExtResource( 8 )]
+position = Vector2( 393.901, -283.435 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco29" parent="." instance=ExtResource( 8 )]
+position = Vector2( 293.743, -304.54 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco30" parent="." instance=ExtResource( 8 )]
+position = Vector2( 328.165, -166.141 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco31" parent="." instance=ExtResource( 8 )]
+position = Vector2( 328.546, -140.713 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco32" parent="." instance=ExtResource( 8 )]
+position = Vector2( 361.27, -166.352 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco33" parent="." instance=ExtResource( 8 )]
+position = Vector2( 361.584, -140.834 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco34" parent="." instance=ExtResource( 8 )]
+position = Vector2( 394.671, -167.217 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco35" parent="." instance=ExtResource( 8 )]
+position = Vector2( 361.92, -115.516 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco36" parent="." instance=ExtResource( 8 )]
+position = Vector2( 328.233, -115.311 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco37" parent="." instance=ExtResource( 8 )]
+position = Vector2( 361.444, -304.653 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco38" parent="." instance=ExtResource( 8 )]
+position = Vector2( 395.263, -115.461 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco39" parent="." instance=ExtResource( 8 )]
+position = Vector2( 394.757, -140.706 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco40" parent="." instance=ExtResource( 8 )]
+position = Vector2( 197.899, -234.083 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco41" parent="." instance=ExtResource( 8 )]
+position = Vector2( 259.875, -304.539 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco42" parent="." instance=ExtResource( 8 )]
+position = Vector2( 231.593, -234.204 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco43" parent="." instance=ExtResource( 8 )]
+position = Vector2( 265.336, -259.124 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco44" parent="." instance=ExtResource( 8 )]
+position = Vector2( 231.417, -259.182 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco45" parent="." instance=ExtResource( 8 )]
+position = Vector2( 197.594, -259.558 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco46" parent="." instance=ExtResource( 8 )]
+position = Vector2( 393.618, -305.681 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco47" parent="." instance=ExtResource( 8 )]
+position = Vector2( 164.27, -259.374 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco48" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.143, -951.489 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco49" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.3433, -233.667 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco50" parent="." instance=ExtResource( 8 )]
+position = Vector2( 213.639, -807.33 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco51" parent="." instance=ExtResource( 8 )]
+position = Vector2( 141.565, -235.474 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco52" parent="." instance=ExtResource( 8 )]
+position = Vector2( 529.984, -140.746 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco53" parent="." instance=ExtResource( 8 )]
+position = Vector2( 530.245, -115.45 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco54" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.5962, -283.633 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco55" parent="." instance=ExtResource( 8 )]
+position = Vector2( 564.008, -115.465 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco56" parent="." instance=ExtResource( 8 )]
+position = Vector2( 496.486, -115.414 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco57" parent="." instance=ExtResource( 8 )]
+position = Vector2( 86.23, -282.936 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco58" parent="." instance=ExtResource( 8 )]
+position = Vector2( 141.605, -259.515 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco59" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.2872, -258.101 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco60" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.3002, -234.361 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco61" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.2329, -258.876 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco62" parent="." instance=ExtResource( 8 )]
+position = Vector2( 170.299, -303.986 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco63" parent="." instance=ExtResource( 8 )]
+position = Vector2( 349.307, -807.353 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco64" parent="." instance=ExtResource( 8 )]
+position = Vector2( 179.976, -782.339 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco65" parent="." instance=ExtResource( 8 )]
+position = Vector2( 250.538, -674.558 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco66" parent="." instance=ExtResource( 8 )]
+position = Vector2( 428.352, -207.813 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco67" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.375, -208.985 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco68" parent="." instance=ExtResource( 8 )]
+position = Vector2( 462.813, -115.487 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco69" parent="." instance=ExtResource( 8 )]
+position = Vector2( 462.613, -140.878 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco70" parent="." instance=ExtResource( 8 )]
+position = Vector2( 142.586, -304.522 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco71" parent="." instance=ExtResource( 8 )]
+position = Vector2( 281.54, -807.271 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco73" parent="." instance=ExtResource( 8 )]
+position = Vector2( 429.145, -115.455 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco74" parent="." instance=ExtResource( 8 )]
+position = Vector2( 428.661, -140.828 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco75" parent="." instance=ExtResource( 8 )]
+position = Vector2( 428.731, -167.604 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco76" parent="." instance=ExtResource( 8 )]
+position = Vector2( 383.474, -752.897 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco77" parent="." instance=ExtResource( 8 )]
+position = Vector2( 78.5208, -808.457 )
+isBattle = true
+isGrass = true
+
+[node name="Grama Alta Bloco78" parent="." instance=ExtResource( 8 )]
+position = Vector2( 559.021, -208.832 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco79" parent="." instance=ExtResource( 8 )]
+position = Vector2( 496.543, -140.402 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco80" parent="." instance=ExtResource( 8 )]
+position = Vector2( 180.029, -807.319 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco81" parent="." instance=ExtResource( 8 )]
+position = Vector2( 112.429, -808.34 )
+isBattle = true
+isGrass = true
+
+[node name="Grama Alta Bloco82" parent="." instance=ExtResource( 8 )]
+position = Vector2( 213.866, -782.339 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco83" parent="." instance=ExtResource( 8 )]
+position = Vector2( 247.663, -807.257 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco84" parent="." instance=ExtResource( 8 )]
+position = Vector2( 530.148, -166.383 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco85" parent="." instance=ExtResource( 8 )]
+position = Vector2( 496.595, -166.907 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco86" parent="." instance=ExtResource( 8 )]
+position = Vector2( 247.794, -782.508 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco87" parent="." instance=ExtResource( 8 )]
+position = Vector2( 281.655, -782.495 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco88" parent="." instance=ExtResource( 8 )]
+position = Vector2( 78.3524, -783.403 )
+isBattle = true
+isGrass = true
+
+[node name="Grama Alta Bloco89" parent="." instance=ExtResource( 8 )]
+position = Vector2( 315.433, -807.268 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco90" parent="." instance=ExtResource( 8 )]
+position = Vector2( 523.328, -208.884 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco91" parent="." instance=ExtResource( 8 )]
+position = Vector2( 464.104, -167.217 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco92" parent="." instance=ExtResource( 8 )]
+position = Vector2( 112.204, -783.358 )
+isBattle = true
+isGrass = true
+
+[node name="Grama Alta Bloco93" parent="." instance=ExtResource( 8 )]
+position = Vector2( 315.552, -782.432 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco26" parent="." instance=ExtResource( 8 )]
+position = Vector2( 206.342, -303.86 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco94" parent="." instance=ExtResource( 8 )]
+position = Vector2( 592.678, -115.638 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 30, 1-2| 21, 1-3, 30, 1-2|16, 1-2, 30, 1-2|19, 1-2, 30, 1-2|17, 1-2, 5, 1|20, 1-2, 3, 1|21, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco20" parent="." instance=ExtResource( 8 )]
+position = Vector2( 226.067, -304.523 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Raid_2" type="Sprite" parent="."]
+position = Vector2( 598.872, -140.878 )
+z_index = -15
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Raid_2"]
+script = ExtResource( 9 )
+path = "res://Scenes/maps/battle/Raid_3.tscn"
+isMapTemp = true
+isBattle = true
+isAreaCatch = true
+isAutoConnect = true
+pokes = ""
+items = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Raid_2/Area2D"]
+shape = SubResource( 24 )
+
+[node name="casa_17" parent="." instance=ExtResource( 7 )]
+position = Vector2( 334.234, -1051.99 )
+
+[node name="Grama Alta Bloco95" parent="." instance=ExtResource( 8 )]
+position = Vector2( 82.3786, -1051.98 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco96" parent="." instance=ExtResource( 8 )]
+position = Vector2( 49.7403, -1000.94 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco97" parent="." instance=ExtResource( 8 )]
+position = Vector2( 112.712, -1075.36 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco98" parent="." instance=ExtResource( 8 )]
+position = Vector2( 82.6102, -1002.39 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco99" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.0722, -1101.08 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco100" parent="." instance=ExtResource( 8 )]
+position = Vector2( 82.7802, -1027.54 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco101" parent="." instance=ExtResource( 8 )]
+position = Vector2( 82.2165, -927.328 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco102" parent="." instance=ExtResource( 8 )]
+position = Vector2( 49.7981, -975.966 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco103" parent="." instance=ExtResource( 8 )]
+position = Vector2( 49.8149, -1076.15 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco104" parent="." instance=ExtResource( 8 )]
+position = Vector2( 82.6102, -1101.32 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco105" parent="." instance=ExtResource( 8 )]
+position = Vector2( 157.05, -1025.42 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco106" parent="." instance=ExtResource( 8 )]
+position = Vector2( 171.281, -1050.54 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco107" parent="." instance=ExtResource( 8 )]
+position = Vector2( 82.2115, -1075.34 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco108" parent="." instance=ExtResource( 8 )]
+position = Vector2( 147.927, -1050.94 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco109" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.5174, -927.506 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco110" parent="." instance=ExtResource( 8 )]
+position = Vector2( 188.157, -998.828 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco111" parent="." instance=ExtResource( 8 )]
+position = Vector2( 187.758, -1075.45 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco112" parent="." instance=ExtResource( 8 )]
+position = Vector2( 187.753, -1024.14 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco113" parent="." instance=ExtResource( 8 )]
+position = Vector2( 187.824, -1049.7 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco114" parent="." instance=ExtResource( 8 )]
+position = Vector2( 186.122, -1100.8 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco115" parent="." instance=ExtResource( 8 )]
+position = Vector2( 117.253, -1101.85 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco116" parent="." instance=ExtResource( 8 )]
+position = Vector2( 152.245, -1101.39 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco117" parent="." instance=ExtResource( 8 )]
+position = Vector2( 82.7358, -952.082 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco118" parent="." instance=ExtResource( 8 )]
+position = Vector2( 116.125, -1001.54 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco119" parent="." instance=ExtResource( 8 )]
+position = Vector2( 124.321, -975.728 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco120" parent="." instance=ExtResource( 8 )]
+position = Vector2( 157.62, -976.12 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco121" parent="." instance=ExtResource( 8 )]
+position = Vector2( 148.934, -1001.97 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco122" parent="." instance=ExtResource( 8 )]
+position = Vector2( 165.938, -999.807 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco123" parent="." instance=ExtResource( 8 )]
+position = Vector2( 103.54, -1026 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco124" parent="." instance=ExtResource( 8 )]
+position = Vector2( 100.625, -976.499 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco125" parent="." instance=ExtResource( 8 )]
+position = Vector2( 126.926, -1025.96 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco126" parent="." instance=ExtResource( 8 )]
+position = Vector2( 160.597, -950.923 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco127" parent="." instance=ExtResource( 8 )]
+position = Vector2( 188.588, -948.684 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco128" parent="." instance=ExtResource( 8 )]
+position = Vector2( 286.758, -879.133 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco129" parent="." instance=ExtResource( 8 )]
+position = Vector2( 132.899, -950.411 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco130" parent="." instance=ExtResource( 8 )]
+position = Vector2( 183.276, -927.444 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco131" parent="." instance=ExtResource( 8 )]
+position = Vector2( 185.816, -902.696 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco132" parent="." instance=ExtResource( 8 )]
+position = Vector2( 118.163, -902.806 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco133" parent="." instance=ExtResource( 8 )]
+position = Vector2( 250.31, -926.627 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco134" parent="." instance=ExtResource( 8 )]
+position = Vector2( 590.974, -1027.59 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco135" parent="." instance=ExtResource( 8 )]
+position = Vector2( 542.198, -1051.79 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco136" parent="." instance=ExtResource( 8 )]
+position = Vector2( 152.017, -902.487 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco137" parent="." instance=ExtResource( 8 )]
+position = Vector2( 51.1761, -853.609 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco138" parent="." instance=ExtResource( 8 )]
+position = Vector2( 542.551, -1001.87 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco139" parent="." instance=ExtResource( 8 )]
+position = Vector2( 590.825, -1051.56 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco140" parent="." instance=ExtResource( 8 )]
+position = Vector2( 575.544, -1001.91 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco141" parent="." instance=ExtResource( 8 )]
+position = Vector2( 474.882, -1001.81 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco142" parent="." instance=ExtResource( 8 )]
+position = Vector2( 442.207, -1026.98 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco143" parent="." instance=ExtResource( 8 )]
+position = Vector2( 508.298, -1051.99 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco144" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.7711, -902.725 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco145" parent="." instance=ExtResource( 8 )]
+position = Vector2( 474.958, -1027.27 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco146" parent="." instance=ExtResource( 8 )]
+position = Vector2( 508.843, -1001.51 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco147" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.08, -1002.44 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco148" parent="." instance=ExtResource( 8 )]
+position = Vector2( 442.347, -1001.42 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco149" parent="." instance=ExtResource( 8 )]
+position = Vector2( 473.998, -976.493 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco150" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.5169, -903.32 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco151" parent="." instance=ExtResource( 8 )]
+position = Vector2( 167.282, -1075.52 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco152" parent="." instance=ExtResource( 8 )]
+position = Vector2( 116.792, -952.259 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco153" parent="." instance=ExtResource( 8 )]
+position = Vector2( 216.861, -927.621 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco154" parent="." instance=ExtResource( 8 )]
+position = Vector2( 115.417, -927.415 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco155" parent="." instance=ExtResource( 8 )]
+position = Vector2( 442.55, -1076.99 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco156" parent="." instance=ExtResource( 8 )]
+position = Vector2( 590.476, -1101.73 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco157" parent="." instance=ExtResource( 8 )]
+position = Vector2( 474.837, -1051.78 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco158" parent="." instance=ExtResource( 8 )]
+position = Vector2( 149.273, -927.551 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco159" parent="." instance=ExtResource( 8 )]
+position = Vector2( 442.715, -1101.69 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco160" parent="." instance=ExtResource( 8 )]
+position = Vector2( 475.66, -1101.69 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco161" parent="." instance=ExtResource( 8 )]
+position = Vector2( 509.642, -1101.75 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco162" parent="." instance=ExtResource( 8 )]
+position = Vector2( 576.275, -1101.87 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco163" parent="." instance=ExtResource( 8 )]
+position = Vector2( 475.462, -1076.87 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco164" parent="." instance=ExtResource( 8 )]
+position = Vector2( 576.731, -1077.15 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco165" parent="." instance=ExtResource( 8 )]
+position = Vector2( 509.031, -1076.64 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco166" parent="." instance=ExtResource( 8 )]
+position = Vector2( 219.776, -902.947 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco167" parent="." instance=ExtResource( 8 )]
+position = Vector2( 542.903, -1076.64 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco168" parent="." instance=ExtResource( 8 )]
+position = Vector2( 590.894, -1077.02 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco169" parent="." instance=ExtResource( 8 )]
+position = Vector2( 442.281, -1051.8 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco170" parent="." instance=ExtResource( 8 )]
+position = Vector2( 253.533, -903.133 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco171" parent="." instance=ExtResource( 8 )]
+position = Vector2( 363.039, -903.302 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco172" parent="." instance=ExtResource( 8 )]
+position = Vector2( 395.843, -926.485 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco173" parent="." instance=ExtResource( 8 )]
+position = Vector2( 51.1096, -877.505 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco174" parent="." instance=ExtResource( 8 )]
+position = Vector2( 575.293, -1051.9 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco175" parent="." instance=ExtResource( 8 )]
+position = Vector2( 441.321, -951.078 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco176" parent="." instance=ExtResource( 8 )]
+position = Vector2( 117.686, -853.677 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco177" parent="." instance=ExtResource( 8 )]
+position = Vector2( 118.463, -878.313 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco178" parent="." instance=ExtResource( 8 )]
+position = Vector2( 186.14, -878.804 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco179" parent="." instance=ExtResource( 8 )]
+position = Vector2( 152.123, -878.541 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco180" parent="." instance=ExtResource( 8 )]
+position = Vector2( 286.728, -926.193 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco181" parent="." instance=ExtResource( 8 )]
+position = Vector2( 286.757, -900.494 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco182" parent="." instance=ExtResource( 8 )]
+position = Vector2( 429.906, -903.21 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco183" parent="." instance=ExtResource( 8 )]
+position = Vector2( 345.306, -853.291 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco184" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.2602, -853.445 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco185" parent="." instance=ExtResource( 8 )]
+position = Vector2( 151.592, -853.377 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco186" parent="." instance=ExtResource( 8 )]
+position = Vector2( 264.867, -926.167 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco187" parent="." instance=ExtResource( 8 )]
+position = Vector2( 219.51, -878.469 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco188" parent="." instance=ExtResource( 8 )]
+position = Vector2( 378.361, -878.896 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco189" parent="." instance=ExtResource( 8 )]
+position = Vector2( 345.41, -926.611 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco190" parent="." instance=ExtResource( 8 )]
+position = Vector2( 403.211, -853.688 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco191" parent="." instance=ExtResource( 8 )]
+position = Vector2( 253.215, -878.931 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco192" parent="." instance=ExtResource( 8 )]
+position = Vector2( 362.07, -925.319 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco193" parent="." instance=ExtResource( 8 )]
+position = Vector2( 253.077, -853.484 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco194" parent="." instance=ExtResource( 8 )]
+position = Vector2( 474.19, -951.111 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco195" parent="." instance=ExtResource( 8 )]
+position = Vector2( 507.867, -976.124 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco196" parent="." instance=ExtResource( 8 )]
+position = Vector2( 185.692, -853.574 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco197" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.612, -799.886 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco198" parent="." instance=ExtResource( 8 )]
+position = Vector2( 219.549, -853.571 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco199" parent="." instance=ExtResource( 8 )]
+position = Vector2( 411.924, -878.21 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco200" parent="." instance=ExtResource( 8 )]
+position = Vector2( 476.92, -878.132 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco201" parent="." instance=ExtResource( 8 )]
+position = Vector2( 444.433, -878.495 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco202" parent="." instance=ExtResource( 8 )]
+position = Vector2( 561.546, -799.905 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco203" parent="." instance=ExtResource( 8 )]
+position = Vector2( 575.238, -951.506 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco204" parent="." instance=ExtResource( 8 )]
+position = Vector2( 345.704, -903.375 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco205" parent="." instance=ExtResource( 8 )]
+position = Vector2( 345.289, -878.536 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco206" parent="." instance=ExtResource( 8 )]
+position = Vector2( 462.104, -926.079 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco207" parent="." instance=ExtResource( 8 )]
+position = Vector2( 508.122, -951.365 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco208" parent="." instance=ExtResource( 8 )]
+position = Vector2( 286.31, -853.582 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco209" parent="." instance=ExtResource( 8 )]
+position = Vector2( 541.719, -976.925 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco210" parent="." instance=ExtResource( 8 )]
+position = Vector2( 441.599, -975.968 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco211" parent="." instance=ExtResource( 8 )]
+position = Vector2( 437.015, -853.442 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco212" parent="." instance=ExtResource( 8 )]
+position = Vector2( 495.593, -799.812 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco213" parent="." instance=ExtResource( 8 )]
+position = Vector2( 541.732, -951.644 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco214" parent="." instance=ExtResource( 8 )]
+position = Vector2( 378.306, -853.505 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco215" parent="." instance=ExtResource( 8 )]
+position = Vector2( 463.473, -903.207 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco216" parent="." instance=ExtResource( 8 )]
+position = Vector2( 395.96, -903.182 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco217" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.328, -976.882 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco218" parent="." instance=ExtResource( 8 )]
+position = Vector2( 428.761, -926.245 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco219" parent="." instance=ExtResource( 8 )]
+position = Vector2( 470.776, -853.613 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco220" parent="." instance=ExtResource( 8 )]
+position = Vector2( 508.723, -1027.2 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco221" parent="." instance=ExtResource( 8 )]
+position = Vector2( 574.675, -1027.27 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco222" parent="." instance=ExtResource( 8 )]
+position = Vector2( 574.824, -976.838 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco223" parent="." instance=ExtResource( 8 )]
+position = Vector2( 542.692, -1027.27 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco224" parent="." instance=ExtResource( 8 )]
+position = Vector2( 69.1602, -1101.25 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco225" parent="." instance=ExtResource( 8 )]
+position = Vector2( 49.6778, -1051.48 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco226" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.0848, -1026.37 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco227" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.1262, -950.857 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco228" parent="." instance=ExtResource( 8 )]
+position = Vector2( 82.247, -977.244 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco229" parent="." instance=ExtResource( 8 )]
+position = Vector2( 188.077, -973.22 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco230" parent="." instance=ExtResource( 8 )]
+position = Vector2( 144.748, -1075.44 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco231" parent="." instance=ExtResource( 8 )]
+position = Vector2( 116.057, -1050.71 )
+isBattle = true
+isGrass = true
+pokes = "13, 1-3, 90, 1-2| 16, 1-3, 30, 1-2|19, 1-3, 30, 1-2|23, 1-3, 30, 1"
+
+[node name="Grama Alta Bloco232" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.8002, -878.536 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco233" parent="." instance=ExtResource( 8 )]
+position = Vector2( 543.619, -1101.94 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|23, 1-3, 30, 1|16, 1-3, 30, 1-2|19, 1-2, 50, 1-2"
+
+[node name="Grama Alta Bloco234" parent="." instance=ExtResource( 8 )]
+position = Vector2( 530.62, -903.21 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco235" parent="." instance=ExtResource( 8 )]
+position = Vector2( 590.932, -926.26 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco236" parent="." instance=ExtResource( 8 )]
+position = Vector2( 543.957, -879.182 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco237" parent="." instance=ExtResource( 8 )]
+position = Vector2( 489.295, -209.332 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco238" parent="." instance=ExtResource( 8 )]
+position = Vector2( 349.189, -782.392 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco239" parent="." instance=ExtResource( 8 )]
+position = Vector2( 522.831, -234.204 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco241" parent="." instance=ExtResource( 8 )]
+position = Vector2( 428.423, -304.999 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco242" parent="." instance=ExtResource( 8 )]
+position = Vector2( 577.892, -878.901 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco243" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.066, -901.734 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco244" parent="." instance=ExtResource( 8 )]
+position = Vector2( 571.629, -853.381 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco245" parent="." instance=ExtResource( 8 )]
+position = Vector2( 562.837, -925.687 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco246" parent="." instance=ExtResource( 8 )]
+position = Vector2( 564.493, -900.905 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco247" parent="." instance=ExtResource( 8 )]
+position = Vector2( 489.098, -233.261 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco248" parent="." instance=ExtResource( 8 )]
+position = Vector2( 504.576, -853.688 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco249" parent="." instance=ExtResource( 8 )]
+position = Vector2( 428.682, -233.052 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco250" parent="." instance=ExtResource( 8 )]
+position = Vector2( 496.839, -902.913 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco251" parent="." instance=ExtResource( 8 )]
+position = Vector2( 510.688, -878.38 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco252" parent="." instance=ExtResource( 8 )]
+position = Vector2( 529.065, -927.186 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco253" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.461, -877.102 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco254" parent="." instance=ExtResource( 8 )]
+position = Vector2( 589.25, -309.106 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco255" parent="." instance=ExtResource( 8 )]
+position = Vector2( 428.621, -258.511 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco256" parent="." instance=ExtResource( 8 )]
+position = Vector2( 428.729, -283.007 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco257" parent="." instance=ExtResource( 8 )]
+position = Vector2( 556.991, -235.232 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco258" parent="." instance=ExtResource( 8 )]
+position = Vector2( 590.982, -853.562 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco259" parent="." instance=ExtResource( 8 )]
+position = Vector2( 538.395, -853.614 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco261" parent="." instance=ExtResource( 8 )]
+position = Vector2( 495.609, -927.403 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco262" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.2259, -517.24 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco264" parent="." instance=ExtResource( 8 )]
+position = Vector2( 555.693, -284.367 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco265" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.5562, -567.306 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco266" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.4453, -643.547 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco267" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.1628, -307.203 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco268" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.5537, -307.08 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco269" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.1796, -592.578 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco270" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.4503, -592.734 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco271" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.5827, -643.271 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco272" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.4507, -542.536 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco273" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.304, -618.143 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco274" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.5928, -669.021 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco275" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.694, -542.35 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco276" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.2749, -694.556 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco277" parent="." instance=ExtResource( 8 )]
+position = Vector2( 488.392, -285.4 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco278" parent="." instance=ExtResource( 8 )]
+position = Vector2( 250.295, -697.661 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco279" parent="." instance=ExtResource( 8 )]
+position = Vector2( 522.971, -258.089 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco280" parent="." instance=ExtResource( 8 )]
+position = Vector2( 557.696, -258.141 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco281" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.77, -567.406 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco282" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.3741, -719.959 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco283" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.2994, -719.896 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco284" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.439, -466.482 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco285" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.49, -617.908 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco286" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.6186, -517.156 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco287" parent="." instance=ExtResource( 8 )]
+position = Vector2( 553.541, -308.34 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco289" parent="." instance=ExtResource( 8 )]
+position = Vector2( 590.572, -258.146 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco290" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.089, -235.872 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco292" parent="." instance=ExtResource( 8 )]
+position = Vector2( 488.613, -258.986 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco293" parent="." instance=ExtResource( 8 )]
+position = Vector2( 589.914, -285.13 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco294" parent="." instance=ExtResource( 8 )]
+position = Vector2( 521.323, -285.019 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco295" parent="." instance=ExtResource( 8 )]
+position = Vector2( 487.942, -308.268 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco296" parent="." instance=ExtResource( 8 )]
+position = Vector2( 146.477, -723.286 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco297" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.3911, -669.13 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco298" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.5576, -466.413 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco299" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.4891, -694.502 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco300" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.3582, -491.695 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco301" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.6968, -440.964 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco302" parent="." instance=ExtResource( 8 )]
+position = Vector2( 85.5316, -440.754 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco303" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.5962, -415.891 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco304" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.6101, -390.766 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco305" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.1906, -491.632 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco306" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.3214, -415.964 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco307" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.6551, -323.018 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco308" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.196, -390.871 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco309" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.7828, -365.827 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco310" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.2063, -365.766 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco311" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.0207, -340.668 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco312" parent="." instance=ExtResource( 8 )]
+position = Vector2( 50.4312, -340.631 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco313" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.7764, -217.054 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco315" parent="." instance=ExtResource( 8 )]
+position = Vector2( 139.396, -427.708 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco316" parent="." instance=ExtResource( 8 )]
+position = Vector2( 427.611, -353.808 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco317" parent="." instance=ExtResource( 8 )]
+position = Vector2( 393.85, -353.88 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco318" parent="." instance=ExtResource( 8 )]
+position = Vector2( 360.022, -380.688 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco319" parent="." instance=ExtResource( 8 )]
+position = Vector2( 84.2942, -319.323 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco320" parent="." instance=ExtResource( 8 )]
+position = Vector2( 297.09, -353.886 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco321" parent="." instance=ExtResource( 8 )]
+position = Vector2( 359.996, -430.485 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 20, 1-2|24, 1-5, 30, 1|21, 1-2, 70, 1-2|19, 1-2, 50, 1-2|20, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco322" parent="." instance=ExtResource( 8 )]
+position = Vector2( 297.384, -403.831 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco323" parent="." instance=ExtResource( 8 )]
+position = Vector2( 359.933, -353.755 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco324" parent="." instance=ExtResource( 8 )]
+position = Vector2( 359.795, -406.084 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco325" parent="." instance=ExtResource( 8 )]
+position = Vector2( 326.501, -453.154 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 20, 1-2|24, 1-5, 30, 1|21, 1-2, 70, 1-2|19, 1-2, 50, 1-2|20, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco326" parent="." instance=ExtResource( 8 )]
+position = Vector2( 263.594, -403.859 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco327" parent="." instance=ExtResource( 8 )]
+position = Vector2( 229.757, -403.897 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco328" parent="." instance=ExtResource( 8 )]
+position = Vector2( 292.611, -453.339 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 20, 1-2|24, 1-5, 30, 1|21, 1-2, 70, 1-2|19, 1-2, 50, 1-2|20, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco329" parent="." instance=ExtResource( 8 )]
+position = Vector2( 258.849, -453.219 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 20, 1-2|24, 1-5, 30, 1|21, 1-2, 70, 1-2|19, 1-2, 50, 1-2|20, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco330" parent="." instance=ExtResource( 8 )]
+position = Vector2( 360.083, -454.71 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 20, 1-2|24, 1-5, 30, 1|21, 1-2, 70, 1-2|19, 1-2, 50, 1-2|20, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco331" parent="." instance=ExtResource( 8 )]
+position = Vector2( 229.627, -353.914 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco332" parent="." instance=ExtResource( 8 )]
+position = Vector2( 196.615, -527.803 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco334" parent="." instance=ExtResource( 8 )]
+position = Vector2( 110.057, -451.302 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 90, 1-2"
+
+[node name="Grama Alta Bloco335" parent="." instance=ExtResource( 8 )]
+position = Vector2( 139.3, -451.518 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 90, 1-2"
+
+[node name="Grama Alta Bloco336" parent="." instance=ExtResource( 8 )]
+position = Vector2( 117.953, -402.417 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco337" parent="." instance=ExtResource( 8 )]
+position = Vector2( 204.03, -527.769 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco338" parent="." instance=ExtResource( 8 )]
+position = Vector2( 477.84, -433.103 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 20, 1-2|24, 1-5, 30, 1|21, 1-2, 70, 1-2|19, 1-2, 50, 1-2|20, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco339" parent="." instance=ExtResource( 8 )]
+position = Vector2( 436.118, -580.531 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco340" parent="." instance=ExtResource( 8 )]
+position = Vector2( 162.428, -353.74 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco341" parent="." instance=ExtResource( 8 )]
+position = Vector2( 141.691, -353.982 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco342" parent="." instance=ExtResource( 8 )]
+position = Vector2( 139.407, -402.417 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco343" parent="." instance=ExtResource( 8 )]
+position = Vector2( 196.662, -452.439 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 20, 1-2|24, 1-5, 30, 1|21, 1-2, 70, 1-2|19, 1-2, 50, 1-2|20, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco344" parent="." instance=ExtResource( 8 )]
+position = Vector2( 196.615, -427.57 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco345" parent="." instance=ExtResource( 8 )]
+position = Vector2( 195.862, -353.823 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco346" parent="." instance=ExtResource( 8 )]
+position = Vector2( 196.527, -403.8 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco347" parent="." instance=ExtResource( 8 )]
+position = Vector2( 283.241, -723.166 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco348" parent="." instance=ExtResource( 8 )]
+position = Vector2( 461.756, -799.776 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco349" parent="." instance=ExtResource( 8 )]
+position = Vector2( 424.701, -775.234 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco350" parent="." instance=ExtResource( 8 )]
+position = Vector2( 108.457, -427.431 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco351" parent="." instance=ExtResource( 8 )]
+position = Vector2( 263.187, -353.766 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco352" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.642, -580.693 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco353" parent="." instance=ExtResource( 8 )]
+position = Vector2( 360.076, -478.616 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco354" parent="." instance=ExtResource( 8 )]
+position = Vector2( 225.25, -452.942 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 20, 1-2|24, 1-5, 30, 1|21, 1-2, 70, 1-2|19, 1-2, 50, 1-2|20, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco355" parent="." instance=ExtResource( 8 )]
+position = Vector2( 504.393, -529.206 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco356" parent="." instance=ExtResource( 8 )]
+position = Vector2( 118.066, -544.727 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco357" parent="." instance=ExtResource( 8 )]
+position = Vector2( 118.093, -595.604 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco358" parent="." instance=ExtResource( 8 )]
+position = Vector2( 118.076, -494.185 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco359" parent="." instance=ExtResource( 8 )]
+position = Vector2( 118.061, -476.807 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco360" parent="." instance=ExtResource( 8 )]
+position = Vector2( 360.054, -502.712 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco361" parent="." instance=ExtResource( 8 )]
+position = Vector2( 261.86, -527.6 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco362" parent="." instance=ExtResource( 8 )]
+position = Vector2( 118.001, -519.271 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco363" parent="." instance=ExtResource( 8 )]
+position = Vector2( 118.105, -620.475 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco364" parent="." instance=ExtResource( 8 )]
+position = Vector2( 464.456, -645.173 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2|"
+
+[node name="Grama Alta Bloco365" parent="." instance=ExtResource( 8 )]
+position = Vector2( 249.405, -723.13 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco366" parent="." instance=ExtResource( 8 )]
+position = Vector2( 215.521, -723.102 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco367" parent="." instance=ExtResource( 8 )]
+position = Vector2( 327.768, -527.945 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco368" parent="." instance=ExtResource( 8 )]
+position = Vector2( 359.923, -526.622 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco369" parent="." instance=ExtResource( 8 )]
+position = Vector2( 427.074, -406.695 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco370" parent="." instance=ExtResource( 8 )]
+position = Vector2( 538.051, -528.943 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco371" parent="." instance=ExtResource( 8 )]
+position = Vector2( 393.301, -406.721 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco372" parent="." instance=ExtResource( 8 )]
+position = Vector2( 538.127, -478.631 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco373" parent="." instance=ExtResource( 8 )]
+position = Vector2( 503.835, -580.466 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco374" parent="." instance=ExtResource( 8 )]
+position = Vector2( 359.92, -527.859 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco375" parent="." instance=ExtResource( 8 )]
+position = Vector2( 538.147, -428.495 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 20, 1-2|24, 1-5, 30, 1|21, 1-2, 70, 1-2|19, 1-2, 50, 1-2|20, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco376" parent="." instance=ExtResource( 8 )]
+position = Vector2( 538.187, -453.538 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 20, 1-2|24, 1-5, 30, 1|21, 1-2, 70, 1-2|19, 1-2, 50, 1-2|20, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco377" parent="." instance=ExtResource( 8 )]
+position = Vector2( 571.646, -379.487 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco378" parent="." instance=ExtResource( 8 )]
+position = Vector2( 538.181, -503.59 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco379" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.529, -696.272 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco380" parent="." instance=ExtResource( 8 )]
+position = Vector2( 418.646, -528.947 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco381" parent="." instance=ExtResource( 8 )]
+position = Vector2( 557.006, -580.575 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco382" parent="." instance=ExtResource( 8 )]
+position = Vector2( 118.095, -570.245 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco383" parent="." instance=ExtResource( 8 )]
+position = Vector2( 118.092, -645.142 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco384" parent="." instance=ExtResource( 8 )]
+position = Vector2( 118.072, -669.32 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco385" parent="." instance=ExtResource( 8 )]
+position = Vector2( 317.059, -723.137 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco386" parent="." instance=ExtResource( 8 )]
+position = Vector2( 522.319, -353.908 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco387" parent="." instance=ExtResource( 8 )]
+position = Vector2( 571.628, -403.481 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco388" parent="." instance=ExtResource( 8 )]
+position = Vector2( 488.413, -353.861 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco389" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.206, -720.702 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco390" parent="." instance=ExtResource( 8 )]
+position = Vector2( 293.88, -527.968 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco391" parent="." instance=ExtResource( 8 )]
+position = Vector2( 360.098, -367.601 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco392" parent="." instance=ExtResource( 8 )]
+position = Vector2( 450.467, -753.081 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco393" parent="." instance=ExtResource( 8 )]
+position = Vector2( 350.77, -723.177 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco394" parent="." instance=ExtResource( 8 )]
+position = Vector2( 590.975, -743.8 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco395" parent="." instance=ExtResource( 8 )]
+position = Vector2( 528.328, -744.422 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco396" parent="." instance=ExtResource( 8 )]
+position = Vector2( 562.033, -744.456 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco397" parent="." instance=ExtResource( 8 )]
+position = Vector2( 450.34, -774.578 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco398" parent="." instance=ExtResource( 8 )]
+position = Vector2( 417.227, -752.969 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco399" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.246, -810.205 )
+isBattle = true
+isGrass = true
+pokes = ""
+
+[node name="Grama Alta Bloco400" parent="." instance=ExtResource( 8 )]
+position = Vector2( 528.024, -799.852 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco401" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.164, -830.081 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-3, 30, 1-2|13, 1-3, 30, 1-2|14, 1-2, 5, 1|11, 1-5, 5, 1| 16, 1-4, 30, 1-2|19, 1-3, 30, 1-2|21, 1-3, 10, 1-2|22, 1-5, 5, 1"
+
+[node name="Grama Alta Bloco333" parent="." instance=ExtResource( 8 )]
+position = Vector2( 470.014, -580.516 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco402" parent="." instance=ExtResource( 8 )]
+position = Vector2( 201.499, -580.621 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco403" parent="." instance=ExtResource( 8 )]
+position = Vector2( 556.084, -353.732 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco404" parent="." instance=ExtResource( 8 )]
+position = Vector2( 537.814, -403.562 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco405" parent="." instance=ExtResource( 8 )]
+position = Vector2( 571.608, -353.95 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Grama Alta Bloco406" parent="." instance=ExtResource( 8 )]
+position = Vector2( 372.327, -696.802 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco407" parent="." instance=ExtResource( 8 )]
+position = Vector2( 529.68, -696.863 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco408" parent="." instance=ExtResource( 8 )]
+position = Vector2( 439.43, -696.745 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco409" parent="." instance=ExtResource( 8 )]
+position = Vector2( 529.641, -671.797 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2|"
+
+[node name="Grama Alta Bloco410" parent="." instance=ExtResource( 8 )]
+position = Vector2( 405.51, -696.663 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco411" parent="." instance=ExtResource( 8 )]
+position = Vector2( 563.36, -671.641 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco412" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.4, -596.345 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco413" parent="." instance=ExtResource( 8 )]
+position = Vector2( 495.764, -671.578 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2|"
+
+[node name="Grama Alta Bloco414" parent="." instance=ExtResource( 8 )]
+position = Vector2( 179.416, -580.369 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco415" parent="." instance=ExtResource( 8 )]
+position = Vector2( 369.583, -580.621 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco416" parent="." instance=ExtResource( 8 )]
+position = Vector2( 296.828, -580.522 )
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco417" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.557, -619.747 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco418" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.414, -670.971 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2|"
+
+[node name="Grama Alta Bloco419" parent="." instance=ExtResource( 8 )]
+position = Vector2( 563.488, -696.873 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco420" parent="." instance=ExtResource( 8 )]
+position = Vector2( 445.095, -529.043 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco421" parent="." instance=ExtResource( 8 )]
+position = Vector2( 444.6, -459.116 )
+isBattle = true
+isGrass = true
+pokes = "23, 1-2, 20, 1-2|24, 1-5, 30, 1|21, 1-2, 70, 1-2|19, 1-2, 50, 1-2|20, 1-2, 3, 1"
+
+[node name="Grama Alta Bloco422" parent="." instance=ExtResource( 8 )]
+position = Vector2( 477.361, -483.958 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco423" parent="." instance=ExtResource( 8 )]
+position = Vector2( 402.568, -580.648 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco424" parent="." instance=ExtResource( 8 )]
+position = Vector2( 179.059, -527.901 )
+isBattle = true
+isGrass = true
+pokes = "10, 1-2, 90, 1-4| 13, 1-4, 90, 1-2"
+
+[node name="Grama Alta Bloco425" parent="." instance=ExtResource( 8 )]
+position = Vector2( 591.471, -645.401 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2|"
+
+[node name="Grama Alta Bloco426" parent="." instance=ExtResource( 8 )]
+position = Vector2( 179.606, -606.5 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco427" parent="." instance=ExtResource( 8 )]
+position = Vector2( 179.503, -669.906 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco428" parent="." instance=ExtResource( 8 )]
+position = Vector2( 179.486, -656.295 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco429" parent="." instance=ExtResource( 8 )]
+position = Vector2( 311.787, -580.579 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco431" parent="." instance=ExtResource( 8 )]
+position = Vector2( 250.747, -651.432 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco432" parent="." instance=ExtResource( 8 )]
+position = Vector2( 264.078, -580.432 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco433" parent="." instance=ExtResource( 8 )]
+position = Vector2( 179.382, -630.839 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco434" parent="." instance=ExtResource( 8 )]
+position = Vector2( 311.454, -630.924 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco435" parent="." instance=ExtResource( 8 )]
+position = Vector2( 372.385, -673.008 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco436" parent="." instance=ExtResource( 8 )]
+position = Vector2( 311.572, -605.868 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco437" parent="." instance=ExtResource( 8 )]
+position = Vector2( 372.724, -647.809 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco438" parent="." instance=ExtResource( 8 )]
+position = Vector2( 310.51, -698.552 )
+isBattle = true
+isGrass = true
+pokes = "16, 1-2, 90, 1-3|19, 1-4, 30, 1-2|17, 1-5, 10, 1"
+
+[node name="Grama Alta Bloco439" parent="." instance=ExtResource( 8 )]
+position = Vector2( 432.912, -645.172 )
+isBattle = true
+isGrass = true
+pokes = "19, 1-2, 90, 1-4|16, 1-4, 90, 1-2|"
+
+[node name="Grama Alta Bloco263" parent="." instance=ExtResource( 8 )]
+position = Vector2( 518.831, -308.11 )
+isGrass = true
+pokes = "10, 1-2, 90, 1-2| 13, 1-2, 30, 1-2"
+
+[node name="Placa_2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 344.641, -553.872 )
+
+[node name="Placa_Madeira" parent="." instance=ExtResource( 6 )]
+position = Vector2( 619.496, -179.954 )
+
+[node name="Potion2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 346.173, -320.823 )
+isDrop = true
+porcentProb = 10
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 360.833, -608.109 )
+isDrop = true
+porcentProb = 10
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Pokeball2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 331.349, -1020.27 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Potion9" parent="." instance=ExtResource( 5 )]
+position = Vector2( 416.905, -462.547 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion13" parent="." instance=ExtResource( 5 )]
+position = Vector2( 45.5481, -820.42 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Potion15" parent="." instance=ExtResource( 5 )]
+position = Vector2( 281.783, -1097.18 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 20,
+"idTm": 0
+}
+
+[node name="Revive8" parent="." instance=ExtResource( 10 )]
+position = Vector2( 387.294, -1100.26 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Revive9" parent="." instance=ExtResource( 10 )]
+position = Vector2( 273.926, -1012.43 )
+isDrop = true
+properties = {
+"catch": 0,
+"cure": 0,
+"idTm": 0,
+"revive": 2
+}
+
+[node name="Ambient" parent="." instance=ExtResource( 1 )]
+
+[node name="Grounds" parent="Ambient" index="0"]
+tile_data = PoolIntArray( -2031616, 0, 0, -2031615, 0, 0, -2031614, 0, 0, -2031613, 0, 0, -2031612, 0, 0, -2031611, 0, 0, -2031610, 0, 0, -2031609, 0, 0, -2031608, 0, 0, -2031607, 0, 0, -2031606, 0, 0, -2031605, 0, 0, -2031604, 0, 0, -2031603, 0, 0, -2031602, 0, 0, -2031601, 0, 0, -2031600, 0, 0, -2031599, 0, 0, -1966080, 0, 0, -1966079, 0, 0, -1966078, 0, 0, -1966077, 0, 0, -1966076, 0, 0, -1966075, 0, 0, -1966074, 0, 0, -1966073, 0, 0, -1966072, 0, 0, -1966071, 0, 0, -1966070, 0, 0, -1966069, 0, 0, -1966068, 0, 0, -1966067, 0, 0, -1966066, 0, 0, -1966065, 0, 0, -1966064, 0, 0, -1966063, 0, 0, -1900544, 0, 0, -1900543, 0, 0, -1900542, 0, 0, -1900541, 0, 0, -1900540, 0, 0, -1900539, 0, 0, -1900538, 0, 0, -1900537, 0, 0, -1900536, 0, 0, -1900535, 0, 0, -1900534, 0, 0, -1900533, 0, 0, -1900532, 0, 0, -1900531, 0, 0, -1900530, 0, 0, -1900529, 0, 0, -1900528, 0, 0, -1900527, 0, 0, -1835008, 0, 0, -1835007, 0, 0, -1835006, 0, 0, -1835003, 0, 0, -1835002, 0, 0, -1835001, 0, 0, -1835000, 0, 0, -1834999, 0, 0, -1834998, 0, 0, -1834997, 0, 0, -1834996, 0, 0, -1834994, 0, 0, -1834991, 0, 0, -1769472, 0, 0, -1769471, 0, 0, -1769470, 0, 0, -1769467, 0, 0, -1769466, 0, 0, -1769465, 0, 0, -1769464, 0, 0, -1769463, 0, 0, -1769462, 0, 0, -1769461, 0, 0, -1769460, 0, 0, -1769459, 0, 0, -1769458, 0, 0, -1769457, 0, 0, -1769456, 0, 0, -1769455, 0, 0, -1703936, 0, 0, -1703935, 0, 0, -1703934, 0, 0, -1703931, 0, 0, -1703930, 0, 0, -1703929, 0, 0, -1703928, 0, 0, -1703927, 0, 0, -1703926, 0, 0, -1703925, 0, 0, -1703924, 0, 0, -1703922, 0, 0, -1703921, 0, 0, -1703920, 0, 0, -1703919, 0, 0, -1638400, 0, 0, -1638399, 0, 0, -1638398, 0, 0, -1638397, 0, 0, -1638394, 0, 0, -1638393, 0, 0, -1638392, 0, 0, -1638391, 0, 0, -1638390, 0, 0, -1638389, 0, 0, -1638388, 0, 0, -1638386, 0, 0, -1638385, 0, 0, -1638384, 0, 0, -1638383, 0, 0, -1572864, 0, 0, -1572863, 0, 0, -1572862, 0, 0, -1572861, 0, 0, -1572860, 0, 0, -1572858, 0, 0, -1572857, 0, 0, -1572856, 0, 0, -1572855, 0, 0, -1572854, 0, 0, -1572853, 0, 0, -1572852, 0, 0, -1572851, 0, 0, -1572850, 0, 0, -1572848, 0, 0, -1572847, 0, 0, -1507328, 0, 0, -1507327, 0, 0, -1507326, 0, 0, -1507325, 0, 0, -1507324, 0, 0, -1507323, 0, 0, -1507322, 0, 0, -1507321, 0, 0, -1507320, 0, 0, -1507319, 0, 0, -1507318, 0, 0, -1507317, 0, 0, -1507316, 0, 0, -1507315, 0, 0, -1507314, 0, 0, -1507313, 0, 0, -1507312, 0, 0, -1507311, 0, 0, -1441792, 0, 0, -1441791, 0, 0, -1441790, 0, 0, -1441789, 0, 0, -1441788, 0, 0, -1441787, 0, 0, -1441786, 0, 0, -1441784, 0, 0, -1441783, 0, 0, -1441782, 0, 0, -1441781, 0, 0, -1441780, 0, 0, -1441779, 0, 0, -1441778, 0, 0, -1441777, 0, 0, -1441776, 0, 0, -1441775, 0, 0, -1376256, 0, 0, -1376255, 0, 0, -1376254, 0, 0, -1376253, 0, 0, -1376252, 0, 0, -1376251, 0, 0, -1376250, 0, 0, -1376249, 0, 0, -1376248, 0, 0, -1376247, 0, 0, -1376246, 0, 0, -1376245, 0, 0, -1376244, 0, 0, -1376243, 0, 0, -1376242, 0, 0, -1376241, 0, 0, -1376240, 0, 0, -1376239, 0, 0, -1310720, 0, 0, -1310719, 0, 0, -1310718, 0, 0, -1310717, 0, 0, -1310716, 0, 0, -1310715, 0, 0, -1310714, 0, 0, -1310713, 0, 0, -1310712, 0, 0, -1310711, 0, 0, -1310710, 0, 0, -1310709, 0, 0, -1310708, 0, 0, -1310707, 0, 0, -1310706, 0, 0, -1310705, 0, 0, -1310704, 0, 0, -1310703, 0, 0, -1245184, 0, 0, -1245183, 0, 0, -1245182, 0, 0, -1245181, 0, 0, -1245180, 0, 0, -1245179, 0, 0, -1245178, 0, 0, -1245177, 0, 0, -1245176, 0, 0, -1245175, 0, 0, -1245174, 0, 0, -1245173, 0, 0, -1245172, 0, 0, -1245171, 0, 0, -1245170, 0, 0, -1245169, 0, 0, -1245168, 0, 0, -1245167, 0, 0, -1179648, 0, 0, -1179647, 0, 0, -1179645, 0, 0, -1179644, 0, 0, -1179643, 0, 0, -1179642, 0, 0, -1179641, 0, 0, -1179640, 0, 0, -1179639, 0, 0, -1179638, 0, 0, -1179637, 0, 0, -1179636, 0, 0, -1179635, 0, 0, -1179634, 0, 0, -1179633, 0, 0, -1179632, 0, 0, -1179631, 0, 0, -1114112, 0, 0, -1114111, 0, 0, -1114108, 0, 0, -1114107, 0, 0, -1114106, 0, 0, -1114105, 0, 0, -1114104, 0, 0, -1114103, 0, 0, -1114102, 0, 0, -1114101, 0, 0, -1114100, 0, 0, -1114099, 0, 0, -1114098, 0, 0, -1114097, 0, 0, -1114096, 0, 0, -1114095, 0, 0, -1048576, 0, 0, -1048575, 0, 0, -1048572, 0, 0, -1048571, 0, 0, -1048570, 0, 0, -1048569, 0, 0, -1048568, 0, 0, -1048567, 0, 0, -1048566, 0, 0, -1048565, 0, 0, -1048564, 0, 0, -1048563, 0, 0, -1048562, 0, 0, -1048561, 0, 0, -1048560, 0, 0, -1048559, 0, 0, -983040, 0, 0, -983039, 0, 0, -983036, 0, 0, -983035, 0, 0, -983034, 0, 0, -983033, 0, 0, -983032, 0, 0, -983031, 0, 0, -983030, 0, 0, -983029, 0, 0, -983028, 0, 0, -983027, 0, 0, -983026, 0, 0, -983025, 0, 0, -983024, 0, 0, -983023, 0, 0, -917504, 0, 0, -917503, 0, 0, -917500, 0, 0, -917499, 0, 0, -917498, 0, 0, -917497, 0, 0, -917496, 0, 0, -917495, 0, 0, -917494, 0, 0, -917493, 0, 0, -917492, 0, 0, -917491, 0, 0, -917490, 0, 0, -917489, 0, 0, -917488, 0, 0, -917487, 0, 0, -851968, 0, 0, -851967, 0, 0, -851965, 0, 0, -851964, 0, 0, -851963, 0, 0, -851962, 0, 0, -851961, 0, 0, -851960, 0, 0, -851959, 0, 0, -851958, 0, 0, -851957, 0, 0, -851956, 0, 0, -851955, 0, 0, -851954, 0, 0, -851953, 0, 0, -851952, 0, 0, -851951, 0, 0, -786432, 0, 0, -786431, 0, 0, -786429, 0, 0, -786428, 0, 0, -786427, 0, 0, -786426, 0, 0, -786425, 0, 0, -786424, 0, 0, -786423, 0, 0, -786422, 0, 0, -786421, 0, 0, -786420, 0, 0, -786419, 0, 0, -786418, 0, 0, -786416, 0, 0, -786415, 0, 0, -720896, 0, 0, -720895, 0, 0, -720893, 0, 0, -720892, 0, 0, -720891, 0, 0, -720890, 0, 0, -720889, 0, 0, -720888, 0, 0, -720887, 0, 0, -720885, 0, 0, -720884, 0, 0, -720883, 0, 0, -720882, 0, 0, -720881, 0, 0, -720880, 0, 0, -720879, 0, 0, -655360, 0, 0, -655359, 0, 0, -655358, 0, 0, -655357, 0, 0, -655356, 0, 0, -655355, 0, 0, -655354, 0, 0, -655353, 0, 0, -655352, 0, 0, -655351, 0, 0, -655350, 0, 0, -655349, 0, 0, -655348, 0, 0, -655347, 0, 0, -655346, 0, 0, -655345, 0, 0, -655344, 0, 0, -655343, 0, 0, -589824, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -589817, 0, 0, -589816, 0, 0, -589815, 0, 0, -589814, 0, 0, -589813, 0, 0, -589812, 0, 0, -589811, 0, 0, -589810, 0, 0, -589809, 0, 0, -589808, 0, 0, -589807, 0, 0, -524288, 0, 0, -524287, 0, 0, -524286, 0, 0, -524285, 0, 0, -524284, 0, 0, -524283, 0, 0, -524282, 0, 0, -524281, 0, 0, -524280, 0, 0, -524279, 0, 0, -524277, 0, 0, -524276, 0, 0, -524275, 0, 0, -524274, 0, 0, -524273, 0, 0, -524272, 0, 0, -524271, 0, 0, -458752, 0, 0, -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458748, 0, 0, -458745, 0, 0, -458744, 0, 0, -458743, 0, 0, -458742, 0, 0, -458741, 0, 0, -458740, 0, 0, -458739, 0, 0, -458738, 0, 0, -458736, 0, 0, -458735, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -393206, 0, 0, -393205, 0, 0, -393204, 0, 0, -393203, 0, 0, -393202, 0, 0, -393200, 0, 0, -393199, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -327670, 0, 0, -327669, 0, 0, -327668, 0, 0, -327667, 0, 0, -327666, 0, 0, -327665, 0, 0, -327664, 0, 0, -327663, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262127, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -196592, 0, 0, -196591, 0, 0 )
+
+[editable path="Ambient"]

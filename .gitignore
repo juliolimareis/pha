@@ -1,0 +1,28 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Arquivos gerados pelo Godot
+*.uid
+*.import
+
+# Configurações locais de exportação
+export_presets.cfg
+
+# Arquivos temporários e backups
+*.tmp
+*.bak
+*.log
+
+# Pastas de build/exportação
+/build/
+/export/
+/bin/
+
+# Arquivos específicos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Configurações locais do editor (opcional)
+.vscode/
+*.code-workspace

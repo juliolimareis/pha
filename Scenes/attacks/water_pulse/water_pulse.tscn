@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/attacks/water_pulse/water_pulse.png" type="Texture" id=1]
+[ext_resource path="res://scripts/battle/moveStatus.gd" type="Script" id=2]
+[ext_resource path="res://scripts/battle/attack.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/attacks/water_pulse/water_pulse.tres" type="Animation" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 6.61015
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("attack:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[node name="Water Pulse" type="Area2D" groups=["fire_1"]]
+position = Vector2( -0.31498, 0.629959 )
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "water_pulse"
+time = 0.9
+prepare = false
+type = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0339104, -0.711632 )
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0.0716635, -0.578454 )
+scale = Vector2( 0.439997, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/attack = ExtResource( 4 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( 0.112394, -0.65047 )
+scale = Vector2( 0.556384, 0.57609 )
+texture = ExtResource( 1 )
+hframes = 3
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 60
+atkType = "Special"
+type = 4
+target = "range"
+effect = true
+effectAccuracy = 20
+effectTarget = "enemy"
+effectTime = 3.0
+enemyStatusCondition = {
+"burn": 0,
+"confusion": 10,
+"freeze": 0,
+"paralysis": 0,
+"poison": 0,
+"sleep": 0
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

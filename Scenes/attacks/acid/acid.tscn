@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://d265k7jox3v4m"]
+
+[ext_resource type="Texture2D" uid="uid://bc68kf0pdk875" path="res://Scenes/attacks/acid/acid.png" id="1"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://scripts/battle/attack.gd" id="3"]
+[ext_resource type="Animation" uid="uid://brd4n64if0ca8" path="res://Scenes/attacks/acid/acid.tres" id="4"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 6.29703
+
+[sub_resource type="Animation" id="2"]
+resource_name = "finished"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5bxq1"]
+_data = {
+&"attack": ExtResource("4"),
+&"finished": SubResource("2")
+}
+
+[node name="Acid" type="Area2D" groups=["fire_1"]]
+z_index = 2
+position = Vector2(-0.31498, 0.629959)
+collision_layer = 2
+script = ExtResource("3")
+attackName = "acid"
+animationFinished = true
+prepare = false
+type = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.602461, -0.289351)
+rotation = -1.5708
+shape = SubResource("1")
+
+[node name="notifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.360326, 0.0680201)
+scale = Vector2(0.29553, 0.386897)
+
+[node name="animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5bxq1")
+}
+
+[node name="attack" type="Sprite2D" parent="."]
+position = Vector2(0.0525987, -0.356212)
+rotation = 1.5708
+scale = Vector2(0.593544, 0.618344)
+texture = ExtResource("1")
+hframes = 4
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource("2")
+pwr = 40
+atkType = "Special"
+type = 7
+countdown = 2
+target = "range"
+effect = true
+effectAccuracy = 33
+effectTarget = "enemy"
+effectTime = 4.0
+enemyEffects = {
+"accuracy": {
+"add": 0,
+"reduce": 0
+},
+"atk": {
+"add": 0,
+"reduce": 0
+},
+"atkSp": {
+"add": 0,
+"reduce": 0
+},
+"def": {
+"add": 0,
+"reduce": 10
+},
+"defSp": {
+"add": 0,
+"reduce": 0
+},
+"hp": {
+"add": 0,
+"reduce": 0
+},
+"speed": {
+"add": 0,
+"reduce": 0
+}
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

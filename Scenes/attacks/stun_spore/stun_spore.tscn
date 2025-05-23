@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/attacks/stun_spore/stun_spore.png" type="Texture" id=1]
+[ext_resource path="res://scripts/battle/moveStatus.gd" type="Script" id=2]
+[ext_resource path="res://scripts/battle/attack.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/attacks/stun_spore/stun_spore.tres" type="Animation" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11.2554, 16.6635 )
+
+[node name="Stun Spore" type="Area2D" groups=[
+"fire_1",
+]]
+position = Vector2( -0.31498, 0.629959 )
+z_index = 10
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "stun_spore"
+move = false
+time = 0.8
+
+[node name="atk collision" type="CollisionShape2D" parent="."]
+position = Vector2( -0.279823, 0.811502 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.103188, 14.3911 )
+scale = Vector2( 1.29666, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( -0.195061, 17.1873 )
+scale = Vector2( 0.119511, 0.257352 )
+z_index = 10
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+atkType = "Physical"
+type = 6
+countdown = 4
+target = "sight"
+effect = true
+effectAccuracy = 75
+effectTarget = "enemy"
+enemyStatusCondition = {
+"burn": 0,
+"paralysis": 100,
+"poison": 0,
+"sleep": 0
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

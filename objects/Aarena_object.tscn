@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://img/fields/field2.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 111.998, 62.5543 )
+
+[node name="Aarena_object" type="Area2D"]
+scale = Vector2( 0.589307, 0.506997 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.63453, 0.457015 )
+scale = Vector2( 1.69691, 1.9724 )
+z_index = -1
+z_as_relative = false
+shape = SubResource( 22 )
+
+[node name="Field2" type="Sprite" parent="."]
+position = Vector2( -3.26275, 0.447518 )
+z_index = -1
+z_as_relative = false
+texture = ExtResource( 2 )

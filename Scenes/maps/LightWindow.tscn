@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://img/maps/sun.png" type="Texture" id=1]
+[ext_resource path="res://img/components/light_mold.png" type="Texture" id=2]
+[ext_resource path="res://scripts/map/light.gd" type="Script" id=3]
+
+[node name="LightMold" type="Sprite"]
+visible = false
+modulate = Color( 1, 1, 1, 0.403922 )
+scale = Vector2( 0.30407, 0.200736 )
+texture = ExtResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -1.28391, 1.30923 )
+scale = Vector2( 0.125681, 0.0912402 )
+enabled = false
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+isWindow = true

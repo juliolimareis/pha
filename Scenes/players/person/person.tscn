@@ -1,0 +1,290 @@
+[gd_scene load_steps=66 format=2]
+
+[ext_resource path="res://Scenes/players/person/Left.tres" type="Animation" id=1]
+[ext_resource path="res://Scenes/players/person/AttackUp.tres" type="Animation" id=2]
+[ext_resource path="res://Scenes/players/person/Down.tres" type="Animation" id=3]
+[ext_resource path="res://Scenes/players/person/RunLeft.tres" type="Animation" id=4]
+[ext_resource path="res://Scenes/players/person/Right.tres" type="Animation" id=5]
+[ext_resource path="res://scripts/player/Player.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/players/person/RunRight.tres" type="Animation" id=7]
+[ext_resource path="res://Scenes/players/person/Up.tres" type="Animation" id=8]
+[ext_resource path="res://Scenes/players/person/RunDown.tres" type="Animation" id=9]
+[ext_resource path="res://Scenes/players/person/RunUp.tres" type="Animation" id=10]
+[ext_resource path="res://Scenes/players/person/AttackSpRight.tres" type="Animation" id=11]
+[ext_resource path="res://Scenes/players/person/AttackSpUp.tres" type="Animation" id=12]
+[ext_resource path="res://Scenes/players/person/Dead.tres" type="Animation" id=13]
+[ext_resource path="res://Scenes/players/person/AttackLeft.tres" type="Animation" id=14]
+[ext_resource path="res://Scenes/players/person/Sleep.tres" type="Animation" id=15]
+[ext_resource path="res://Scenes/players/person/AttackDown.tres" type="Animation" id=16]
+[ext_resource path="res://Scenes/players/person/AttackRight.tres" type="Animation" id=17]
+[ext_resource path="res://Scenes/players/person/AttackSpDown.tres" type="Animation" id=18]
+[ext_resource path="res://Scenes/players/person/RunDead.tres" type="Animation" id=19]
+[ext_resource path="res://Scenes/players/person/AttackSpLeft.tres" type="Animation" id=20]
+[ext_resource path="res://Scenes/screens/name_player_theme.tres" type="Theme" id=21]
+[ext_resource path="res://img/icons/battle.png" type="Texture" id=22]
+[ext_resource path="res://img/components/shadow_mold_2.png" type="Texture" id=23]
+[ext_resource path="res://fonts/arial/ARIAL.TTF" type="DynamicFontData" id=24]
+[ext_resource path="res://Scenes/players/person/flashDamage.tres" type="Animation" id=25]
+[ext_resource path="res://scripts/player/action-area.gd" type="Script" id=26]
+[ext_resource path="res://img/players/person.png" type="Texture" id=28]
+
+[sub_resource type="CapsuleShape2D" id=36]
+radius = 3.73192
+height = 5.17605
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "attackLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "attackRight"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "attackDown"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "attackUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=6]
+blend_point_0/node = SubResource( 2 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 3 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 4 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 5 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "attackSpLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "attackSpRight"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "attackSpDown"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "attackSpUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=11]
+blend_point_0/node = SubResource( 7 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 8 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 9 )
+blend_point_2/pos = Vector2( 0, 1.1 )
+blend_point_3/node = SubResource( 10 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1.1, -1.1 )
+max_space = Vector2( 1.1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "left"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "right"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "down"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "up"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=16]
+blend_point_0/node = SubResource( 12 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 13 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 14 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 15 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "runLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "runRight"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "runDown"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "runUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=21]
+blend_point_0/node = SubResource( 17 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 18 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 19 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 20 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "dead"
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "runDead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+
+[sub_resource type="AnimationNodeStateMachine" id=34]
+states/Attack/node = SubResource( 6 )
+states/Attack/position = Vector2( 375, 220 )
+states/AttackSp/node = SubResource( 11 )
+states/AttackSp/position = Vector2( 545, 220 )
+states/Idle/node = SubResource( 16 )
+states/Idle/position = Vector2( 459, 119 )
+states/Run/node = SubResource( 21 )
+states/Run/position = Vector2( 640, 119 )
+states/dead/node = SubResource( 22 )
+states/dead/position = Vector2( 459, 26.7068 )
+states/runDead/node = SubResource( 23 )
+states/runDead/position = Vector2( 276.039, 119 )
+transitions = [ "Run", "Idle", SubResource( 24 ), "Idle", "Run", SubResource( 25 ), "Idle", "Attack", SubResource( 26 ), "Attack", "Idle", SubResource( 27 ), "Idle", "AttackSp", SubResource( 28 ), "AttackSp", "Idle", SubResource( 29 ), "runDead", "Idle", SubResource( 30 ), "Idle", "runDead", SubResource( 31 ), "dead", "Idle", SubResource( 32 ), "Idle", "dead", SubResource( 33 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -303.961, -8.29323 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=35]
+
+[sub_resource type="DynamicFont" id=37]
+size = 6
+outline_size = 1
+font_data = ExtResource( 24 )
+
+[sub_resource type="Theme" id=38]
+default_font = SubResource( 37 )
+
+[sub_resource type="CapsuleShape2D" id=39]
+radius = 5.06779
+height = 5.743
+
+[node name="Person" type="KinematicBody2D"]
+position = Vector2( -0.297302, -6.54064 )
+collision_layer = 16
+collision_mask = 44
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_vertical_guides_": [ -180.324 ]
+}
+
+[node name="ShadowMold2" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.454902 )
+position = Vector2( 0.0562849, 9.91642 )
+scale = Vector2( 0.299052, 0.147763 )
+texture = ExtResource( 23 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.805543, 0.805543 )
+texture = ExtResource( 28 )
+hframes = 12
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.368343, 5.84287 )
+rotation = 1.5708
+shape = SubResource( 36 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/attackDown = ExtResource( 16 )
+anims/attackLeft = ExtResource( 14 )
+anims/attackRight = ExtResource( 17 )
+anims/attackSpDown = ExtResource( 18 )
+anims/attackSpLeft = ExtResource( 20 )
+anims/attackSpRight = ExtResource( 11 )
+anims/attackSpUp = ExtResource( 12 )
+anims/attackUp = ExtResource( 2 )
+anims/dead = ExtResource( 13 )
+anims/down = ExtResource( 3 )
+anims/flashDamage = ExtResource( 25 )
+anims/left = ExtResource( 1 )
+anims/right = ExtResource( 5 )
+anims/runDead = ExtResource( 19 )
+anims/runDown = ExtResource( 9 )
+anims/runLeft = ExtResource( 4 )
+anims/runRight = ExtResource( 7 )
+anims/runUp = ExtResource( 10 )
+anims/sleep = ExtResource( 15 )
+anims/up = ExtResource( 8 )
+next/up = "up"
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 34 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 35 )
+parameters/Attack/blend_position = Vector2( 0.000589967, 0 )
+parameters/AttackSp/blend_position = Vector2( 0, 0 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Run/blend_position = Vector2( 0, 0 )
+
+[node name="Name" type="Label" parent="."]
+margin_left = -22.0
+margin_top = -20.1892
+margin_right = 22.0
+margin_bottom = -10.1892
+theme = ExtResource( 21 )
+custom_colors/font_color = Color( 0.254902, 0.266667, 0.305882, 1 )
+text = "Person"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChatLabel" type="Label" parent="."]
+margin_left = -21.2929
+margin_top = -30.4422
+margin_right = 22.7071
+margin_bottom = -20.4422
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource( 38 )
+custom_colors/font_color = Color( 0.254902, 0.266667, 0.305882, 1 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Battle" type="Sprite" parent="."]
+position = Vector2( 16.2881, -15.1237 )
+scale = Vector2( 0.0127327, 0.01181 )
+texture = ExtResource( 22 )
+
+[node name="TimerChat" type="Timer" parent="."]
+
+[node name="Action" type="Area2D" parent="."]
+position = Vector2( 0, 1 )
+collision_layer = 0
+collision_mask = 768
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Action"]
+position = Vector2( -0.702698, 0.608179 )
+shape = SubResource( 39 )
