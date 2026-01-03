@@ -226,7 +226,7 @@ states/runDead/position = Vector2(276.039, 119)
 states/sleep/node = SubResource("AnimationNodeAnimation_6vava")
 states/sleep/position = Vector2(567.039, 22.7068)
 transitions = ["Run", "Idle", SubResource("AnimationNodeStateMachineTransition_7deqw"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_m085i"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_dcacm"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_7n0eo"), "Idle", "AttackSp", SubResource("AnimationNodeStateMachineTransition_n675g"), "AttackSp", "Idle", SubResource("AnimationNodeStateMachineTransition_8xs7w"), "runDead", "Idle", SubResource("AnimationNodeStateMachineTransition_lsb4w"), "Idle", "runDead", SubResource("AnimationNodeStateMachineTransition_5024r"), "dead", "Idle", SubResource("35"), "Idle", "dead", SubResource("36"), "sleep", "Idle", SubResource("37"), "Idle", "sleep", SubResource("38")]
-graph_offset = Vector2(-303.961, -8.29323)
+graph_offset = Vector2(-303.961, 32.2582)
 
 [node name="Bulbasaur" type="CharacterBody2D"]
 collision_mask = 2
@@ -237,6 +237,7 @@ position = Vector2(0.417138, 0.417138)
 scale = Vector2(0.78726, 0.78726)
 texture = ExtResource("2_v8sop")
 hframes = 40
+frame = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.0626847, 4.23721)

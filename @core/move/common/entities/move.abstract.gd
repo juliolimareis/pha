@@ -1,4 +1,4 @@
-class_name PokemonMoveAbstract
+class_name MoveAbstract
 
 enum Type {
   PHYSICAL,

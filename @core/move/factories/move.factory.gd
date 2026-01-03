@@ -1,6 +1,6 @@
-class_name PokemonMoveFactory
+class_name MoveFactory
 
-static func build(code: int) -> PokemonMoveAbstract:
+static func build(code: int) -> MoveAbstract:
 	match code:
 		1:
 			return CharmAttack.new()

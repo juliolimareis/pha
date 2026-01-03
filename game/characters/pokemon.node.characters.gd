@@ -8,17 +8,17 @@ var pokemon: PokemonAbstract = PokemonFactory.build(code);
 #@export var MAX_SPEED = 65
 #@export var FRICTION = 400
 
-enum {
-	DEAD,
+enum State {
 	MOVE,
+	DEAD,
 	SLEEP,
 	ATTACK_1,
-  ATTACK_2,
-  ATTACK_3,
-  ATTACK_4,
+	ATTACK_2,
+	ATTACK_3,
+	ATTACK_4,
 }
 
-var state = MOVE
+var state = State.MOVE
 
 @export var isPlayer = true
 
@@ -33,11 +33,6 @@ var state = MOVE
 
 var input_vector = Vector2(0, 0)
 
-var move1: PokemonMoveAbstract = null
-var move2: PokemonMoveAbstract = null
-var move3: PokemonMoveAbstract = null
-var move4: PokemonMoveAbstract = null
-
 var momentAttack: int = 1
 var moveAttack: MoveNode
 var isAttack: bool = false
@@ -48,13 +43,13 @@ var max_speed_default: int = pokemon.max_speed
 
 func _init() -> void:
 	if codeMove1:
-		move1 = PokemonMoveFactory.build(codeMove1)
+		pokemon.addMove(codeMove1)
 	if codeMove2:
-		move2 = PokemonMoveFactory.build(codeMove2)
+		pokemon.addMove(codeMove2)
 	if codeMove3:
-		move3 = PokemonMoveFactory.build(codeMove3)
+		pokemon.addMove(codeMove3)
 	if codeMove4:
-		move4 = PokemonMoveFactory.build(codeMove4)
+		pokemon.addMove(codeMove4)
 
 func _ready():
 	mountSprite()
@@ -67,26 +62,23 @@ func _ready():
 
 func _process(delta):
 	match state:
-		MOVE:
+		State.ATTACK_1:
+			attack_state(0)
+		State.ATTACK_2:
+			attack_state(1)
+		State.ATTACK_3:
+			attack_state(2)
+		State.ATTACK_4:
+			attack_state(3)
+		State.MOVE:
 			move_state(delta)
 			isAttack = false
-		SLEEP:
+		State.SLEEP:
 			animationTree.set("parameters/sleep/blend_position", input_vector)
 			animationState.travel("sleep")
-		DEAD:
+		State.DEAD:
 			animationTree.set("parameters/dead/blend_position", input_vector)
 			animationState.travel("dead")
-		ATTACK_1:
-			attack_1_state()
-		ATTACK_2:
-			attack_2_state()
-		ATTACK_3:
-			attack_3_state()
-		ATTACK_4:
-			attack_4_state()
-
-func getAttackPath(path: String) -> String:
-	return "res://Scenes/attacks/" + str(path) + "/" + str(path) + ".tscn"
 
 func move_state(delta: float) -> void:
 	if isPlayer:
@@ -112,13 +104,13 @@ func move_state(delta: float) -> void:
 	
 	#if(isPlayer && !isAttack):
 	if Input.is_action_just_pressed("attack_1"):
-		atk1()
+		prepareMove(State.ATTACK_1)
 	elif Input.is_action_just_pressed("attack_2"):
-		atk2()
+		prepareMove(State.ATTACK_2)
 	elif Input.is_action_just_pressed("attack_3"):
-		atk3()
+		prepareMove(State.ATTACK_3)
 	elif Input.is_action_just_pressed("attack_4"):
-		atk4()
+		prepareMove(State.ATTACK_4)
 
 func mountSprite() -> void:
 	var sprite_path = VariablesGlobal.getPokemonSprite(pokemon.name)
@@ -132,53 +124,29 @@ func mountSprite() -> void:
 	texture.set_image(image)
 	get_node("Sprite").texture = texture
 
-func atk1():
-	if(move1):
-		momentAttack = 1
+func prepareMove(moveState: State):
+	if(pokemon.moveExist(moveState)):
+		momentAttack = moveState
 		isAttack = true
-		state = ATTACK_1
-func atk2():
-	if(move2):
-		momentAttack = 2
-		isAttack = true
-		state = ATTACK_2
-func atk3():
-	if(move2):
-		momentAttack = 3
-		isAttack = true
-		state = ATTACK_3
-func atk4():
-	if(move4):
-		momentAttack = 4
-		isAttack = true
-		state = ATTACK_4
+		state = moveState
 
-func attack_1_state():
-	if(isAttack):
-		instanceAndAnimateAttack(move1)
-func attack_2_state():
-	if(isAttack):
-		instanceAndAnimateAttack(move2)
-func attack_3_state():
-	if(isAttack):
-		instanceAndAnimateAttack(move2)
-func attack_4_state():
-	if(isAttack):
-		instanceAndAnimateAttack(move4)
+func attack_state(index: int):
+	if(isAttack and pokemon.moveExist(index)):
+		instanceAndAnimateAttack(index)
 	
-func instanceAndAnimateAttack(pathMove):
+func instanceAndAnimateAttack(index: int):
 	isAttack = false
+	var moveNode = VariablesGlobal.getMoveInstance(pokemon.getMove(index).name)
 
-	if pathMove:
-		moveAttack = load(pathMove).instance()
-		animationStateAttack(moveAttack)
+	if moveNode:
+		animationStateAttack(moveNode)
 	
-#animação chama este evento
-func attack_animation_fnished():
+# animação chama este evento
+func attack_animation_finished():
 	attack()
 	isAttack = false
 	isMove = true
-	state = MOVE
+	state = State.MOVE
 
 func attack():
 	if(moveAttack != null):
@@ -243,8 +211,8 @@ func atkRange():
 		#moveAttack.global_position = $closeAttack.global_position
 		#get_parent().add_child(moveAttack)
 
-func animationStateAttack(moveAttack: MoveNode):
-	if(moveAttack.status.atkType == "Physical"):
+func animationStateAttack(moveNode: MoveNode):
+	if(moveNode.status.atkType == "Physical"):
 		animationState.travel("Attack")
 	else:
 		animationState.travel("AttackSp")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture" uid="uid://bh0y6vsass5by" path="res://Scenes/attacks/sand_attack/sand_attack.png" id="1"]
 [ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
-[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.gd" id="3"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="3"]
 [ext_resource type="Animation" path="res://Scenes/attacks/sand_attack/sand_attack.tres" id="4"]
 
 [sub_resource type="CircleShape2D" id=1]

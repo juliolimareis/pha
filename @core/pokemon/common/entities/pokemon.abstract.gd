@@ -7,15 +7,42 @@ var status_effects: Array[PokemonStatusEffect] = []
 var status_effects_unaffected: Array[PokemonStatusEffect] = []
 var isUnaffected = false
 
-var moves: Array[PokemonMoveAbstract] = []
+var _moves: Array[PokemonMoveAbstract] = []
 
 func _init():
 	if get_class() == "PokemonAbstract":
 		push_error("PokemonAbstract is abstract class")
 
-func getAttack(attack_id: int) -> PokemonMoveAbstract:
-	if moves.has(attack_id - 1):
-		return moves[attack_id - 1]
+func getMove(index: int) -> PokemonMoveAbstract:
+	if _moves.has(index):
+		return _moves[index]
 	else:
+		push_error("Invalid move index: " + str(index))
 		return null
 
+func moveExist(index: int) -> bool:
+	return _moves.has(index)
+
+func replaceMove(moveCode: int, index: int):
+	if index >= 0 && index < _moves.size():
+		var new_move = PokemonMoveFactory.build(moveCode)
+
+		if !new_move:
+			push_error("Invalid move code: " + str(moveCode))
+			return
+
+		_moves[index] = new_move
+	else:
+		push_error("Invalid move index: " + str(index))
+
+func addMove(moveCode: int):
+	if _moves.size() < 4:
+		var new_move = PokemonMoveFactory.build(moveCode)
+
+		if !new_move:
+			push_error("Invalid move code: " + str(moveCode))
+			return
+	  
+		_moves.append(new_move)
+	else:
+		push_error("Cannot add more than 4 moves to a Pokemon.")

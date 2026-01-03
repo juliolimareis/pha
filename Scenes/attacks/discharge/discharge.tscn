@@ -3,7 +3,7 @@
 [ext_resource type="Texture" uid="uid://c1gwclmim2e7j" path="res://Scenes/attacks/discharge/discharge.png" id="1"]
 [ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
 [ext_resource type="Animation" path="res://Scenes/attacks/discharge/Discharge.tres" id="3"]
-[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.gd" id="4"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="4"]
 [ext_resource type="Texture" uid="uid://7yf3psjytf0o" path="res://img/maps/sun.png" id="5"]
 
 [sub_resource type="CapsuleShape2D" id=1]

@@ -1,4 +1,4 @@
-extends PokemonMoveAbstract
+extends MoveAbstract
 class_name CharmAttack
 
 func _init() -> void:
@@ -7,5 +7,5 @@ func _init() -> void:
   name = "Charm"
   pwr = 20
   countdown = 1
-  type = PokemonMoveAbstract.Type.SPECIAL
+  type = MoveAbstract.Type.SPECIAL
   atkType = PokemonType.FAIRY

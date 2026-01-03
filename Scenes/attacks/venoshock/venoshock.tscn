@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture" uid="uid://coe8yymbddrsf" path="res://Scenes/attacks/venoshock/venoshock.png" id="1"]
 [ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
-[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.gd" id="3"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="3"]
 [ext_resource type="Animation" path="res://Scenes/attacks/venoshock/venoshock.tres" id="4"]
 [ext_resource type="Texture" uid="uid://bg5t0bqe3m57h" path="res://Scenes/attacks/venoshock/venoshock_finished.png" id="5"]
 

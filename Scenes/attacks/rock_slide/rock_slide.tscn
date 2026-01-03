@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture" uid="uid://djx8waun0q2y3" path="res://Scenes/attacks/rock_slide/rock_slide.png" id="1"]
 [ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
-[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.gd" id="3"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="3"]
 [ext_resource type="Animation" path="res://Scenes/attacks/rock_slide/rock_slide.tres" id="4"]
 [ext_resource type="Texture" uid="uid://cmgy5nei51s86" path="res://img/components/shadow_mold_2.png" id="5"]
 
