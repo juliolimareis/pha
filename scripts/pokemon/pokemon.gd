@@ -34,7 +34,7 @@ var pathMove3 = ""
 var pathMove4 = ""
 
 var momentAttack: int = 1
-var moveAttack: MoveAttack
+var moveAttack: MoveNode
 var isAttack: bool = false
 var directionPoke = Vector2(-1,0)
 var isMove: bool = true
@@ -240,7 +240,7 @@ func atkRange():
 		#moveAttack.global_position = $closeAttack.global_position
 		#get_parent().add_child(moveAttack)
 
-func animationStateAttack(moveAttack: MoveAttack):
+func animationStateAttack(moveAttack: MoveNode):
 	if(moveAttack.status.atkType == "Physical"):
 		animationState.travel("Attack")
 	else:

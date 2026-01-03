@@ -1,6 +1,6 @@
 [gd_scene load_steps=63 format=3 uid="uid://5lnaufpt6ets"]
 
-[ext_resource type="Script" uid="uid://c64by8kfuv433" path="res://@core/pokemon/application/services/pokemon.service.gd" id="1_xcxl1"]
+[ext_resource type="Script" uid="uid://c64by8kfuv433" path="res://game/characters/pokemon.node.characters.gd" id="1_xcxl1"]
 [ext_resource type="Texture2D" uid="uid://bebqfyxegyhh8" path="res://img/pokemons/Bulbasaur.png" id="2_v8sop"]
 [ext_resource type="Animation" uid="uid://otjog8qexxx0" path="res://Scenes/characters/Bulbasaur/AttackDown.tres" id="3_mv5ef"]
 [ext_resource type="Animation" uid="uid://5gwjj4hnws8w" path="res://Scenes/characters/Bulbasaur/AttackLeft.tres" id="4_4qogf"]

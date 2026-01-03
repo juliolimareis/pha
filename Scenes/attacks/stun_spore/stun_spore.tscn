@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/attacks/stun_spore/stun_spore.png" type="Texture" id=1]
-[ext_resource path="res://scripts/battle/moveStatus.gd" type="Script" id=2]
-[ext_resource path="res://scripts/battle/attack.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/attacks/stun_spore/stun_spore.tres" type="Animation" id=4]
+[ext_resource type="Texture" uid="uid://doh1llbwft4jf" path="res://Scenes/attacks/stun_spore/stun_spore.png" id="1"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.gd" id="3"]
+[ext_resource type="Animation" path="res://Scenes/attacks/stun_spore/stun_spore.tres" id="4"]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.2554, 16.6635 )

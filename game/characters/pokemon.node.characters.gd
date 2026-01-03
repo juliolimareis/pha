@@ -1,6 +1,5 @@
 extends CharacterBody2D
-
-class_name PokemonTscn 
+class_name PokemonNode 
 
 @export var code: int = 1
 var pokemon: PokemonAbstract = PokemonFactory.build(code);
@@ -13,17 +12,20 @@ enum {
 	DEAD,
 	MOVE,
 	SLEEP,
-	ATTACK_1, ATTACK_2, ATTACK_3, ATTACK_4,
+	ATTACK_1,
+  ATTACK_2,
+  ATTACK_3,
+  ATTACK_4,
 }
 
 var state = MOVE
 
 @export var isPlayer = true
 
-@export var move1: String = ""
-@export var move2: String = ""
-@export var move3: String = ""
-@export var move4: String = ""
+@export var codeMove1: int = 0
+@export var codeMove2: int = 0
+@export var codeMove3: int = 0
+@export var codeMove4: int = 0
 
 @onready var animationTree: AnimationTree = $AnimationTree
 @onready var animationPlayer = $AnimationPlayer
@@ -31,22 +33,31 @@ var state = MOVE
 
 var input_vector = Vector2(0, 0)
 
-var pathMove1 = ""
-var pathMove2 = ""
-var pathMove3 = ""
-var pathMove4 = ""
+var move1: PokemonMoveAbstract = null
+var move2: PokemonMoveAbstract = null
+var move3: PokemonMoveAbstract = null
+var move4: PokemonMoveAbstract = null
 
 var momentAttack: int = 1
-var moveAttack: MoveAttack
+var moveAttack: MoveNode
 var isAttack: bool = false
 var directionPoke = Vector2(-1,0)
 var isMove: bool = true
 var isNetwork: bool = false
 var max_speed_default: int = pokemon.max_speed
 
+func _init() -> void:
+	if codeMove1:
+		move1 = PokemonMoveFactory.build(codeMove1)
+	if codeMove2:
+		move2 = PokemonMoveFactory.build(codeMove2)
+	if codeMove3:
+		move3 = PokemonMoveFactory.build(codeMove3)
+	if codeMove4:
+		move4 = PokemonMoveFactory.build(codeMove4)
+
 func _ready():
 	mountSprite()
-	mountAttacks()
 	animationPlayer.active = true
 	animationTree.active = true
 
@@ -73,6 +84,9 @@ func _process(delta):
 			attack_3_state()
 		ATTACK_4:
 			attack_4_state()
+
+func getAttackPath(path: String) -> String:
+	return "res://Scenes/attacks/" + str(path) + "/" + str(path) + ".tscn"
 
 func move_state(delta: float) -> void:
 	if isPlayer:
@@ -107,60 +121,50 @@ func move_state(delta: float) -> void:
 		atk4()
 
 func mountSprite() -> void:
-	var sprite_path = "res://img/pokemons/"+str(pokemon.name)+".png"
+	var sprite_path = VariablesGlobal.getPokemonSprite(pokemon.name)
 	var image = Image.new()
 	var error = image.load(sprite_path)
 	var texture: ImageTexture = ImageTexture.new()
 	
 	if (error != OK):
-		push_error("Error loading pokemon sprite")
+		push_error("Error loading pokemon sprite" + pokemon.name)
   
 	texture.set_image(image)
 	get_node("Sprite").texture = texture
 
-func mountAttacks():
-	if(move1):
-		move1 = "res://Scenes/attacks/"+str(move1)+"/"+str(move1)+".tscn"
-	if(move2):
-		move2 = "res://Scenes/attacks/"+str(move2)+"/"+str(move2)+".tscn"
-	if(move3):
-		move3 = "res://Scenes/attacks/"+str(move3)+"/"+str(move3)+".tscn"
-	if(move4):
-		move4 = "res://Scenes/attacks/"+str(move4)+"/"+str(move4)+".tscn"
-
 func atk1():
-	if(pathMove1):
+	if(move1):
 		momentAttack = 1
 		isAttack = true
 		state = ATTACK_1
 func atk2():
-	if(pathMove2):
+	if(move2):
 		momentAttack = 2
 		isAttack = true
 		state = ATTACK_2
 func atk3():
-	if(pathMove3):
+	if(move2):
 		momentAttack = 3
 		isAttack = true
 		state = ATTACK_3
 func atk4():
-	if(pathMove4):
+	if(move4):
 		momentAttack = 4
 		isAttack = true
 		state = ATTACK_4
 
 func attack_1_state():
 	if(isAttack):
-		instanceAndAnimateAttack(pathMove1)
+		instanceAndAnimateAttack(move1)
 func attack_2_state():
 	if(isAttack):
-		instanceAndAnimateAttack(pathMove2)
+		instanceAndAnimateAttack(move2)
 func attack_3_state():
 	if(isAttack):
-		instanceAndAnimateAttack(pathMove3)
+		instanceAndAnimateAttack(move2)
 func attack_4_state():
 	if(isAttack):
-		instanceAndAnimateAttack(pathMove4)
+		instanceAndAnimateAttack(move4)
 	
 func instanceAndAnimateAttack(pathMove):
 	isAttack = false
@@ -239,7 +243,7 @@ func atkRange():
 		#moveAttack.global_position = $closeAttack.global_position
 		#get_parent().add_child(moveAttack)
 
-func animationStateAttack(moveAttack: MoveAttack):
+func animationStateAttack(moveAttack: MoveNode):
 	if(moveAttack.status.atkType == "Physical"):
 		animationState.travel("Attack")
 	else:

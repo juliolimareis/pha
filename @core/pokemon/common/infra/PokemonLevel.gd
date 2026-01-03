@@ -66,16 +66,16 @@ static func calcLimitLevel(levelingRate: LevelingRate, level: int) -> int:
 		n = pow(level,3)
 	  #se for level menor que 15
 		if(level < 15):
-			n2 = level+1/3
-			n2 = n2+24
-			n2 = n2/50
-			n = n*n2
+			n2 = level + 1/3
+			n2 = n2 + 24
+			n2 = n2 / 50
+			n = n * n2
 		#se for level maior que 14 e menor que 36
 		elif(level >= 15 && level < 36):
-			n2 = level+14/50
+			n2 = level + 14/50
 			n = n*n2
 		#se for level maior que 35
 		elif(level > 35):
-			n2 =  int((level/2)+32/50)
+			n2 =  int((level/2) + 32/50)
 			n = n*n2
 	return int(n)

@@ -1,6 +1,6 @@
 extends Area2D
 
-class_name MoveAttack
+class_name MoveNode
 
 @export var attackName = "scratch"
 @export var animationFinished = false
