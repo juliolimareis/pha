@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://5lnaufpt6ets"]
+[gd_scene load_steps=64 format=3 uid="uid://5lnaufpt6ets"]
 
 [ext_resource type="Script" uid="uid://c64by8kfuv433" path="res://game/characters/pokemon.node.characters.gd" id="1_xcxl1"]
 [ext_resource type="Texture2D" uid="uid://bebqfyxegyhh8" path="res://img/pokemons/Bulbasaur.png" id="2_v8sop"]
@@ -18,7 +18,7 @@
 [ext_resource type="Animation" uid="uid://dmbj0w3lnyy05" path="res://Scenes/characters/Bulbasaur/RunDown.tres" id="16_qnnfx"]
 [ext_resource type="Animation" uid="uid://rlnp4mupd6p" path="res://Scenes/characters/Bulbasaur/RunLeft.tres" id="17_ho5jt"]
 [ext_resource type="Animation" uid="uid://bfxm0mackw1p1" path="res://Scenes/characters/Bulbasaur/RunRight.tres" id="18_kqmil"]
-[ext_resource type="Animation" path="res://Scenes/characters/Bulbasaur/RunUp.tres" id="19_sr55i"]
+[ext_resource type="Animation" uid="uid://din4truankjux" path="res://Scenes/characters/Bulbasaur/RunUp.tres" id="19_sr55i"]
 [ext_resource type="Animation" path="res://Scenes/characters/Bulbasaur/Sleep.tres" id="20_tu8v5"]
 [ext_resource type="Animation" uid="uid://bfo5bqia3in32" path="res://Scenes/characters/Bulbasaur/Up.tres" id="21_nyfbj"]
 [ext_resource type="Script" uid="uid://bpbh24u1sky75" path="res://scripts/battle/sight.gd" id="22_4yiff"]
@@ -31,36 +31,28 @@ height = 3.4855
 radius = 2.78354
 height = 5.56707
 
-[sub_resource type="Animation" id="3"]
-resource_name = "flashDamage"
-length = 0.3
+[sub_resource type="Animation" id="Animation_djxgp"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("")
+tracks/0/path = NodePath("Attack/sight:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, true, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.972549, 0.352941, 0.352941, 1), Color(1, 1, 1, 1)]
+"values": [Vector2(0, -17)]
 }
+
+[sub_resource type="Animation" id="3"]
+resource_name = "flashDamage"
+length = 0.3
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h605k"]
 _data = {
+&"RESET": SubResource("Animation_djxgp"),
 &"attackDown": ExtResource("3_mv5ef"),
 &"attackLeft": ExtResource("4_4qogf"),
 &"attackRight": ExtResource("5_eqpno"),
@@ -219,6 +211,7 @@ states/Idle/node = SubResource("18")
 states/Idle/position = Vector2(459, 119)
 states/Run/node = SubResource("AnimationNodeBlendSpace2D_d76pk")
 states/Run/position = Vector2(640, 119)
+states/Start/position = Vector2(130, 119)
 states/dead/node = SubResource("AnimationNodeAnimation_ue1ud")
 states/dead/position = Vector2(353, 22.7068)
 states/runDead/node = SubResource("AnimationNodeAnimation_ng807")
@@ -226,18 +219,19 @@ states/runDead/position = Vector2(276.039, 119)
 states/sleep/node = SubResource("AnimationNodeAnimation_6vava")
 states/sleep/position = Vector2(567.039, 22.7068)
 transitions = ["Run", "Idle", SubResource("AnimationNodeStateMachineTransition_7deqw"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_m085i"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_dcacm"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_7n0eo"), "Idle", "AttackSp", SubResource("AnimationNodeStateMachineTransition_n675g"), "AttackSp", "Idle", SubResource("AnimationNodeStateMachineTransition_8xs7w"), "runDead", "Idle", SubResource("AnimationNodeStateMachineTransition_lsb4w"), "Idle", "runDead", SubResource("AnimationNodeStateMachineTransition_5024r"), "dead", "Idle", SubResource("35"), "Idle", "dead", SubResource("36"), "sleep", "Idle", SubResource("37"), "Idle", "sleep", SubResource("38")]
-graph_offset = Vector2(-303.961, 32.2582)
+graph_offset = Vector2(-303.961, 66.3018)
 
 [node name="Bulbasaur" type="CharacterBody2D"]
 collision_mask = 2
 script = ExtResource("1_xcxl1")
+code = 1
+codeMove1 = 1
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0.417138, 0.417138)
 scale = Vector2(0.78726, 0.78726)
 texture = ExtResource("2_v8sop")
 hframes = 40
-frame = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.0626847, 4.23721)
@@ -267,9 +261,10 @@ parameters/Run/blend_position = Vector2(-0.0017699, -0.00709224)
 
 [node name="sight" type="Marker2D" parent="Attack"]
 z_index = 20
-position = Vector2(60.4476, -9.70061)
-rotation = -0.191986
+position = Vector2(0, -17)
 script = ExtResource("22_4yiff")
 color = Color(0.980392, 0.305882, 0.176471, 1)
 
 [node name="range" type="Marker2D" parent="Attack"]
+
+[connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished_tree"]

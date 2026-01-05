@@ -1,21 +1,21 @@
 extends CharacterBody2D
 class_name PokemonNode 
 
-@export var code: int = 1
-var pokemon: PokemonAbstract = PokemonFactory.build(code);
+@export var code: int = 0
+var pokemon: PokemonAbstract = null
 
 #@export var ACCELERATION = 400
 #@export var MAX_SPEED = 65
 #@export var FRICTION = 400
 
 enum State {
-	MOVE,
-	DEAD,
-	SLEEP,
 	ATTACK_1,
 	ATTACK_2,
 	ATTACK_3,
 	ATTACK_4,
+	MOVE,
+	DEAD,
+	SLEEP,
 }
 
 var state = State.MOVE
@@ -39,9 +39,12 @@ var isAttack: bool = false
 var directionPoke = Vector2(-1,0)
 var isMove: bool = true
 var isNetwork: bool = false
-var max_speed_default: int = pokemon.max_speed
+var max_speed_default: int = 0
 
-func _init() -> void:
+func mount() -> void:
+	pokemon = PokemonFactory.build(code)
+	max_speed_default = pokemon.max_speed
+
 	if codeMove1:
 		pokemon.addMove(codeMove1)
 	if codeMove2:
@@ -52,6 +55,7 @@ func _init() -> void:
 		pokemon.addMove(codeMove4)
 
 func _ready():
+	mount()
 	mountSprite()
 	animationPlayer.active = true
 	animationTree.active = true
@@ -72,7 +76,6 @@ func _process(delta):
 			attack_state(3)
 		State.MOVE:
 			move_state(delta)
-			isAttack = false
 		State.SLEEP:
 			animationTree.set("parameters/sleep/blend_position", input_vector)
 			animationState.travel("sleep")
@@ -81,6 +84,10 @@ func _process(delta):
 			animationState.travel("dead")
 
 func move_state(delta: float) -> void:
+	if !isMove:
+		animationState.travel("Idle")
+		return
+	
 	if isPlayer:
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -113,10 +120,10 @@ func move_state(delta: float) -> void:
 		prepareMove(State.ATTACK_4)
 
 func mountSprite() -> void:
-	var sprite_path = VariablesGlobal.getPokemonSprite(pokemon.name)
-	var image = Image.new()
-	var error = image.load(sprite_path)
-	var texture: ImageTexture = ImageTexture.new()
+	var sprite_path := VariablesGlobal.getPokemonSprite(pokemon.name)
+	var image := Image.new()
+	var error := image.load(sprite_path)
+	var texture := ImageTexture.new()
 	
 	if (error != OK):
 		push_error("Error loading pokemon sprite" + pokemon.name)
@@ -125,25 +132,27 @@ func mountSprite() -> void:
 	get_node("Sprite").texture = texture
 
 func prepareMove(moveState: State):
-	if(pokemon.moveExist(moveState)):
+	if(pokemon.hasMoveIndex(moveState)):
 		momentAttack = moveState
 		isAttack = true
 		state = moveState
 
 func attack_state(index: int):
-	if(isAttack and pokemon.moveExist(index)):
+	if(isAttack and pokemon.hasMoveIndex(index)):
 		instanceAndAnimateAttack(index)
+	else:
+		state = State.MOVE
 	
 func instanceAndAnimateAttack(index: int):
-	isAttack = false
 	var moveNode = VariablesGlobal.getMoveInstance(pokemon.getMove(index).name)
 
 	if moveNode:
+		isMove = false
 		animationStateAttack(moveNode)
 	
 # animação chama este evento
 func attack_animation_finished():
-	attack()
+	#attack()
 	isAttack = false
 	isMove = true
 	state = State.MOVE
@@ -190,7 +199,7 @@ func atkRange():
 	else:
 		moveAttack.global_position = $Attack/range.global_position
 #		get_parent().add_child(moveAttack)
-		get_node("/root/Server").add_child(moveAttack)
+		#get_node("/root/Server").add_child(moveAttack)
 
 #func atkSight():
 	#moveAttack = setAttackStatus(moveAttack)
@@ -212,7 +221,7 @@ func atkRange():
 		#get_parent().add_child(moveAttack)
 
 func animationStateAttack(moveNode: MoveNode):
-	if(moveNode.status.atkType == "Physical"):
+	if(moveNode.move.category == MoveAbstract.Category.PHYSICAL):
 		animationState.travel("Attack")
 	else:
 		animationState.travel("AttackSp")
@@ -251,4 +260,7 @@ func flashAnimationCatch(isCatch: bool) -> void:
 
 func randInt(init: int, end: int) -> int:
 	return AttackProcess.new().getRandomInt(init, end)
-	
+
+func _on_animation_tree_animation_finished_tree(anim_name: StringName) -> void:
+	if anim_name.contains("attack"):
+		attack_animation_finished()

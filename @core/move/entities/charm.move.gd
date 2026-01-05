@@ -7,5 +7,5 @@ func _init() -> void:
   name = "Charm"
   pwr = 20
   countdown = 1
-  type = MoveAbstract.Type.SPECIAL
-  atkType = PokemonType.FAIRY
+  type = PokemonType.FAIRY
+  category = MoveAbstract.Category.SPECIAL

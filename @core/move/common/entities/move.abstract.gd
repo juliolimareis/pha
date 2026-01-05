@@ -1,22 +1,23 @@
 class_name MoveAbstract
 
-enum Type {
+enum Category {
   PHYSICAL,
-  SPECIAL
+  SPECIAL,
+  STATUS
 }
 
-var id: String = ""
-var code: int = 0
-var name: String = ""
-var pwr: int = 0
-var countdown: int = 1
-var type: int = PokemonType.NORMAL
-var atkType: int = PokemonType.NORMAL
+var id := ""
+var code := 0
+var name := ""
+var pwr := 0
+var countdown := 1
+var type := PokemonType.NORMAL
+var category := Category.SPECIAL
 
-var velocity = 250
-var time = 0
-var prepare = true
-var hold = false
+var velocity := 250
+var time := 0
+var prepare := true
+var hold := false
 
 func _init():
 	if get_class() == "PokemonMoveAbstract":

@@ -7,25 +7,25 @@ var status_effects: Array[PokemonStatusEffect] = []
 var status_effects_unaffected: Array[PokemonStatusEffect] = []
 var isUnaffected = false
 
-var _moves: Array[PokemonMoveAbstract] = []
+var _moves: Array[MoveAbstract] = []
 
 func _init():
 	if get_class() == "PokemonAbstract":
 		push_error("PokemonAbstract is abstract class")
 
-func getMove(index: int) -> PokemonMoveAbstract:
-	if _moves.has(index):
+func getMove(index: int) -> MoveAbstract:
+	if hasMoveIndex(index):
 		return _moves[index]
 	else:
 		push_error("Invalid move index: " + str(index))
 		return null
 
-func moveExist(index: int) -> bool:
-	return _moves.has(index)
+func hasMoveIndex(index: int) -> bool:
+	return index >= 0 and index < _moves.size()
 
 func replaceMove(moveCode: int, index: int):
 	if index >= 0 && index < _moves.size():
-		var new_move = PokemonMoveFactory.build(moveCode)
+		var new_move = MoveFactory.build(moveCode)
 
 		if !new_move:
 			push_error("Invalid move code: " + str(moveCode))
@@ -37,7 +37,7 @@ func replaceMove(moveCode: int, index: int):
 
 func addMove(moveCode: int):
 	if _moves.size() < 4:
-		var new_move = PokemonMoveFactory.build(moveCode)
+		var new_move = MoveFactory.build(moveCode)
 
 		if !new_move:
 			push_error("Invalid move code: " + str(moveCode))
