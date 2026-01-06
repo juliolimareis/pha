@@ -1,0 +1,131 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource type="Texture" uid="uid://c8axrsewgmq7t" path="res://game/moves/flame_burst/flame_burst.png" id="1"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="3"]
+[ext_resource type="Animation" path="res://game/moves/flame_burst/flame_burst.tres" id="4"]
+[ext_resource type="Texture" uid="uid://cfonurbi8woau" path="res://game/moves/flame_burst/flame_burst_finished.png" id="5"]
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 12.7234
+height = 0.0
+
+[sub_resource type="Animation" id=8]
+resource_name = "finished"
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 40, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 80, 0, 40, 40 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 120, 0, 40, 40 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ null, SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": false,
+"name": "finished",
+"speed": 7.0
+} ]
+
+[node name="Flame Burst" type="Area2D" groups=[
+"fire_1",
+]]
+position = Vector2( -0.31498, 0.629959 )
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "flame_burst"
+animationFinished = true
+time = 0.9
+inverse = true
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.184774, -1.2592 )
+rotation = -1.5708
+shape = SubResource( 7 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 1.3681, 2.03106 )
+scale = Vector2( 0.29553, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+anims/finished = SubResource( 8 )
+
+[node name="attack" type="Sprite" parent="."]
+modulate = Color( 0.964706, 0.988235, 0.529412, 1 )
+position = Vector2( 0.382027, -1.26057 )
+scale = Vector2( 0.604751, 0.542831 )
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="finished" type="AnimatedSprite" parent="."]
+frames = SubResource( 9 )
+animation = "finished"
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 70
+atkType = "Special"
+type = 2
+target = "range"
+effectAccuracy = 0
+effectTarget = "enemy"
+effectTime = 0.0
+enemyEffects = {
+"status": {
+"accuracy": {
+"add": 0,
+"reduce": 0
+},
+"atk": {
+"add": 0,
+"reduce": 0
+},
+"atkSp": {
+"add": 0,
+"reduce": 0
+},
+"def": {
+"add": 0,
+"reduce": 0
+},
+"defSp": {
+"add": 0,
+"reduce": 10
+},
+"hp": {
+"add": 0,
+"reduce": 0
+},
+"paralyze": 0,
+"poison": {
+"damage": 0
+},
+"sleep": 0,
+"speed": {
+"add": 0,
+"reduce": 0
+}
+}
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

@@ -6,6 +6,12 @@ enum Category {
   STATUS
 }
 
+enum FormatType {
+  RANGE,
+  CLOSE,
+  SIGHT
+}
+
 var id := ""
 var code := 0
 var name := ""
@@ -18,6 +24,10 @@ var velocity := 250
 var time := 0
 var prepare := true
 var hold := false
+var formatType := FormatType.RANGE
+
+var effectAccuracy := 100
+var effectTime := 2.0
 
 func _init():
 	if get_class() == "PokemonMoveAbstract":

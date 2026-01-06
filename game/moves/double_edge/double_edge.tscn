@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource type="Texture" uid="uid://dw4gavg344a8" path="res://game/moves/double_edge/double_edge.png" id="1"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="3"]
+[ext_resource type="Animation" path="res://game/moves/double_edge/double_edge.tres" id="4"]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.2213
+
+[node name="Double-Edge" type="Area2D" groups=[
+"fire_1",
+]]
+position = Vector2( -0.31498, 0.629959 )
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "double_edge"
+time = 0.9
+hold = true
+type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.536512, -0.0958441 )
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -8.21072, 12.7599 )
+scale = Vector2( 0.0436709, 0.0896523 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( 0.413428, -0.0227284 )
+scale = Vector2( 1.24871, 0.973582 )
+texture = ExtResource( 1 )
+hframes = 3
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 120
+atkType = "Physical"
+type = 1
+target = "close"
+effectAccuracy = 0
+effectTarget = "self"
+effectTime = 0.0
+selfEffects = {
+"accuracy": {
+"add": 0,
+"reduce": 0
+},
+"atk": {
+"add": 0,
+"reduce": 0
+},
+"atkSp": {
+"add": 0,
+"reduce": 0
+},
+"def": {
+"add": 0,
+"reduce": 0
+},
+"defSp": {
+"add": 0,
+"reduce": 0
+},
+"hp": {
+"add": 0,
+"reduce": 0
+},
+"speed": {
+"add": 0,
+"reduce": 0
+}
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

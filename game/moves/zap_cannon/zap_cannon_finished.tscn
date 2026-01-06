@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource type="Texture" uid="uid://dlf5odyplg83j" path="res://game/moves/zap_cannon/zap_cannon_finished.png" id="1"]
+[ext_resource type="Script" uid="uid://d2om3866fe72n" path="res://scripts/battle/attack_finished.gd" id="2"]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 70, 70 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 70, 0, 70, 70 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 140, 0, 70, 70 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 210, 0, 70, 70 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 280, 0, 70, 70 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 350, 0, 70, 70 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "Animated",
+"speed": 4.0
+} ]
+
+[node name="FireFinished" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1.26134, 0.630665 )
+scale = Vector2( 0.783769, 0.753737 )
+frames = SubResource( 7 )
+animation = "Animated"
+frame = 4
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

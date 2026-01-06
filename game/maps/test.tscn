@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ff7u8wdisc8i"]
+
+[ext_resource type="Texture2D" uid="uid://bla5gp3yi72b2" path="res://img/maps/1_Pallet_Town.png" id="1_t7mgw"]
+[ext_resource type="PackedScene" uid="uid://5lnaufpt6ets" path="res://game/characters/bulbasaur/Pokemon.tscn" id="2_jr6a4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="1PalletTown" type="Sprite2D" parent="."]
+position = Vector2(24, 62)
+texture = ExtResource("1_t7mgw")
+
+[node name="Bulbasaur" parent="." instance=ExtResource("2_jr6a4")]
+position = Vector2(2, 31)

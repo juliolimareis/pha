@@ -1,0 +1,115 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource type="Texture" uid="uid://bopac7byui1oo" path="res://game/moves/twineedle/twineedle.png" id="1"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="3"]
+[ext_resource type="Animation" path="res://game/moves/twineedle/twineedle.tres" id="4"]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 7.20271
+
+[node name="Twineedle" type="Area2D" groups=[
+"fire_1",
+]]
+position = Vector2( -0.31498, 0.629959 )
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "twineedle"
+time = 0.9
+type = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0817658, -0.496005 )
+scale = Vector2( 0.96, 0.627298 )
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0.507554, -0.417084 )
+scale = Vector2( 0.439997, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( 0.0781269, -0.973025 )
+scale = Vector2( 0.568508, 0.527629 )
+texture = ExtResource( 1 )
+hframes = 3
+frame = 2
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 25
+atkType = "Physical"
+type = 13
+countdown = 2
+target = "range"
+effect = true
+effectAccuracy = 20
+effectTarget = "enemy"
+effectTime = 3.0
+enemyEffects = {
+"accuracy": {
+"add": 0,
+"reduce": 0
+},
+"atk": {
+"add": 0,
+"reduce": 0
+},
+"atkSp": {
+"add": 0,
+"reduce": 0
+},
+"def": {
+"add": 0,
+"reduce": 0
+},
+"defSp": {
+"add": 0,
+"reduce": 0
+},
+"hp": {
+"add": 0,
+"reduce": 20
+},
+"speed": {
+"add": 0,
+"reduce": 0
+}
+}
+selfEffects = {
+"accuracy": {
+"add": 0,
+"reduce": 0
+},
+"atk": {
+"add": 0,
+"reduce": 0
+},
+"atkSp": {
+"add": 0,
+"reduce": 0
+},
+"def": {
+"add": 0,
+"reduce": 0
+},
+"defSp": {
+"add": 0,
+"reduce": 0
+},
+"hp": {
+"add": 0,
+"reduce": 0
+},
+"speed": {
+"add": 0,
+"reduce": 0
+}
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

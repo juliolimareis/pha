@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource type="Texture" uid="uid://up6lcd5gkutf" path="res://game/moves/tackle/tackle_finished.png" id="1"]
+[ext_resource type="Script" uid="uid://d2om3866fe72n" path="res://scripts/battle/attack_finished.gd" id="2"]
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 300, 0, 60, 80 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 360, 0, 60, 80 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Animated",
+"speed": 15.0
+} ]
+
+[node name="FireFinished" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.100016, -0.0991786 )
+scale = Vector2( 0.25846, 0.247752 )
+frames = SubResource( 5 )
+animation = "Animated"
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

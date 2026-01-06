@@ -39,7 +39,9 @@ func _on_timer_timeout_remove_attack() -> void:
 
 func finished() -> void:
 	if(hasAnimationFinished && move.name):
-		var animation_node = load("res://Scenes/attacks/"+move.name+"/"+move.name+"_finished.tscn").instance()
+		# var animation_node = load("res://Scenes/attacks/"+move.name+"/"+move.name+"_finished.tscn").instance()
+		var animation_node = VariablesGlobal.getMoveNodeFinishedInstance(move.name)
+		
 		var world = get_tree().current_scene
 		world.add_child(animation_node)
 		animation_node.global_position = global_position
@@ -53,10 +55,6 @@ func set_dir(val) -> void:
 
 func _on_Fire_1_body_entered(body: Node2D) -> void:
 #	if body.is_in_group("player_self") || body.is_in_group("player_friend"):
-#		return
-	#if !isInfo:
-		#if(verifySelfDamage(body)):
-			#return
 	if(hasAnimationFinished):
 		finished()
 

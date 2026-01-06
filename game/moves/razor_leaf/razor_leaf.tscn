@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource type="Texture" uid="uid://xg7stgq67k62" path="res://game/moves/razor_leaf/razor_leaf.png" id="1"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="3"]
+[ext_resource type="Animation" path="res://game/moves/razor_leaf/razor_leaf.tres" id="4"]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.84358
+height = 82.8197
+
+[node name="Razor Leaf" type="Area2D" groups=["fire_1"]]
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "razor_leaf"
+prepare = false
+type = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0482564, 0.0821674 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.0693812, -0.0550857 )
+scale = Vector2( 0.849934, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( 0.000328109, 0.842839 )
+scale = Vector2( 0.653124, 0.690626 )
+z_index = 10
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 75
+atkType = "Physical"
+type = 6
+countdown = 2
+target = "range"
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

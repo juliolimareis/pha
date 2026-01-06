@@ -225,13 +225,15 @@ graph_offset = Vector2(-303.961, 66.3018)
 collision_mask = 2
 script = ExtResource("1_xcxl1")
 code = 1
-codeMove1 = 1
+codeMove1 = 2
+codeMove2 = 1
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0.417138, 0.417138)
 scale = Vector2(0.78726, 0.78726)
 texture = ExtResource("2_v8sop")
 hframes = 40
+frame = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.0626847, 4.23721)
@@ -266,5 +268,7 @@ script = ExtResource("22_4yiff")
 color = Color(0.980392, 0.305882, 0.176471, 1)
 
 [node name="range" type="Marker2D" parent="Attack"]
+
+[node name="closeAttack" type="Marker2D" parent="."]
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished_tree"]

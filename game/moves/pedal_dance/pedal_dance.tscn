@@ -1,0 +1,108 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource type="Texture" uid="uid://7ytg4ar5ltg" path="res://game/moves/pedal_dance/pedal_dance.png" id="1"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="3"]
+[ext_resource type="Animation" path="res://game/moves/pedal_dance/pedal_dance.tres" id="4"]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 9.43961
+height = 7.22096
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("attack:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 150, 100 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 150, 0, 150, 100 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 300, 0, 150, 100 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 450, 0, 150, 100 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Pedal Dance" type="Area2D" groups=["fire_1"]]
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "pedal_dance"
+prepare = false
+type = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.372665, 0.503089 )
+rotation = 1.1013
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.0693812, -0.0550857 )
+scale = Vector2( 0.849934, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/attack = ExtResource( 4 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( 0.160233, -0.195407 )
+scale = Vector2( 0.204822, 0.220876 )
+z_index = 10
+texture = ExtResource( 1 )
+hframes = 4
+frame = 2
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 120
+atkType = "Special"
+type = 6
+countdown = 6
+target = "range"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -9.22843, 0.144577 )
+scale = Vector2( 0.205, 0.221 )
+frames = SubResource( 7 )
+frame = 1
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( -23.5237, 0.039463 )
+scale = Vector2( 0.205, 0.221 )
+frames = SubResource( 7 )
+frame = 3
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( -35.8218, 0.039465 )
+scale = Vector2( 0.205, 0.221 )
+frames = SubResource( 7 )
+frame = 1
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

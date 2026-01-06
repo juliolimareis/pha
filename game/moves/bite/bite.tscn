@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://u3b157irid3g"]
+
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="1_gcf2i"]
+[ext_resource type="Animation" path="res://game/moves/bite/bite.tres" id="2_6yf61"]
+[ext_resource type="Texture2D" uid="uid://co15aqi2dwb81" path="res://game/moves/bite/bite.png" id="3_ouwrb"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="4_nv430"]
+
+[sub_resource type="CapsuleShape2D" id="1"]
+radius = 5.71588
+height = 11.8511
+
+[sub_resource type="Animation" id="2"]
+resource_name = "finished"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v4f0u"]
+_data = {
+&"attack": ExtResource("2_6yf61"),
+&"finished": SubResource("2")
+}
+
+[node name="Bite" type="Area2D" groups=["fire_1"]]
+z_index = 2
+position = Vector2(-0.31498, 0.629959)
+collision_layer = 2
+script = ExtResource("1_gcf2i")
+code = 2
+inverse = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.0125406, -0.407336)
+rotation = -1.5708
+shape = SubResource("1")
+
+[node name="notifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.360326, 0.0680201)
+scale = Vector2(0.29553, 0.386897)
+
+[node name="animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_v4f0u")
+}
+
+[node name="attack" type="Sprite2D" parent="."]
+position = Vector2(0.186642, -0.215742)
+scale = Vector2(0.389048, 0.405303)
+texture = ExtResource("3_ouwrb")
+hframes = 2
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource("4_nv430")
+pwr = 60
+atkType = "Physical"
+countdown = 2
+target = "range"
+effect = true
+effectAccuracy = 30
+effectTarget = "enemy"
+effectTime = 3.0
+enemyEffects = {
+"accuracy": {
+"add": 0,
+"reduce": 0
+},
+"atk": {
+"add": 0,
+"reduce": 0
+},
+"atkSp": {
+"add": 0,
+"reduce": 0
+},
+"def": {
+"add": 0,
+"reduce": 20
+},
+"defSp": {
+"add": 0,
+"reduce": 0
+},
+"hp": {
+"add": 0,
+"reduce": 0
+},
+"speed": {
+"add": 0,
+"reduce": 10
+}
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

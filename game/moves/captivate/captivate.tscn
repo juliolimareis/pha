@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource type="Texture" uid="uid://68kligk2xxbg" path="res://game/moves/captivate/captivate.png" id="1"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="3"]
+[ext_resource type="Animation" path="res://game/moves/captivate/captivate.tres" id="4"]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 9.38373
+
+[node name="Captivate" type="Area2D" groups=[
+"fire_1",
+]]
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "captivate"
+inverse = true
+prepare = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.172721, 0.303139 )
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.319849, 0.65202 )
+scale = Vector2( 0.345551, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( 0.228847, 0.187121 )
+scale = Vector2( 0.675437, 0.634373 )
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+atkType = "Special"
+type = 1
+countdown = 2
+target = "range"
+effect = true
+effectTarget = "enemy"
+effectTime = 4.0
+enemyEffects = {
+"accuracy": {
+"add": 0,
+"reduce": 0
+},
+"atk": {
+"add": 0,
+"reduce": 0
+},
+"atkSp": {
+"add": 0,
+"reduce": 20
+},
+"def": {
+"add": 0,
+"reduce": 0
+},
+"defSp": {
+"add": 0,
+"reduce": 0
+},
+"hp": {
+"add": 0,
+"reduce": 0
+},
+"speed": {
+"add": 0,
+"reduce": 0
+}
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

@@ -1,0 +1,109 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource type="Texture" uid="uid://cwwnn855kxbra" path="res://game/moves/rain_dance/rain_dance.png" id="1"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="3"]
+[ext_resource type="Animation" path="res://game/moves/rain_dance/rain_dance.tres" id="4"]
+[ext_resource type="Texture" uid="uid://dejbd8o5c2fpv" path="res://img/particles/flame.png" id="5"]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 14.2765
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.103933, 0.814607, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.508427, 0.508427, 0.508427, 1, 1, 1, 1, 1, 0.403922, 0.00392157, 0.545098, 0.745098 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+width = 8
+
+[sub_resource type="ParticlesMaterial" id=2]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 50.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.2
+color = Color( 0.529412, 0.0156863, 0.635294, 0.396078 )
+color_ramp = SubResource( 4 )
+
+[node name="Dragon Dance" type="Area2D" groups=["fire_1"]]
+position = Vector2( -0.31498, -1.37004 )
+z_index = 10
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "dragon_dance"
+move = false
+time = 3.0
+prepare = false
+hold = true
+type = 14
+
+[node name="atk collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0.151741, 0.807793 )
+shape = SubResource( 5 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0.342757, 6.73557 )
+scale = Vector2( 0.657461, 0.290274 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+
+[node name="attack" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0.106144, 2.63425 )
+scale = Vector2( 0.653124, 0.690626 )
+z_index = 10
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+atkType = "Special"
+type = 14
+countdown = 7
+target = "close"
+effect = true
+effectTarget = "self"
+effectTime = 3.0
+selfEffects = {
+"accuracy": {
+"add": 0,
+"reduce": 0
+},
+"atk": {
+"add": 10,
+"reduce": 0
+},
+"atkSp": {
+"add": 10,
+"reduce": 0
+},
+"def": {
+"add": 0,
+"reduce": 0
+},
+"defSp": {
+"add": 0,
+"reduce": 0
+},
+"hp": {
+"add": 0,
+"reduce": 0
+},
+"speed": {
+"add": 10,
+"reduce": 0
+}
+}
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 0, 4.49122 )
+process_material = SubResource( 2 )
+texture = ExtResource( 5 )
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

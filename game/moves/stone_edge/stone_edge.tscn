@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource type="Texture" uid="uid://bcrpgoiq4nyfa" path="res://game/moves/stone_edge/stone_edge.png" id="1"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="3"]
+[ext_resource type="Animation" path="res://game/moves/stone_edge/stone_edge.tres" id="4"]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 10.3119
+height = 8.24795
+
+[node name="stone_edge" type="Area2D" groups=[
+"fire_1",
+]]
+position = Vector2( -0.31498, 0.629959 )
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "stone_edge"
+move = false
+time = 1.7
+
+[node name="atk collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0.590546, 4.20061 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.103188, 14.3911 )
+scale = Vector2( 1.29666, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( 0.106144, 2.63425 )
+scale = Vector2( 0.653124, 0.690626 )
+texture = ExtResource( 1 )
+hframes = 6
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 100
+atkType = "Physical"
+type = 11
+target = "sight"
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

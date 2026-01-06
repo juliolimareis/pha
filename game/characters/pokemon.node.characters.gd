@@ -1,9 +1,6 @@
 extends CharacterBody2D
 class_name PokemonNode 
 
-@export var code: int = 0
-var pokemon: PokemonAbstract = null
-
 #@export var ACCELERATION = 400
 #@export var MAX_SPEED = 65
 #@export var FRICTION = 400
@@ -20,26 +17,31 @@ enum State {
 
 var state = State.MOVE
 
-@export var isPlayer = true
+@export var code: int = 0
+@export var isPlayer := true
 
-@export var codeMove1: int = 0
-@export var codeMove2: int = 0
-@export var codeMove3: int = 0
-@export var codeMove4: int = 0
+@export var codeMove1 := 0
+@export var codeMove2 := 0
+@export var codeMove3 := 0
+@export var codeMove4 := 0
 
 @onready var animationTree: AnimationTree = $AnimationTree
-@onready var animationPlayer = $AnimationPlayer
-@onready var animationState = animationTree.get("parameters/playback")
+@onready var animationPlayer: AnimationPlayer = $AnimationPlayer
+@onready var animationState: AnimationNodeStateMachinePlayback = animationTree.get("parameters/playback")
+@onready var attackSightNode: Marker2D = $Attack/sight
+@onready var attackRangeNode: Marker2D = $Attack/range
+@onready var attackCloseNode: Marker2D = $closeAttack
 
-var input_vector = Vector2(0, 0)
-
-var momentAttack: int = 1
-var moveAttack: MoveNode
-var isAttack: bool = false
-var directionPoke = Vector2(-1,0)
-var isMove: bool = true
-var isNetwork: bool = false
-var max_speed_default: int = 0
+var pokemon: PokemonAbstract = null
+var input_vector := Vector2(0, 0)
+var momentAttack := 1
+var _currentMoveNode: MoveNode
+var isAttack := false
+var directionPoke := Vector2(-1,0)
+var isMove : = true
+var isNetwork := false
+var max_speed_default := 0
+var cameraZoom = 2.5
 
 func mount() -> void:
 	pokemon = PokemonFactory.build(code)
@@ -61,7 +63,8 @@ func _ready():
 	animationTree.active = true
 
 	if(isPlayer):
-		var camera = Camera2D.new()
+		var camera := Camera2D.new()
+		camera.zoom = Vector2(cameraZoom, cameraZoom)
 		add_child(camera)
 
 func _process(delta):
@@ -144,84 +147,74 @@ func attack_state(index: int):
 		state = State.MOVE
 	
 func instanceAndAnimateAttack(index: int):
-	var moveNode = VariablesGlobal.getMoveInstance(pokemon.getMove(index).name)
+	_currentMoveNode = VariablesGlobal.getMoveInstance(pokemon.getMove(index).name)
 
-	if moveNode:
+	if _currentMoveNode:
 		isMove = false
-		animationStateAttack(moveNode)
+		animationStateAttack()
 	
 # animação chama este evento
 func attack_animation_finished():
-	#attack()
+	attack()
 	isAttack = false
 	isMove = true
 	state = State.MOVE
 
 func attack():
-	if(moveAttack != null):
-		atkRange()
-	elif(moveAttack.get_node("status").getTarget() == "sight"):
-		#atkSight()
-		pass
-	else:
-		atkClose()
+	if(_currentMoveNode.move.formatType == MoveAbstract.FormatType.RANGE):
+		onAttackRange()
+	elif(_currentMoveNode.move.formatType == MoveAbstract.FormatType.CLOSE):
+		onAttackClose()
+	elif(_currentMoveNode.move.formatType == MoveAbstract.FormatType.SIGHT):
+		onAttackSight()
 
-#func atkSight():
-	#moveAttack = setAttackStatus(moveAttack)
-	
-	if(moveAttack.hold):
-		$Attack/sight.add_child(moveAttack)
+func onAttackSight():
+	if(_currentMoveNode.move.hold):
+		attackSightNode.add_child(_currentMoveNode)
 	else:
-		moveAttack.global_position = $Attack/sight.global_position
-		get_parent().add_child(moveAttack)
+		_currentMoveNode.global_position = attackSightNode.global_position
+		get_parent().add_child(_currentMoveNode)
 	
-func atkClose():
-	#moveAttack = setAttackStatus(moveAttack)
-	moveAttack.direction = Vector2.ZERO
+func onAttackClose():
+	_currentMoveNode.direction = Vector2.ZERO
 	
-	if(moveAttack.hold):
-		$closeAttack.add_child(moveAttack)
+	if(_currentMoveNode.move.hold):
+		attackCloseNode.add_child(_currentMoveNode)
 	else:
-		moveAttack.global_position = $closeAttack.global_position
-		get_parent().add_child(moveAttack)
+		_currentMoveNode.global_position = attackCloseNode.global_position
+		get_parent().add_child(_currentMoveNode)
 
-func atkRange():
-	#moveAttack = setAttackStatus(moveAttack)
-	
-	if(!moveAttack.inverse):
-		moveAttack.rotation = getRotationAttack()
-		
-	if(moveAttack.move):
-		moveAttack.direction = getDirectionAttack()
-	
-	if(moveAttack.hold):
-		$Attack/range.add_child(moveAttack)
-	else:
-		moveAttack.global_position = $Attack/range.global_position
-#		get_parent().add_child(moveAttack)
-		#get_node("/root/Server").add_child(moveAttack)
+func onAttackRange():
+	_currentMoveNode.direction = getDirectionAttack()
 
-#func atkSight():
-	#moveAttack = setAttackStatus(moveAttack)
+	if(!_currentMoveNode.inverse):
+		_currentMoveNode.rotation = getRotationAttack()
+
+	_currentMoveNode.global_position = attackRangeNode.global_position
+	get_parent().add_child(_currentMoveNode)
+	# get_tree().current_scene.add_child(_currentMoveNode)
+
+#func onAttackSight():
+	#_currentMoveNode = setAttackStatus(_currentMoveNode)
 	#
-	#if(moveAttack.hold):
-		#$Attack/sight.add_child(moveAttack)
+	#if(_currentMoveNode.hold):
+		#$Attack/sightNode.add_child(_currentMoveNode)
 	#else:
-		#moveAttack.global_position = $Attack/sight.global_position
-		#get_parent().add_child(moveAttack)
+		#_currentMoveNode.global_position = $Attack/sightNode.global_position
+		#get_parent().add_child(_currentMoveNode)
 	
-#func atkClose():
-	#moveAttack = setAttackStatus(moveAttack)
-	#moveAttack.direction = Vector2.ZERO
+#func onAttackClose():
+	#_currentMoveNode = setAttackStatus(_currentMoveNode)
+	#_currentMoveNode.direction = Vector2.ZERO
 	#
-	#if(moveAttack.hold):
-		#$closeAttack.add_child(moveAttack)
+	#if(_currentMoveNode.hold):
+		#$closeAttack.add_child(_currentMoveNode)
 	#else:
-		#moveAttack.global_position = $closeAttack.global_position
-		#get_parent().add_child(moveAttack)
+		#_currentMoveNode.global_position = $closeAttack.global_position
+		#get_parent().add_child(_currentMoveNode)
 
-func animationStateAttack(moveNode: MoveNode):
-	if(moveNode.move.category == MoveAbstract.Category.PHYSICAL):
+func animationStateAttack():
+	if(_currentMoveNode.move.category == MoveAbstract.Category.PHYSICAL):
 		animationState.travel("Attack")
 	else:
 		animationState.travel("AttackSp")
@@ -258,8 +251,8 @@ func flashAnimationCatch(isCatch: bool) -> void:
 	else: 
 		$Sprite.modulate = "#ffffff"
 
-func randInt(init: int, end: int) -> int:
-	return AttackProcess.new().getRandomInt(init, end)
+# func randInt(init: int, end: int) -> int:
+# 	return AttackProcess.new().getRandomInt(init, end)
 
 func _on_animation_tree_animation_finished_tree(anim_name: StringName) -> void:
 	if anim_name.contains("attack"):

@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource type="Texture" uid="uid://c0mxvmnvvt8re" path="res://game/moves/hydro_pump/hydro_pump.png" id="1"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
+[ext_resource type="Animation" path="res://game/moves/hydro_pump/hydro_pump.tres" id="3"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="4"]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 3.40796
+height = 10.4107
+
+[node name="Hydro Pump" type="Area2D" groups=["fire_1"]]
+z_index = 10
+collision_layer = 2
+script = ExtResource( 4 )
+attackName = "hydro_pump"
+time = 0.8
+type = 4
+
+[node name="atk collision" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0304522, -0.261847 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -9.53674e-07, -1.50084 )
+scale = Vector2( 0.237197, 0.175004 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 3 )
+
+[node name="attack" type="Sprite" parent="."]
+modulate = Color( 0.733333, 0.854902, 1, 1 )
+position = Vector2( -1.003, -0.230021 )
+rotation = 1.57489
+scale = Vector2( 0.62549, 0.577085 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 110
+atkType = "Special"
+type = 4
+target = "range"
+effect = true
+effectAccuracy = 0
+effectTarget = "self"
+effectTime = 0.0
+enemyStatusCondition = {
+"burn": 0,
+"paralysis": 0,
+"poison": 0,
+"sleep": 0
+}
+selfEffects = {
+"accuracy": {
+"add": 0,
+"reduce": 0
+},
+"atk": {
+"add": 0,
+"reduce": 0
+},
+"atkSp": {
+"add": 0,
+"reduce": 0
+},
+"def": {
+"add": 0,
+"reduce": 0
+},
+"defSp": {
+"add": 0,
+"reduce": 0
+},
+"hp": {
+"add": 0,
+"reduce": 0
+},
+"speed": {
+"add": 0,
+"reduce": 0
+}
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

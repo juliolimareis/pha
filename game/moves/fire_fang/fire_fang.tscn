@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource type="Texture" uid="uid://66jajk5xgh2t" path="res://game/moves/fire_fang/fire_fang.png" id="1"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="3"]
+[ext_resource type="Animation" path="res://game/moves/fire_fang/fire_fang.tres" id="4"]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.72264
+height = 11.4498
+
+[sub_resource type="Animation" id=2]
+resource_name = "finished"
+
+[node name="Fire Fang" type="Area2D" groups=["fire_1"]]
+position = Vector2( -0.31498, 0.629959 )
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "fire_fang"
+animationFinished = true
+time = 0.25
+inverse = true
+prepare = false
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0125406, -0.407336 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0.360326, 0.0680201 )
+scale = Vector2( 0.29553, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+anims/finished = SubResource( 2 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( 0.191803, -0.231212 )
+scale = Vector2( 0.389567, 0.405844 )
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 65
+atkType = "Physical"
+type = 2
+target = "range"
+effect = true
+effectAccuracy = 10
+effectTarget = "enemy"
+effectTime = 3.0
+enemyStatusCondition = {
+"burn": 10,
+"confusion": 0,
+"freeze": 0,
+"paralysis": 0,
+"poison": 0,
+"sleep": 0
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

@@ -3,7 +3,9 @@ class_name MoveFactory
 static func build(code: int) -> MoveAbstract:
 	match code:
 		1:
-			return CharmAttack.new()
+			return CharmMove.new()
+		2:
+			return BiteMove.new()
 		_:
-			push_error("Attack code ${code} not found")
+			push_error("Move code ${code} not found")
 			return null

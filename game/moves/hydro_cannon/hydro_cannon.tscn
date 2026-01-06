@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource type="Texture" uid="uid://cmrl0mbl165d8" path="res://game/moves/hydro_cannon/hydro_cannon.png" id="1"]
+[ext_resource type="Script" uid="uid://fdiwb2pyb3ww" path="res://scripts/battle/moveStatus.gd" id="2"]
+[ext_resource type="Script" uid="uid://c1ctficgcapfh" path="res://game/moves/move.node.gd" id="3"]
+[ext_resource type="Animation" path="res://game/moves/hydro_cannon/hydro_cannon.tres" id="4"]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.40204
+height = 36.556
+
+[sub_resource type="Animation" id=2]
+resource_name = "finished"
+
+[node name="Hydro Cannon" type="Area2D" groups=["fire_1"]]
+position = Vector2( -0.31498, 0.629959 )
+z_index = 2
+collision_layer = 2
+script = ExtResource( 3 )
+attackName = "hydro_cannon"
+prepare = false
+type = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.53282, -0.110034 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0.360326, 0.0680201 )
+scale = Vector2( 0.29553, 0.386897 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 4 )
+anims/finished = SubResource( 2 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( -2.54879, -0.69067 )
+rotation = -1.5708
+scale = Vector2( 1.08781, 1.47627 )
+texture = ExtResource( 1 )
+hframes = 4
+frame = 2
+
+[node name="status" type="Node2D" parent="."]
+script = ExtResource( 2 )
+pwr = 150
+atkType = "Special"
+type = 4
+countdown = 5
+target = "range"
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_1_body_entered"]
+[connection signal="body_entered" from="." to="status" method="_on_Fire_1_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]
