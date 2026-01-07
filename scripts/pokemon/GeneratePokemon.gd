@@ -14,7 +14,7 @@ func generate(pokeMold, lv: int):
 	newPoke["ev"] = getInitialEv()
 
 	for key in newPoke["iv"]:
-		newPoke[key] = gerateStatus(key, pokeMold[key], lv, newPoke["iv"][key], newPoke["ev"][key])
+		newPoke[key] = generateStatus(key, pokeMold[key], lv, newPoke["iv"][key], newPoke["ev"][key])
 
 	newPoke["gender"] = getGender(pokeMold['gender'])
 
@@ -26,7 +26,7 @@ func create(statusBase, lv: int, iv, ev): # -> statusPokeJson
 
 	for key in statusBase:
 		if(key != "gender"):
-			newPoke[key] = gerateStatus(key, statusBase[key], lv, iv[key], ev[key])
+			newPoke[key] = generateStatus(key, statusBase[key], lv, iv[key], ev[key])
 	
 	newPoke["gender"] = getGender(statusBase['gender'])
 	
@@ -56,9 +56,9 @@ func getInitialEv():
 		"speed": 4
 	}
 
-func gerateStatus(stName: String, base: int, lv: int, iv: int, ev: int) -> int:
-	var b = (2*base+iv)
-	var b2 = (ev/4)
+func generateStatus(stName: String, base: int, lv: int, iv: int, ev: int) -> int:
+	var b := (2*base+iv)
+	var b2 := (ev/4)
 	b = (b+b2)
 	b = (b*lv)/100
 

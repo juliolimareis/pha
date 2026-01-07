@@ -17,7 +17,7 @@ var code := 0
 var name := ""
 var pwr := 0
 var countdown := 1
-var type := PokemonType.NORMAL
+var type := PokemonBaseAbstract.Type.NORMAL
 var category := Category.SPECIAL
 
 var velocity := 250

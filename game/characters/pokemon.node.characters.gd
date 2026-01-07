@@ -17,7 +17,8 @@ enum State {
 
 var state = State.MOVE
 
-@export var code: int = 0
+@export var code := 1
+@export var level := 1
 @export var isPlayer := true
 
 @export var codeMove1 := 0
@@ -44,8 +45,10 @@ var max_speed_default := 0
 var cameraZoom = 2.5
 
 func mount() -> void:
-	pokemon = PokemonFactory.build(code)
+	pokemon = PokemonFactory.generate(code, level)
 	max_speed_default = pokemon.max_speed
+	
+	print(pokemon.to_string())
 
 	if codeMove1:
 		pokemon.addMove(codeMove1)

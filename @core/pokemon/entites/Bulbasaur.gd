@@ -4,6 +4,7 @@ extends PokemonAbstract
 func _init() -> void:
   code = 1
   name = "Bulbasaur"
+	
   atk = 49
   sp_atk = 64
   def = 49
@@ -14,7 +15,7 @@ func _init() -> void:
   catchRate = 45
   
   levelingRate = PokemonLevel.LevelingRate.MEDIUM_SLOW
-  type = [PokemonType.GRASS, PokemonType.POISON]
+  type = [PokemonBaseAbstract.Type.GRASS, PokemonBaseAbstract.Type.POISON]
 
   catchRate = 45
 

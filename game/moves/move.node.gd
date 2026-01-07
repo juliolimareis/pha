@@ -54,13 +54,20 @@ func set_dir(val) -> void:
 # 	rotation = val
 
 func _on_Fire_1_body_entered(body: Node2D) -> void:
-#	if body.is_in_group("player_self") || body.is_in_group("player_friend"):
+	if body.get_class() == "PokemonNode" && body.pokemon:
+		var pokemonNode: PokemonNode = body
+		if(pokemonNode.isNetwork): return
+
+		if(isAttack):
+			isAttack = false
+			var effects = move.fetchEffects()
+			for effect in effects:
+				pokemonNode.pokemon.addEffect(effect)
+				
+
 	if(hasAnimationFinished):
 		finished()
 
 func _on_notifier_screen_exited() -> void:
 	if !isInfo:
 		queue_free()
-
-#func verifySelfDamage(body: Node2D):
-	#return $status.receiverIsAttack(body)

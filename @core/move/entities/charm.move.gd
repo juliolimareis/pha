@@ -5,9 +5,9 @@ func _init() -> void:
 	id = "charm-move"
 	code = 1
 	name = "Charm"
-	pwr = 20
+	pwr = 0
 	countdown = 1
-	type = PokemonType.FAIRY
+	type = PokemonBaseAbstract.Type.FAIRY
 	category = MoveAbstract.Category.STATUS
 
 	velocity = 250

@@ -7,3 +7,6 @@ static func build(code: int) -> PokemonAbstract:
 		_:
 			push_error("Pokemon code {code} not found".format({ "code": code }))
 			return null
+
+static func generate(code: int, level := 1) -> PokemonAbstract:
+	return PokemonGenerate.new().build(code, level)

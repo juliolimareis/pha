@@ -7,7 +7,7 @@ func _init() -> void:
 	name = "Bite"
 	pwr = 60
 	countdown = 2
-	type = PokemonType.DARK
+	type = PokemonBaseAbstract.Type.DARK
 	category = MoveAbstract.Category.PHYSICAL
 
 	velocity = 250
